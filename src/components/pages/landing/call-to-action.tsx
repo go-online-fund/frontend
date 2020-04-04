@@ -1,17 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CallToActionHeader = styled.h1 `
+  text-align: justify;
+  // width: 100%
+`;
+
 const CallToActionWrapper = styled.section`
+  align-items: center;
   background-color: #fbc91b;
-  height: calc(100vh - 80px);
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
 `;
 
 const CallToAction: React.FC = () => {
   return (
     <CallToActionWrapper>
-      <h1>Why do we want to do this?</h1>
-      <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</h2>
+      <CallToActionHeader>Why do we want to do this?</CallToActionHeader>
+      <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</span>
     </CallToActionWrapper>
   );
 }
