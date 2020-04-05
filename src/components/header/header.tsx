@@ -6,7 +6,7 @@ import { ReactComponent as NasCompanyImage } from '../../assets/images/thenascom
 const HeaderWrapper = styled.header`
   background-image: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
   display: flex;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;
 `;
 
@@ -32,8 +32,8 @@ const Navigation = styled.div`
 `;
 
 const NasCompanyLogo = styled(NasCompanyImage)`
-  height: 20px;
-  width: 150px;
+  height: 30px;
+  width: 225px;
 `;
 
 // only import polyfill if scrollBehavior is not supported by browser

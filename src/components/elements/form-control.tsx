@@ -33,3 +33,12 @@ export const TextField = styled.input`
 export const TextArea = styled.textarea`
   ${formControlStyles}
 `;
+
+export const SuccessText = styled.span`
+  text-align: center;
+  width: 50%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;

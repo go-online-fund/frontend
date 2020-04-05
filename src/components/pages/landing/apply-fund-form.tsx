@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { TextField, TextArea } from '../../elements/form-control';
+import { TextField, TextArea, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
@@ -12,18 +12,25 @@ const ApplyFundFormWrapper = styled.form`
   padding: 2rem 2rem;
 `;
 
-const ApplyFundForm: React.FC = () => {
-  const [fundForm, setFundForm] = useState<FundApplication>({
-    companyName: '', 
-    companySize: '', 
-    companyEmail: '', 
-    businessDescription: '',
-    businessChallenge: '',
-    businessPriority: '',  
-  });
+const defaultForm = {
+  companyName: '', 
+  companySize: '', 
+  companyEmail: '', 
+  businessDescription: '',
+  businessChallenge: '',
+  businessPriority: '',  
+};
 
-  const submitForm = () => {
-    FormsService.postFundApplication(fundForm);
+const ApplyFundForm: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [fundForm, setFundForm] = useState<FundApplication>(defaultForm);
+
+  const submitForm = async () => {
+    const responseStatus = await FormsService.postFundApplication(fundForm);
+    if (responseStatus === 200) {
+      setFundForm(defaultForm);
+      setIsSubmitted(true);
+    }
   };
 
   return (
@@ -79,6 +86,11 @@ const ApplyFundForm: React.FC = () => {
       >
         Apply
       </PrimaryButton>
+      {isSubmitted && (
+        <SuccessText>
+          Thank you. Your application has been submitted. We will be in touch with you shortly if we are able to support your application.
+        </SuccessText>
+      )}
     </ApplyFundFormWrapper>
   );
 }

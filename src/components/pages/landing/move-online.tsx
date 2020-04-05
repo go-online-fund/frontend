@@ -60,10 +60,6 @@ const DeliveryIcon = styled(Delivery)`
   ${svgSize}
 `;
 
-// const WebsiteIcon = styled(Website)`
-//   ${svgSize}
-// `;
-
 const WebsiteIcon = styled.img`
   ${svgSize}
 `;
@@ -91,7 +87,7 @@ const MoveOnline: React.FC = () => {
         <LearningDescription>You need a delivery method for your goods</LearningDescription>
       </LearningPoint>
       <LearningPoint>
-        <WebsiteIcon src={Website} />
+        <WebsiteIcon src={Website} alt='website icon' />
         <LearningTitle>Website</LearningTitle>
         <LearningDescription>You need to build a website</LearningDescription>
       </LearningPoint>
