@@ -7,17 +7,14 @@ const formControlStyles = css`
   box-sizing: border-box;
   background-color: ${StylesSchema.Yellow};
   font-family: 'Raleway', sans-serif;
+  font-size: 16px;
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.8rem;
   width: 100%;
 
   &:focus {
     outline: 1px solid ${StylesSchema.Yellow};
     outline-offset: 1px;
-  }
-
-  &::placeholder {
-    color: ${StylesSchema.Black};
   }
 
   @media (min-width: 768px) {

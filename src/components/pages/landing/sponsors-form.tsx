@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { TextField } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import { StylesSchema } from '../../../shared/enums/styles';
+import FormsService from '../../../shared/services/forms.service';
+import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 
 interface SponsorHelpOption {
   value: string;
@@ -31,6 +33,10 @@ const ReactSelect = React.lazy(() => import('react-select'));
 const Select = styled(ReactSelect)`
   margin: 0.5rem;
   width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const options: SponsorHelpOption[] = [
@@ -41,12 +47,23 @@ const options: SponsorHelpOption[] = [
 ];
 
 const SponsorsForm: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+  // const [selectedOption, setSelectedOption] = useState('');
+  const [sponsorForm, setSponsorForm] = useState<SponsorApplication>({
+    companyName: '', 
+    companyEmail: '', 
+    contributionArea: '',
+  });
 
   const onSelect = (e: SponsorHelpOption[]) => {
-    // setSelectedOption()
-    const processSelection = e.map(({ value }) => value).join(',');
-    setSelectedOption(processSelection);
+    const contributionArea = e.map(({ value }) => value).join(',');
+    setSponsorForm({
+      ...sponsorForm,
+      contributionArea
+    })
+  };
+
+  const submitForm = () => {
+    FormsService.postSponsorApplication(sponsorForm);
   };
 
   return (
@@ -55,8 +72,20 @@ const SponsorsForm: React.FC = () => {
       BE A SPONSOR
     </SponsorTitle>
     <SponsorsFormWrapper>
-      <TextField placeholder='Company name' />
-      <TextField placeholder='Contact' />
+      <TextField 
+        placeholder='Company name'
+        onChange={(e) => setSponsorForm({
+          ...sponsorForm,
+          companyName: e.target.value,
+        })}
+      />
+      <TextField 
+        placeholder='Contact' 
+        onChange={(e) => setSponsorForm({
+          ...sponsorForm,
+          companyEmail: e.target.value,
+        })}
+      />
       <span>What would you like to contribute?</span>
       <Suspense fallback={<div>Loading Options...</div>}>
         <Select
@@ -65,7 +94,10 @@ const SponsorsForm: React.FC = () => {
           onChange={onSelect}
         />
       </Suspense>
-      <PrimaryButton>
+      <PrimaryButton
+        type='button'
+        onClick={submitForm}
+      >
         Be a Sponsor
       </PrimaryButton>
       <h3>We will be in touch with you shortly</h3>
