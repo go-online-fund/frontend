@@ -97,7 +97,7 @@ const ApplyFundForm: React.FC = () => {
       />
       <PrimaryButton 
         type='submit'
-        onClick={submitForm}
+        // onClick={submitForm}
       >
         Apply For The Fund
       </PrimaryButton>

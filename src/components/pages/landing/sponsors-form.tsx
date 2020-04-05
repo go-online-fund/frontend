@@ -116,7 +116,7 @@ const SponsorsForm: React.FC = () => {
         </Suspense>
         <PrimaryButton
           type='submit'
-          onClick={submitForm}
+          // onClick={submitForm}
         >
           BE A SPONSOR
         </PrimaryButton>
