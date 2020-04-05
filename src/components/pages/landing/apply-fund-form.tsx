@@ -12,6 +12,12 @@ const ApplyFundFormWrapper = styled.form`
   padding: 2rem 2rem;
 `;
 
+const ApplyFundFormHeader = styled.h1`
+ text-align: center;
+ font-weight: bold;
+ text-transform: uppercase
+`;
+
 const ApplyFundForm: React.FC = () => {
   const [fundForm, setFundForm] = useState<FundApplication>({
     companyName: '', 
@@ -27,29 +33,36 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
+      <>
+          <ApplyFundFormHeader>We're here to support</ApplyFundFormHeader>
     <ApplyFundFormWrapper>
-      <TextField 
+      <TextField
+          required
         placeholder='Company'
         onChange={(e) => setFundForm({
           ...fundForm,
           companyName: e.target.value,
         })}
       />
-      <TextField 
+      <TextField
+          required
         placeholder='Company size' 
         onChange={(e) => setFundForm({
           ...fundForm,
           companySize: e.target.value,
         })}
       />
-      <TextField 
-        placeholder='Contact' 
+      <TextField
+          required
+          type="email"
+        placeholder='Company Email'
         onChange={(e) => setFundForm({
           ...fundForm,
           companyEmail: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea
+          required
         placeholder='Tell us about your business' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -57,7 +70,8 @@ const ApplyFundForm: React.FC = () => {
           businessDescription: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea
+          required
         placeholder='What is the biggest challenge for your business to get online?'
         rows={4} 
         onChange={(e) => setFundForm({
@@ -65,7 +79,8 @@ const ApplyFundForm: React.FC = () => {
           businessChallenge: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea
+          required
         placeholder='What is the current top priority for your business?' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -74,12 +89,13 @@ const ApplyFundForm: React.FC = () => {
         })}
       />
       <PrimaryButton 
-        type='button'
+        type='submit'
         onClick={submitForm}
       >
-        Apply
+        Apply For The Fund
       </PrimaryButton>
     </ApplyFundFormWrapper>
+          </>
   );
 }
 

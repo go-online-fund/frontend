@@ -2,7 +2,6 @@ import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
 import { TextField } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
-import { StylesSchema } from '../../../shared/enums/styles';
 import FormsService from '../../../shared/services/forms.service';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 
@@ -11,14 +10,23 @@ interface SponsorHelpOption {
   label: string;
 }
 
-const SponsorTitle = styled.div`
-  background-color: ${StylesSchema.Yellow};
-  color: ${StylesSchema.Black};
-  font-size: 2rem;
-  font-weight: 1000;
-  padding: 2rem 0;
+// const SponsorTitle = styled.div`
+//   background-color: ${StylesSchema.Yellow};
+//   color: ${StylesSchema.Black};
+//   font-size: 2rem;
+//   font-weight: 1000;
+//   padding: 2rem 0;
+//   text-align: center;
+//   width: 100%;
+// `;
+
+const SponsorSection = styled.div`
+  margin: 0 auto;
   text-align: center;
-  width: 100%;
+  align-items: center
+  background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const SponsorsFormWrapper = styled.form`
@@ -26,6 +34,10 @@ const SponsorsFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
+  background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 500px;
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));
@@ -68,40 +80,42 @@ const SponsorsForm: React.FC = () => {
 
   return (
     <>
-      <SponsorTitle>
-        BE A SPONSOR
-      </SponsorTitle>
+      <SponsorSection>
       <SponsorsFormWrapper>
-        <TextField 
+        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+            required
           placeholder='Company name'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyName: e.target.value,
           })}
         />
-        <TextField 
-          placeholder='Contact' 
+        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+            required
+            type="email"
+          placeholder='Company Email'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyEmail: e.target.value,
           })}
         />
-        <span>What would you like to contribute?</span>
         <Suspense fallback={<div>Loading Options...</div>}>
-          <Select
+          <Select placeholder={<div>What would you like to contribute?</div>}
+                  required
+                  style={{paddingTop: '40px', paddingBottom: '40px', height: '60px'}}
             options={options}
             isMulti
             onChange={onSelect}
           />
         </Suspense>
         <PrimaryButton
-          type='button'
+          type='submit'
           onClick={submitForm}
         >
-          Be a Sponsor
+          SUBMIT
         </PrimaryButton>
-        <h3>We will be in touch with you shortly</h3>
       </SponsorsFormWrapper>
+      </SponsorSection>
     </>
   );
 }
