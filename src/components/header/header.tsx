@@ -4,7 +4,7 @@ import { StylesSchema } from '../../shared/enums/styles';
 import { ReactComponent as NasCompanyImage } from '../../assets/images/thenascompany.svg';
 
 const HeaderWrapper = styled.header`
-  background-color: ${StylesSchema.Black};
+  background-image: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
   display: flex;
   padding: 2rem 2rem;
   justify-content: space-between;
@@ -21,15 +21,18 @@ const NavAnchor = styled.a`
 `;
 
 const Navigation = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
+  display: none;
+
+  @media (min-width: 768px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+  }
 `;
 
 const NasCompanyLogo = styled(NasCompanyImage)`
   height: 20px;
-  // margin-top: 30px;
   width: 150px;
 `;
 

@@ -17,6 +17,10 @@ const formControlStyles = css`
     outline-offset: 1px;
   }
 
+  &::placeholder {
+    color: rgb(117, 117, 117);
+  }
+
   @media (min-width: 768px) {
     width: 50%;
   }
