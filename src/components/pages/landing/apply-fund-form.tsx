@@ -27,7 +27,7 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
-    <ApplyFundFormWrapper>
+    <ApplyFundFormWrapper id='applyForFund'>
       <TextField 
         placeholder='Company'
         onChange={(e) => setFundForm({

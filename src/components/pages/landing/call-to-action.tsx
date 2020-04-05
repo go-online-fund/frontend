@@ -16,7 +16,7 @@ const CallToActionWrapper = styled.section`
 
 const CallToAction: React.FC = () => {
   return (
-    <CallToActionWrapper>
+    <CallToActionWrapper id='home'>
       <CallToActionHeader>Why do we want to do this?</CallToActionHeader>
       <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</span>
     </CallToActionWrapper>
