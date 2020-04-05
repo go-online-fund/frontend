@@ -15,6 +15,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.0.1",
     "typescript": "^3.7.5"
   },
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-select": "^3.0.11"
+    "@types/react-select": "^3.0.11",
+    "@types/smoothscroll-polyfill": "^0.3.1"
   }
 }

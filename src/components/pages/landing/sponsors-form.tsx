@@ -68,7 +68,7 @@ const SponsorsForm: React.FC = () => {
 
   return (
     <>
-      <SponsorTitle id='BeASponsor'>
+      <SponsorTitle id='beASponsor'>
         BE A SPONSOR
       </SponsorTitle>
       <SponsorsFormWrapper>
