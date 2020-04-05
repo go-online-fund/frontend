@@ -5,7 +5,7 @@ export const PrimaryButton = styled.button `
   background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
   border: 0;
   color: ${StylesSchema.White};
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   font-size: 1.2rem;
   margin: 2rem 0;
   padding: 1rem 0;
