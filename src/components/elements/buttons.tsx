@@ -6,6 +6,7 @@ export const PrimaryButton = styled.button `
   border: 0;
   color: ${StylesSchema.Black};
   font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
   padding: 1rem 0;
   width: 100%;
 

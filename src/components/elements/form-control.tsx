@@ -5,7 +5,7 @@ const formControlStyles = css`
   border: none;
   border-radius: 1px;
   box-sizing: border-box;
-  background-color: #ACDEF9;
+  background-color: ${StylesSchema.Yellow};
   font-family: 'Raleway', sans-serif;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -17,7 +17,7 @@ const formControlStyles = css`
   }
 
   &::placeholder {
-    color: #55ACD5;
+    color: ${StylesSchema.Black};
   }
 
   @media (min-width: 768px) {
