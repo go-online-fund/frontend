@@ -33,7 +33,7 @@ const ReactSelect = React.lazy(() => import('react-select'));
 const Select = styled(ReactSelect)`
   margin: 0.5rem;
   width: 100%;
-
+  
   @media (min-width: 768px) {
     width: 50%;
   }
@@ -68,40 +68,40 @@ const SponsorsForm: React.FC = () => {
 
   return (
     <>
-    <SponsorTitle>
-      BE A SPONSOR
-    </SponsorTitle>
-    <SponsorsFormWrapper>
-      <TextField 
-        placeholder='Company name'
-        onChange={(e) => setSponsorForm({
-          ...sponsorForm,
-          companyName: e.target.value,
-        })}
-      />
-      <TextField 
-        placeholder='Contact' 
-        onChange={(e) => setSponsorForm({
-          ...sponsorForm,
-          companyEmail: e.target.value,
-        })}
-      />
-      <span>What would you like to contribute?</span>
-      <Suspense fallback={<div>Loading Options...</div>}>
-        <Select
-          options={options}
-          isMulti
-          onChange={onSelect}
+      <SponsorTitle>
+        BE A SPONSOR
+      </SponsorTitle>
+      <SponsorsFormWrapper>
+        <TextField 
+          placeholder='Company name'
+          onChange={(e) => setSponsorForm({
+            ...sponsorForm,
+            companyName: e.target.value,
+          })}
         />
-      </Suspense>
-      <PrimaryButton
-        type='button'
-        onClick={submitForm}
-      >
-        Be a Sponsor
-      </PrimaryButton>
-      <h3>We will be in touch with you shortly</h3>
-    </SponsorsFormWrapper>
+        <TextField 
+          placeholder='Contact' 
+          onChange={(e) => setSponsorForm({
+            ...sponsorForm,
+            companyEmail: e.target.value,
+          })}
+        />
+        <span>What would you like to contribute?</span>
+        <Suspense fallback={<div>Loading Options...</div>}>
+          <Select
+            options={options}
+            isMulti
+            onChange={onSelect}
+          />
+        </Suspense>
+        <PrimaryButton
+          type='button'
+          onClick={submitForm}
+        >
+          Be a Sponsor
+        </PrimaryButton>
+        <h3>We will be in touch with you shortly</h3>
+      </SponsorsFormWrapper>
     </>
   );
 }
