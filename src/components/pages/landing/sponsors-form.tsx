@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
-import { TextField } from '../../elements/form-control';
+import { TextField, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import FormsService from '../../../shared/services/forms.service';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
@@ -58,13 +58,15 @@ const options: SponsorHelpOption[] = [
   { value: 'training', label: 'Training' },
 ];
 
+const defaultForm = {
+  companyName: '',
+  companyEmail: '',
+  contributionArea: '',
+};
+
 const SponsorsForm: React.FC = () => {
-  // const [selectedOption, setSelectedOption] = useState('');
-  const [sponsorForm, setSponsorForm] = useState<SponsorApplication>({
-    companyName: '', 
-    companyEmail: '', 
-    contributionArea: '',
-  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
 
   const onSelect = (e: SponsorHelpOption[]) => {
     const contributionArea = e.map(({ value }) => value).join(',');
@@ -74,13 +76,17 @@ const SponsorsForm: React.FC = () => {
     })
   };
 
-  const submitForm = () => {
-    FormsService.postSponsorApplication(sponsorForm);
+  const submitForm = async () => {
+    const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
+    if (responseStatus === 200) {
+      setSponsorForm(defaultForm);
+      setIsSubmitted(true);
+    }
   };
 
   return (
     <>
-      <SponsorSection>
+      <SponsorSection id='beASponsor'>
       <SponsorsFormWrapper>
         <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
             required
@@ -114,6 +120,13 @@ const SponsorsForm: React.FC = () => {
         >
           BE A SPONSOR
         </PrimaryButton>
+        {
+          isSubmitted && (
+            <SuccessText>
+              Thank you for. Your response has been submitted. We will be in touch with you shortly to discuss how you can support this initiative.
+            </SuccessText>
+          )
+        }
       </SponsorsFormWrapper>
       </SponsorSection>
     </>

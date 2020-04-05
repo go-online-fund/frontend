@@ -4,7 +4,8 @@ import { ReactComponent as Communication } from '../../../assets/icons/communica
 import { ReactComponent as Delivery } from '../../../assets/icons/delivery.svg';
 import { ReactComponent as Learning } from '../../../assets/icons/learning.svg';
 import { ReactComponent as Marketing } from '../../../assets/icons/marketing.svg';
-import { ReactComponent as Website } from '../../../assets/icons/website.svg';
+// import { ReactComponent as Website } from '../../../assets/icons/website.svg';
+import Website from '../../../assets/icons/website.svg';
 
 const MoveOnlineWrapper = styled.section`
   align-items: center;
@@ -69,7 +70,7 @@ const DeliveryIcon = styled(Delivery)`
   ${svgSize}
 `;
 
-const WebsiteIcon = styled(Website)`
+const WebsiteIcon = styled.img`
   ${svgSize}
 `;
 
@@ -96,7 +97,7 @@ const MoveOnline: React.FC = () => {
         <LearningDescription>A delivery method for your goods/services</LearningDescription>
       </LearningPoint>
       <LearningPoint>
-        <WebsiteIcon />
+        <WebsiteIcon src={Website} alt='website icon' />
         <LearningTitle>Website</LearningTitle>
         <LearningDescription>Build a website</LearningDescription>
       </LearningPoint>

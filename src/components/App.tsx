@@ -13,7 +13,7 @@ const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
   height: 100%;
 `;
- 
+
 const App: React.FC = ()  => {
   return (
     <AppWrapper>

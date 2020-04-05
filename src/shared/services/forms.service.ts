@@ -32,9 +32,8 @@ class FormsService {
       method: 'POST',
       body: JSON.stringify(body)
     });
-    const result = await response.json();
-
-    return result;
+    // const result = await response.json();
+    return response.status;
   }
 
   async postSponsorApplication(sponsorApplication: SponsorApplication) {
@@ -59,12 +58,10 @@ class FormsService {
       method: 'POST',
       body: JSON.stringify(body)
     });
-    const result = await response.json();
+    // const result = await response.json();
 
-    return result;
+    return response.status;
   }
 }
 
 export default new FormsService();
-
-// export default FormsService
