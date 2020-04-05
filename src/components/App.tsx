@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './header/header';
 import CallToAction from './pages/landing/call-to-action';
 import MoveOnline from './pages/landing/move-online';
+import ApplyFundForm from './pages/landing/apply-fund-form';
 
 const AppWrapper = styled.div`
   background-color: #fdfdfd;
@@ -16,6 +17,7 @@ const App: React.FC = ()  => {
       <Header />
       <CallToAction />
       <MoveOnline />
+      <ApplyFundForm />
     </AppWrapper>
   );
 }

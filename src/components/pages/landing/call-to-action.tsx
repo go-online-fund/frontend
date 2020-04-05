@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const CallToActionHeader = styled.h1 `
   text-align: justify;
-  // width: 100%
 `;
 
 const CallToActionWrapper = styled.section`
   align-items: center;
-  background-color: #fbc91b;
+  background-color: ${StylesSchema.Yellow};
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
