@@ -15,7 +15,18 @@ const ApplyFundFormWrapper = styled.form`
 const ApplyFundFormHeader = styled.h1`
  text-align: center;
  font-weight: bold;
- text-transform: uppercase
+ text-transform: uppercase;
+ padding-top: 40px;
+ color: white
+`;
+
+const ApplyFundFormHeaderHighLight = styled.span`
+ color: #fbc91b;
+ font-weight: bold;
+`;
+
+const ApplyFundSection = styled.div`
+ background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
 `;
 
 const defaultForm = {
@@ -40,10 +51,10 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
-      <>
-          <ApplyFundFormHeader id='applyForFund'>We're here to support</ApplyFundFormHeader>
+      <ApplyFundSection>
+          <ApplyFundFormHeader id='applyForFund'>We're here to <ApplyFundFormHeaderHighLight>support</ApplyFundFormHeaderHighLight></ApplyFundFormHeader>
     <ApplyFundFormWrapper>
-      <TextField
+      <TextField style={{background: 'white'}}
           required
         placeholder='Company'
         onChange={(e) => setFundForm({
@@ -51,7 +62,7 @@ const ApplyFundForm: React.FC = () => {
           companyName: e.target.value,
         })}
       />
-      <TextField
+      <TextField style={{background: 'white'}}
           required
         placeholder='Company size' 
         onChange={(e) => setFundForm({
@@ -59,7 +70,7 @@ const ApplyFundForm: React.FC = () => {
           companySize: e.target.value,
         })}
       />
-      <TextField
+      <TextField style={{background: 'white'}}
           required
           type="email"
         placeholder='Company Email'
@@ -68,7 +79,7 @@ const ApplyFundForm: React.FC = () => {
           companyEmail: e.target.value,
         })}
       />
-      <TextArea
+      <TextArea style={{background: 'white'}}
           required
         placeholder='Tell us about your business' 
         rows={4} 
@@ -77,7 +88,7 @@ const ApplyFundForm: React.FC = () => {
           businessDescription: e.target.value,
         })}
       />
-      <TextArea
+      <TextArea style={{background: 'white'}}
           required
         placeholder='What is the biggest challenge for your business to get online?'
         rows={4} 
@@ -86,7 +97,7 @@ const ApplyFundForm: React.FC = () => {
           businessChallenge: e.target.value,
         })}
       />
-      <TextArea
+      <TextArea style={{background: 'white'}}
           required
         placeholder='What is the current top priority for your business?' 
         rows={4} 
@@ -95,7 +106,7 @@ const ApplyFundForm: React.FC = () => {
           businessPriority: e.target.value,
         })}
       />
-      <PrimaryButton 
+      <PrimaryButton style={{background: '#fbc91b', color: 'black'}}
         type='submit'
         // onClick={submitForm}
       >
@@ -107,7 +118,7 @@ const ApplyFundForm: React.FC = () => {
         </SuccessText>
       )}
     </ApplyFundFormWrapper>
-          </>
+          </ApplyFundSection>
   );
 }
 

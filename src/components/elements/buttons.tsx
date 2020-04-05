@@ -11,6 +11,12 @@ export const PrimaryButton = styled.button `
   padding: 1rem 0;
   width: 100%;
   text-transform: uppercase;
+  font-weight: bold;
+  
+   &:hover {
+   cursor: pointer;
+   opacity: 0.9
+   }
 
   &:active, &:focus {
     outline-color: ${StylesSchema.Yellow}; 

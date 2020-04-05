@@ -12,6 +12,7 @@ const HeaderWrapper = styled.header`
 
 const NavAnchor = styled.a`
   color: ${StylesSchema.LightGrey};
+  font-size: 16px;
   cursor: pointer;
   text-decoration: none;
 
@@ -56,9 +57,9 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <NasCompanyLogo />
       <Navigation>
-        <NavAnchor onClick={() => smoothScroll('home')}>Home</NavAnchor>
-        <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for Fund</NavAnchor>
-        <NavAnchor onClick={() => smoothScroll('beASponsor')}>Be a Sponsor</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('home')}>HOME</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('applyForFund')}>APPLY FOR FUND</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('beASponsor')}>BE A SPONSOR</NavAnchor>
       </Navigation> 
     </HeaderWrapper>
   );

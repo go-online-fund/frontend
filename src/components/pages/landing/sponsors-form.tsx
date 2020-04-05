@@ -37,7 +37,7 @@ const SponsorsFormWrapper = styled.form`
   background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 500px;
+  padding-top: 750px;
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));

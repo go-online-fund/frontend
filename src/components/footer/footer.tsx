@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.header`
-  height: 100px;
+  height: 140px;
   background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
   margin: 0 auto;
   text-align: center;
@@ -29,7 +29,9 @@ const Footer: React.FC = () => {
         <FooterWrapper>
             <FooterLogo src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg"></FooterLogo>
             <br/>
-            <span>Move Online Together Fund © 2020</span>
+            <span>M<span className="icon-heart"></span>ve Online Together Fund © 2020</span>
+            <br/>
+            <span style={{fontSize: '12px'}}>10 Central Green Exchange, Singapore 138649</span>
         </FooterWrapper>
     );
 }
