@@ -34,8 +34,9 @@ const SponsorsFormWrapper = styled.form`
   flex-direction: column;
   padding: 2rem 2rem;
   background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: left -20px;
   padding-top: 750px;
   
   @media (max-width: 415px){
