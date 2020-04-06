@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { StylesSchema } from "../../shared/enums/styles";
+import React from "react";
 
 const formControlStyles = css`
   border: none;
@@ -34,10 +35,26 @@ export const TextArea = styled.textarea`
   ${formControlStyles}
 `;
 
-export const SuccessText = styled.span`
+interface SuccessTextProps {
+  type: 'dark' | 'light';
+}
+
+export const SuccessText = styled.span<SuccessTextProps>`
+  color: ${({ type }) => type === 'dark' ? StylesSchema.Black : StylesSchema.White};
   text-align: center;
   width: 50%;
 
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const ReactSelect = React.lazy(() => import('react-select'));
+
+export const Select = styled(ReactSelect)`
+  margin: 0.5rem;
+  width: 100%;
+  
   @media (min-width: 768px) {
     width: 50%;
   }

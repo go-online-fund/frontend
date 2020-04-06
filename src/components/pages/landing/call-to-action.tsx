@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StylesSchema } from '../../../shared/enums/styles';
+import {StylesSchema} from '../../../shared/enums/styles';
 
-const CallToActionHeader = styled.h1 `
+const CallToActionHeader = styled.h1`
   text-align: justify;
   font-size: 2em;
   font-weight: bold;
@@ -12,7 +12,7 @@ const CallToActionHeader = styled.h1 `
    }
 `;
 
-const CallToActionHighlight = styled.span `
+const CallToActionHighlight = styled.span`
   font-weight: bold;
   font-size: 1.8em;
   color: white;
@@ -58,14 +58,15 @@ const HighlightDescription = styled.span`
 `;
 
 const CallToAction: React.FC = () => {
-  return (
-    <CallToActionWrapper>
-        <CallToActionHeader>HELP <CallToActionHighlight>BUSINESS</CallToActionHighlight> MOVE <CallToActionHighlight>ONLINE</CallToActionHighlight></CallToActionHeader>
-      <HighlightDescription>Here at The Nas Company, we believe all businesses can play a part to help the economy during the COVID-19 situation.
-        </HighlightDescription>
-        <CallToActionVideo />
-    </CallToActionWrapper>
-  );
+    return (
+        <CallToActionWrapper>
+            <CallToActionHeader>HELP <CallToActionHighlight>BUSINESS</CallToActionHighlight> MOVE <CallToActionHighlight>ONLINE</CallToActionHighlight></CallToActionHeader>
+            <HighlightDescription>Here at The Nas Company, we believe all businesses can play a part to help the economy
+                during the COVID-19 situation.
+            </HighlightDescription>
+            <CallToActionVideo/>
+        </CallToActionWrapper>
+    );
 }
 
 export default CallToAction;

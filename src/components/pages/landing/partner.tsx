@@ -7,19 +7,19 @@ import CountUp from 'react-countup';
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
+        breakpoint: {max: 4000, min: 3000},
         items: 5,
     },
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
+        breakpoint: {max: 3000, min: 1024},
         items: 3,
     },
     tablet: {
-        breakpoint: { max: 1024, min: 464 },
+        breakpoint: {max: 1024, min: 464},
         items: 2,
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: {max: 464, min: 0},
         items: 1,
     },
 };
@@ -27,19 +27,19 @@ const responsive = {
 const responsiveSupport = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
+        breakpoint: {max: 4000, min: 3000},
         items: 2,
     },
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
+        breakpoint: {max: 3000, min: 1024},
         items: 2,
     },
     tablet: {
-        breakpoint: { max: 1024, min: 464 },
+        breakpoint: {max: 1024, min: 464},
         items: 2,
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: {max: 464, min: 0},
         items: 1,
     },
 };
@@ -118,23 +118,29 @@ const Partner: React.FC = () => {
         <PartnerWrapper>
             <PartnerHeader>Proudly Supported By</PartnerHeader>
             <Carousel responsive={responsive}>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/facebook_pckthg.svg"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147117/logo/lark_ywj9oi.png"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
+                <PartnerIcon
+                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/facebook_pckthg.svg"></PartnerIcon>
+                <PartnerIcon
+                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147117/logo/lark_ywj9oi.png"></PartnerIcon>
+                <PartnerIcon
+                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
+                <PartnerIcon
+                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
             </Carousel>
             <PartnerHeader>Thanks to your support</PartnerHeader>
             <Carousel responsive={responsiveSupport}>
                 <PartnerSupport>
-                    <MoneyIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586173103/logo/icon_money_aeedca.svg" alt="money icon"/><CountUp
+                    <MoneyIcon
+                        src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586173103/logo/icon_money_aeedca.svg"
+                        alt="money icon"/><CountUp
                     formattingFn={(e) => e.toLocaleString('en-US')} start={100}
                     end={1000000}
                 /> <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
                 </PartnerSupport>
                 <PartnerSupport>
                     <CountUp
-                    formattingFn={(e) => e.toLocaleString('en-US')} start={0}
-                    end={25}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
+                        formattingFn={(e) => e.toLocaleString('en-US')} start={0}
+                        end={25}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
                 </PartnerSupport>
             </Carousel>
             <a href="#beASponsor"><SecondaryButton>

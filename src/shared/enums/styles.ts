@@ -3,4 +3,5 @@ export enum StylesSchema {
   Black = '#000',
   White = '#fdfdfd',
   LightGrey = '#c9c9c9',
+  BlackGradient = 'linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%)'
 }
