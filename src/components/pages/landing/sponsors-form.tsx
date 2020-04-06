@@ -25,7 +25,6 @@ const SponsorSection = styled.div`
   text-align: center;
   align-items: center;
   height: 100%;
-  background: #fbc91b
   }
 `;
 
@@ -43,6 +42,7 @@ const SponsorsFormWrapper = styled.form`
     background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586131835/mobile_ljxlfe.jpg') !important
     background-size: contain;
     padding-top: 240px;
+    height: 100%;
   background-repeat: no-repeat;
   }
 `;
