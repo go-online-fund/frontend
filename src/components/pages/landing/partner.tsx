@@ -2,51 +2,52 @@ import React from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5,
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-    },
+  superLargeDesktop: {
+      // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
 };
 
 const responsiveSupport = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 2,
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 2,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-    },
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 2,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
 };
 
 
 const PartnerWrapper = styled.header`
   height: 100%;
-  background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background-image: ${StylesSchema.BlackGradient};
   margin: 0 auto;
   text-align: center;
   padding-top: 120px;
@@ -89,29 +90,31 @@ const SecondaryButton = styled.div`
 
 
 const Partner: React.FC = () => {
-    return (
-        <PartnerWrapper>
-            <PartnerHeader>Proudly Supported By</PartnerHeader>
-            <Carousel responsive={responsive}>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/facebook_pckthg.svg"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147117/logo/lark_ywj9oi.png"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
-                <PartnerIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
-            </Carousel>
-            <PartnerHeader>Thanks to your support</PartnerHeader>
-            <Carousel responsive={responsiveSupport}>
-                <PartnerSupport>
-                    $1,000,000 <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
-                </PartnerSupport>
-                <PartnerSupport>
-                    10 <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
-                </PartnerSupport>
-            </Carousel>
-            <a href="#beASponsor"><SecondaryButton>
-                JOIN THE MOVEMENT
-            </SecondaryButton></a>
-        </PartnerWrapper>
-    );
+  return (
+    <PartnerWrapper>
+      <PartnerHeader>Proudly Supported By</PartnerHeader>
+      <Carousel responsive={responsive}>
+        <PartnerIcon src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/facebook_pckthg.svg' />
+        <PartnerIcon src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586147117/logo/lark_ywj9oi.png' />
+        <PartnerIcon src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg' />
+        <PartnerIcon src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg' />
+      </Carousel>
+      <PartnerHeader>Thanks to your support</PartnerHeader>
+      <Carousel responsive={responsiveSupport}>
+        <PartnerSupport>
+          $1,000,000 <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
+        </PartnerSupport>
+        <PartnerSupport>
+          10 <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
+        </PartnerSupport>
+      </Carousel>
+      <a href="#beASponsor">
+        <SecondaryButton>
+          JOIN THE MOVEMENT
+        </SecondaryButton>
+      </a>
+    </PartnerWrapper>
+  );
 }
 
 export default Partner;

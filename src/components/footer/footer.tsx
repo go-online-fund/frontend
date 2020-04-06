@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../shared/enums/styles';
 
 const FooterWrapper = styled.header`
   height: 100%;
-  background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background-image: ${StylesSchema.BlackGradient};
   margin: 0 auto;
   text-align: center;
   padding-bottom: 20px;

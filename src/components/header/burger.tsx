@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { StylesSchema } from '../../shared/enums/styles';
 
 type StyledBurgerProps = Omit<BurgerProps, 'setOpen'>; 
 
-const StyledBurger = styled.button<StyledBurgerProps>`
+const BurgerItemStyles = css<StyledBurgerProps>`
+  width: 2rem;
+  height: 0.25rem;
+  background: ${({ open }) => open ?  StylesSchema.Black : StylesSchema.White};
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+`;
+
+const StyledBurger = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -23,29 +33,24 @@ const StyledBurger = styled.button<StyledBurgerProps>`
   &:focus {
     outline: none;
   }
-  
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ open }) => open ?  StylesSchema.Black : StylesSchema.White};
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
+`;
 
-    &:first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-    }
+const Bun = styled.div<StyledBurgerProps>`
+  ${BurgerItemStyles}
 
-    &:nth-child(2) {
-      opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-    }
-
-    &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-    }
+  &:first-child {
+    transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
   }
+
+  &:last-child {
+    transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+  }
+`;
+
+const Patty = styled.div<StyledBurgerProps>`
+  ${BurgerItemStyles}
+  opacity: ${({ open }) => open ? '0' : '1'};
+  transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
 `;
 
 interface BurgerProps {
@@ -54,10 +59,10 @@ interface BurgerProps {
 }
 
 const Burger: React.FC<BurgerProps> = ({ open, setOpen }) => (
-  <StyledBurger open={open} onClick={() => setOpen(!open)}>
-    <div />
-    <div />
-    <div />
+  <StyledBurger onClick={() => setOpen(!open)}>
+    <Bun open={open} />
+    <Patty open={open} />
+    <Bun open={open} />
   </StyledBurger>
 );
 

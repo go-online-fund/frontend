@@ -4,7 +4,7 @@ import { StylesSchema } from '../../shared/enums/styles';
 
 type StyledMenuProps = Omit<SlideMenuProps, 'onNavigation'>;
 
-export const StyledMenu = styled.nav<StyledMenuProps>`
+const StyledMenu = styled.nav<StyledMenuProps>`
   background: ${StylesSchema.White};
   box-sizing: border-box;
   display: flex;
@@ -25,21 +25,21 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
   @media (min-width: 768px){
     display: none;
   }
+`;
 
-  span {
-    color: ${StylesSchema.Black};
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    text-decoration: none;
-    padding: 2rem 0;
-    text-transform: uppercase;
-    transition: color 0.3s linear;
+const NavAnchor = styled.div`
+  color: ${StylesSchema.Black};
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  padding: 1.2rem 0;
+  text-transform: uppercase;
+  transition: color 0.3s linear;
 
-    &:hover {
-      color: ${StylesSchema.LightGrey};
-    }
+  &:hover {
+    color: ${StylesSchema.LightGrey};
   }
 `;
 
@@ -51,12 +51,12 @@ interface SlideMenuProps {
 const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => {
   return (
     <StyledMenu open={open}>
-      <span onClick={() => onNavigation('applyForFund')}>
+      <NavAnchor onClick={() => onNavigation('applyForFund')}>
         Apply For Fund
-      </span>
-      <span onClick={() => onNavigation('applyForFund')}>
+      </NavAnchor>
+      <NavAnchor onClick={() => onNavigation('applyForFund')}>
         Be a Sponsor
-      </span>
+      </NavAnchor>
     </StyledMenu>
   )
 }

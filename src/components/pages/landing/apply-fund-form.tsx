@@ -4,6 +4,7 @@ import { TextField, TextArea, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;
@@ -21,13 +22,13 @@ const ApplyFundFormHeader = styled.h1`
 `;
 
 const ApplyFundFormHeaderHighLight = styled.span`
- color: #fbc91b !important;
- font-weight: bold;
+  color: #fbc91b !important;
+  font-weight: bold;
 `;
 
 const ApplyFundSection = styled.div`
- background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
- border-top: 2px solid #fbc91b
+  background-image: ${StylesSchema.BlackGradient};
+  border-top: 2px solid #fbc91b
 `;
 
 const defaultForm = {

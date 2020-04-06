@@ -6,7 +6,7 @@ import Burger from './burger';
 import SlideMenu from './slide-menu';
 
 const HeaderWrapper = styled.header`
-  background-image: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background-image: ${StylesSchema.BlackGradient};
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;
@@ -35,7 +35,7 @@ const Navigation = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 50%;
+    width: 40%;
     padding-top: 5px
   }
 `;
@@ -57,11 +57,13 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (open) {
+      // prevent scrolling when menu is open
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [open])
+  }, [open]);
+
   const smoothScroll = (target: string) => {
     if (open) {
       setOpen(false);

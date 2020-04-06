@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StylesSchema } from "../../shared/enums/styles";
 
 export const PrimaryButton = styled.button `
-  background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background-image: ${StylesSchema.BlackGradient};
   border: 0;
   color: ${StylesSchema.White};
   font-family: 'Proxima Nova', sans-serif;
