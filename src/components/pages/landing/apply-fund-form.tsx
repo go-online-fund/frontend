@@ -55,12 +55,18 @@ const ApplyFundForm: React.FC = () => {
 
   return (
     <ApplyFundSection>
-      <ApplyFundFormHeader id='applyForFund'>We're here to <ApplyFundFormHeaderHighLight>support</ApplyFundFormHeaderHighLight></ApplyFundFormHeader>
+      <ApplyFundFormHeader id='applyForFund'>
+        We're here to
+        <ApplyFundFormHeaderHighLight>
+          support
+        </ApplyFundFormHeaderHighLight>
+      </ApplyFundFormHeader>
       <ApplyFundFormWrapper onSubmit={submitForm}>
         <TextField
           style={{background: 'white'}}
           required
           placeholder='Company'
+          value={fundForm.companyName}
           onChange={(e) => setFundForm({
             ...fundForm,
             companyName: e.target.value,
@@ -70,6 +76,7 @@ const ApplyFundForm: React.FC = () => {
         style={{background: 'white'}}
         required
         placeholder='Company size' 
+        value={fundForm.companySize}
         onChange={(e) => setFundForm({
           ...fundForm,
           companySize: e.target.value,
@@ -80,6 +87,7 @@ const ApplyFundForm: React.FC = () => {
         required
         type='email'
         placeholder='Company Email'
+        value={fundForm.companyEmail}
         onChange={(e) => setFundForm({
           ...fundForm,
           companyEmail: e.target.value,
@@ -90,6 +98,7 @@ const ApplyFundForm: React.FC = () => {
         required
         placeholder='Tell us about your business' 
         rows={4} 
+        value={fundForm.businessDescription}
         onChange={(e) => setFundForm({
           ...fundForm,
           businessDescription: e.target.value,
@@ -100,6 +109,7 @@ const ApplyFundForm: React.FC = () => {
         required
         placeholder='What is the biggest challenge for your business to get online?'
         rows={4} 
+        value={fundForm.businessChallenge}
         onChange={(e) => setFundForm({
           ...fundForm,
           businessChallenge: e.target.value,
@@ -110,6 +120,7 @@ const ApplyFundForm: React.FC = () => {
         required
         placeholder='What is the current top priority for your business?' 
         rows={4} 
+        value={fundForm.businessPriority}
         onChange={(e) => setFundForm({
           ...fundForm,
           businessPriority: e.target.value,
@@ -123,9 +134,9 @@ const ApplyFundForm: React.FC = () => {
       </PrimaryButton>
       {
         isSubmitted && (
-        <SuccessText>
-          Thank you. Your application has been submitted. We will be in touch with you shortly if we are able to support your application.
-        </SuccessText>
+          <SuccessText type={'light'}>
+            Thank you. Your application has been submitted. We will be in touch with you shortly if we are able to support your application.
+          </SuccessText>
         )
       }
       </ApplyFundFormWrapper>

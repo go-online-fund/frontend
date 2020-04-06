@@ -35,7 +35,12 @@ export const TextArea = styled.textarea`
   ${formControlStyles}
 `;
 
-export const SuccessText = styled.span`
+interface SuccessTextProps {
+  type: 'dark' | 'light';
+}
+
+export const SuccessText = styled.span<SuccessTextProps>`
+  color: ${({ type }) => type === 'dark' ? StylesSchema.Black : StylesSchema.White};
   text-align: center;
   width: 50%;
 

@@ -55,9 +55,11 @@ const defaultForm = {
 
 const SponsorsForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectValues, setSelectValues] = useState<SponsorHelpOption[]>([]);
   const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
 
   const onSelect = (e: SponsorHelpOption[]) => {
+    setSelectValues(e);
     const contributionArea = e.map(({ value }) => value).join(',');
     setSponsorForm({
       ...sponsorForm,
@@ -70,6 +72,7 @@ const SponsorsForm: React.FC = () => {
     const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
     if (responseStatus === 200) {
       setSponsorForm(defaultForm);
+      setSelectValues([]);
       setIsSubmitted(true);
     }
   };
@@ -81,6 +84,7 @@ const SponsorsForm: React.FC = () => {
           style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
           required
           placeholder='Company name'
+          value={sponsorForm.companyName}
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyName: e.target.value,
@@ -91,6 +95,7 @@ const SponsorsForm: React.FC = () => {
           required
           type='email'
           placeholder='Company Email'
+          value={sponsorForm.companyEmail}
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyEmail: e.target.value,
@@ -104,6 +109,7 @@ const SponsorsForm: React.FC = () => {
             options={options}
             isMulti
             onChange={onSelect}
+            value={selectValues}
           />
         </Suspense>
         <PrimaryButton
@@ -113,7 +119,7 @@ const SponsorsForm: React.FC = () => {
         </PrimaryButton>
         {
           isSubmitted && (
-            <SuccessText>
+            <SuccessText type='light'>
               Thank you for. Your response has been submitted. We will be in touch with you shortly to discuss how you can support this initiative.
             </SuccessText>
           )
