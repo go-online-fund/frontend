@@ -2,12 +2,9 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 import Header from './header/header';
-// import CallToAction from './pages/landing/call-to-action';
-// import MoveOnline from './pages/landing/move-online';
-// import ApplyFundForm from './pages/landing/apply-fund-form';
-// import SponsorsForm from './pages/landing/sponsors-form';
 import { StylesSchema } from '../shared/enums/styles';
 import Landing from './pages/landing';
+import Footer from "./footer/footer";
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -19,6 +16,7 @@ const App: React.FC = ()  => {
     <AppWrapper>
       <Header />
       <Landing />
+      <Footer />
     </AppWrapper>
   );
 }

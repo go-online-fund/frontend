@@ -2,7 +2,6 @@ import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
 import { TextField, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
-import { StylesSchema } from '../../../shared/enums/styles';
 import FormsService from '../../../shared/services/forms.service';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 
@@ -11,14 +10,24 @@ interface SponsorHelpOption {
   label: string;
 }
 
-const SponsorTitle = styled.div`
-  background-color: ${StylesSchema.Yellow};
-  color: ${StylesSchema.Black};
-  font-size: 2rem;
-  font-weight: 1000;
-  padding: 2rem 0;
+// const SponsorTitle = styled.div`
+//   background-color: ${StylesSchema.Yellow};
+//   color: ${StylesSchema.Black};
+//   font-size: 2rem;
+//   font-weight: 1000;
+//   padding: 2rem 0;
+//   text-align: center;
+//   width: 100%;
+// `;
+
+const SponsorSection = styled.div`
+  margin: 0 auto;
+  padding-top: 60px;
   text-align: center;
-  width: 100%;
+  align-items: center;
+  height: 100%;
+  background: #f8c446
+  }
 `;
 
 const SponsorsFormWrapper = styled.form`
@@ -26,6 +35,19 @@ const SponsorsFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
+  background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left -20px;
+  padding-top: 680px;
+  
+  @media (max-width: 415px){
+    background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586131835/mobile_ljxlfe.jpg') !important
+    background-size: contain;
+    padding-top: 240px;
+    height: 100%;
+  background-repeat: no-repeat;
+  }
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));
@@ -47,8 +69,8 @@ const options: SponsorHelpOption[] = [
 ];
 
 const defaultForm = {
-  companyName: '', 
-  companyEmail: '', 
+  companyName: '',
+  companyEmail: '',
   contributionArea: '',
 };
 
@@ -73,38 +95,39 @@ const SponsorsForm: React.FC = () => {
   };
 
   return (
-    <>
-      <SponsorTitle id='beASponsor'>
-        BE A SPONSOR
-      </SponsorTitle>
+      <SponsorSection id='beASponsor'>
       <SponsorsFormWrapper>
-        <TextField 
+        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+            required
           placeholder='Company name'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyName: e.target.value,
           })}
         />
-        <TextField 
-          placeholder='Contact' 
+        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+            required
+            type="email"
+          placeholder='Company Email'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyEmail: e.target.value,
           })}
         />
-        <span>What would you like to contribute?</span>
         <Suspense fallback={<div>Loading Options...</div>}>
-          <Select
+          <Select placeholder={<div>What would you like to contribute?</div>}
+                  required
+                  style={{paddingTop: '40px', paddingBottom: '40px', height: '60px'}}
             options={options}
             isMulti
             onChange={onSelect}
           />
         </Suspense>
         <PrimaryButton
-          type='button'
-          onClick={submitForm}
+          type='submit'
+          // onClick={submitForm}
         >
-          Be a Sponsor
+          BE A SPONSOR
         </PrimaryButton>
         {
           isSubmitted && (
@@ -113,9 +136,8 @@ const SponsorsForm: React.FC = () => {
             </SuccessText>
           )
         }
-        <h3>We will be in touch with you shortly</h3>
       </SponsorsFormWrapper>
-    </>
+      </SponsorSection>
   );
 }
 

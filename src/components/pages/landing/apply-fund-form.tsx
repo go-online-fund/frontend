@@ -12,13 +12,30 @@ const ApplyFundFormWrapper = styled.form`
   padding: 2rem 2rem;
 `;
 
+const ApplyFundFormHeader = styled.h1`
+ text-align: center;
+ font-weight: bold;
+ text-transform: uppercase;
+ padding-top: 40px;
+ color: white
+`;
+
+const ApplyFundFormHeaderHighLight = styled.span`
+ color: #fbc91b !important;
+ font-weight: bold;
+`;
+
+const ApplyFundSection = styled.div`
+ background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+`;
+
 const defaultForm = {
-  companyName: '', 
-  companySize: '', 
-  companyEmail: '', 
+  companyName: '',
+  companySize: '',
+  companyEmail: '',
   businessDescription: '',
   businessChallenge: '',
-  businessPriority: '',  
+  businessPriority: '',
 };
 
 const ApplyFundForm: React.FC = () => {
@@ -34,29 +51,36 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
-    <ApplyFundFormWrapper id='applyForFund'>
-      <TextField 
+      <ApplyFundSection>
+          <ApplyFundFormHeader id='applyForFund'>We're here to <ApplyFundFormHeaderHighLight>support</ApplyFundFormHeaderHighLight></ApplyFundFormHeader>
+    <ApplyFundFormWrapper>
+      <TextField style={{background: 'white'}}
+          required
         placeholder='Company'
         onChange={(e) => setFundForm({
           ...fundForm,
           companyName: e.target.value,
         })}
       />
-      <TextField 
+      <TextField style={{background: 'white'}}
+          required
         placeholder='Company size' 
         onChange={(e) => setFundForm({
           ...fundForm,
           companySize: e.target.value,
         })}
       />
-      <TextField 
-        placeholder='Contact' 
+      <TextField style={{background: 'white'}}
+          required
+          type="email"
+        placeholder='Company Email'
         onChange={(e) => setFundForm({
           ...fundForm,
           companyEmail: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea style={{background: 'white'}}
+          required
         placeholder='Tell us about your business' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -64,7 +88,8 @@ const ApplyFundForm: React.FC = () => {
           businessDescription: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea style={{background: 'white'}}
+          required
         placeholder='What is the biggest challenge for your business to get online?'
         rows={4} 
         onChange={(e) => setFundForm({
@@ -72,7 +97,8 @@ const ApplyFundForm: React.FC = () => {
           businessChallenge: e.target.value,
         })}
       />
-      <TextArea 
+      <TextArea style={{background: 'white'}}
+          required
         placeholder='What is the current top priority for your business?' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -80,11 +106,11 @@ const ApplyFundForm: React.FC = () => {
           businessPriority: e.target.value,
         })}
       />
-      <PrimaryButton 
-        type='button'
-        onClick={submitForm}
+      <PrimaryButton style={{background: '#fbc91b', color: 'black'}}
+        type='submit'
+        // onClick={submitForm}
       >
-        Apply
+        Apply For The Fund
       </PrimaryButton>
       {isSubmitted && (
         <SuccessText>
@@ -92,6 +118,7 @@ const ApplyFundForm: React.FC = () => {
         </SuccessText>
       )}
     </ApplyFundFormWrapper>
+          </ApplyFundSection>
   );
 }
 

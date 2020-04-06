@@ -19,9 +19,19 @@ const MoveOnlineWrapper = styled.section`
   }
 `;
 
-const MoveOnlineTitle = styled.h2`
+const MoveOnlineTitle = styled.h1`
   text-align: center;
   width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-size: 2em;
+  padding-top: 140px
+`;
+
+const MoveOnlineDescription = styled.span`
+  color: #FBC91B;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 const LearningPoint = styled.div`
@@ -29,6 +39,7 @@ const LearningPoint = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
+  text-transform: uppercase;
 
   @media (min-width: 768px) {
     flex: 1 0 50%;
@@ -75,31 +86,31 @@ const LearningIcon = styled(Learning)`
 const MoveOnline: React.FC = () => {
   return (
     <MoveOnlineWrapper>
-      <MoveOnlineTitle>In order to move online</MoveOnlineTitle>
+      <MoveOnlineTitle>Your Business is determined to <MoveOnlineDescription>succeed  online </MoveOnlineDescription> BUT you need</MoveOnlineTitle>
       <LearningPoint>
         <CommunicationIcon />
         <LearningTitle>Communication Tool</LearningTitle>
-        <LearningDescription>You need communication tools for your staff</LearningDescription>
+        <LearningDescription>Communication tools for your staff</LearningDescription>
       </LearningPoint>
       <LearningPoint>
         <DeliveryIcon />
         <LearningTitle>Delivery</LearningTitle>
-        <LearningDescription>You need a delivery method for your goods</LearningDescription>
+        <LearningDescription>A delivery method for your goods/services</LearningDescription>
       </LearningPoint>
       <LearningPoint>
         <WebsiteIcon src={Website} alt='website icon' />
         <LearningTitle>Website</LearningTitle>
-        <LearningDescription>You need to build a website</LearningDescription>
+        <LearningDescription>Build a website</LearningDescription>
       </LearningPoint>
       <LearningPoint>
       <MarketingIcon />
       <LearningTitle>Marketing</LearningTitle>
-      <LearningDescription>You need to market your products/services via social media</LearningDescription>
+      <LearningDescription>Market your products/services via social media</LearningDescription>
       </LearningPoint>
       <LearningPoint>
         <LearningIcon />
         <LearningTitle>Learning</LearningTitle>
-        <LearningDescription>You need online learning/teaching platform</LearningDescription>
+        <LearningDescription>Online learning/teaching platform</LearningDescription>
       </LearningPoint>
     </MoveOnlineWrapper>
   );

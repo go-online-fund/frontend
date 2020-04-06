@@ -8,10 +8,15 @@ const HeaderWrapper = styled.header`
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;
+  @media (min-width: 768px){
+    text-align: center;
+    align-items: center
+  }
 `;
 
 const NavAnchor = styled.a`
   color: ${StylesSchema.LightGrey};
+  font-size: 16px;
   cursor: pointer;
   text-decoration: none;
 
@@ -28,6 +33,7 @@ const Navigation = styled.div`
     flex-direction: row;
     justify-content: space-around;
     width: 50%;
+    padding-top: 5px
   }
 `;
 
@@ -56,9 +62,9 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <NasCompanyLogo />
       <Navigation>
-        <NavAnchor onClick={() => smoothScroll('home')}>Home</NavAnchor>
-        <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for Fund</NavAnchor>
-        <NavAnchor onClick={() => smoothScroll('beASponsor')}>Be a Sponsor</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('home')}>HOME</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('applyForFund')}>APPLY FOR FUND</NavAnchor>
+        <NavAnchor onClick={() => smoothScroll('beASponsor')}>BE A SPONSOR</NavAnchor>
       </Navigation> 
     </HeaderWrapper>
   );
