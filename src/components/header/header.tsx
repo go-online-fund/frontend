@@ -4,7 +4,7 @@ import { StylesSchema } from '../../shared/enums/styles';
 import { ReactComponent as NasCompanyImage } from '../../assets/images/thenascompany.svg';
 
 const HeaderWrapper = styled.header`
-  background-image: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background-color: #2c2c2c;
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;

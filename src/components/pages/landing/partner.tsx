@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import CountUp from 'react-countup';
 
 const responsive = {
     superLargeDesktop: {
@@ -46,7 +47,7 @@ const responsiveSupport = {
 
 const PartnerWrapper = styled.header`
   height: 100%;
-  background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+  background: #2c2c2c;
   margin: 0 auto;
   text-align: center;
   padding-top: 120px;
@@ -61,16 +62,40 @@ const PartnerHeader = styled.h1`
   padding-top: 80px;
   padding-bottom: 40px;
   font-weight: bold;
-  color: #fbc91b
+  color: #fbc91b;
+  
+  @media (max-width: 415px) {
+    padding-top: 40px;
+  }
 `;
 
 const PartnerIcon = styled.img`
-  width: 200px
+  width: 200px;
+  
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transform-duration: 500
+    
+  }
 `;
 
 const PartnerSupport = styled.div`
   color: #fbc91b;
-  font-size: 3em
+  font-size: 3em;
+  font-weight: bold !important;
+  
+   span {
+    font-weight: bold !important
+  }
+`;
+
+const MoneyIcon = styled.img`
+    width: 40px;
+    height: 37px;
+    margin-right: 15px;
+    padding-top: 5px
+    
 `;
 
 const SecondaryButton = styled.div`
@@ -83,8 +108,8 @@ const SecondaryButton = styled.div`
   text-align: center;
   margin: 0 auto;
   width: 200px;
+  margin-top: 40px;
   font-weight: bold;
-  margin-top: 40px
 `;
 
 
@@ -101,10 +126,15 @@ const Partner: React.FC = () => {
             <PartnerHeader>Thanks to your support</PartnerHeader>
             <Carousel responsive={responsiveSupport}>
                 <PartnerSupport>
-                    $1,000,000 <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
+                    <MoneyIcon src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586173103/logo/icon_money_aeedca.svg" alt="money icon"/><CountUp
+                    formattingFn={(e) => e.toLocaleString('en-US')} start={100}
+                    end={1000000}
+                /> <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
                 </PartnerSupport>
                 <PartnerSupport>
-                    10 <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
+                    <CountUp
+                    formattingFn={(e) => e.toLocaleString('en-US')} start={0}
+                    end={25}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
                 </PartnerSupport>
             </Carousel>
             <a href="#beASponsor"><SecondaryButton>

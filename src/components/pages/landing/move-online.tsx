@@ -33,7 +33,23 @@ const MoveOnlineDescription = styled.span`
   text-transform: uppercase;
 `;
 
-const LearningPoint = styled.div`
+const LearningPointHalfFlex = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  
+  @media (max-width: 415px) {
+    flex: 1 0 50%;
+  }
+
+  @media (min-width: 768px) {
+    flex: 1 0 50%;
+  }
+`;
+
+const LearningPointThirdFlex = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -41,7 +57,7 @@ const LearningPoint = styled.div`
   text-transform: uppercase;
 
   @media (min-width: 768px) {
-    flex: 1 0 50%;
+    flex: 1 0 33%;
   }
 `;
 
@@ -91,31 +107,31 @@ const MoveOnline: React.FC = () => {
   return (
     <MoveOnlineWrapper>
       <MoveOnlineTitle>Your Business is determined to <MoveOnlineDescription>succeed  online</MoveOnlineDescription>, BUT you need</MoveOnlineTitle>
-      <LearningPoint>
+      <LearningPointHalfFlex>
           <CommunicationIcon src={Communication} alt='communication icon' />
         <LearningTitle>Communication Tool</LearningTitle>
         <LearningDescription>Communication tools for your staff</LearningDescription>
-      </LearningPoint>
-      <LearningPoint>
+      </LearningPointHalfFlex>
+      <LearningPointHalfFlex>
           <DeliveryIcon src={Delivery} alt='delivery icon' />
         <LearningTitle>Delivery</LearningTitle>
         <LearningDescription>A delivery method for your goods/services</LearningDescription>
-      </LearningPoint>
-      <LearningPoint>
+      </LearningPointHalfFlex>
+      <LearningPointThirdFlex>
         <WebsiteIcon src={Website} alt='website icon' />
         <LearningTitle>Website</LearningTitle>
         <LearningDescription>Build a website</LearningDescription>
-      </LearningPoint>
-      <LearningPoint>
+      </LearningPointThirdFlex>
+      <LearningPointThirdFlex>
           <MarketingIcon src={Marketing} alt='marketing icon' />
       <LearningTitle>Marketing</LearningTitle>
       <LearningDescription>Market your products/services via social media</LearningDescription>
-      </LearningPoint>
-      <LearningPoint>
+      </LearningPointThirdFlex>
+      <LearningPointThirdFlex>
           <LearningIcon src={Learning} alt='learning icon' />
         <LearningTitle>Learning</LearningTitle>
         <LearningDescription>Online learning/teaching platform</LearningDescription>
-      </LearningPoint>
+      </LearningPointThirdFlex>
     </MoveOnlineWrapper>
   );
 }

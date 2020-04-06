@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -8,8 +8,7 @@ body {
 
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 span {
@@ -24,4 +23,49 @@ span {
 
 a {
   text-decoration: none;
+}
+
+#return-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 5%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 60px;
+  height: 60px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#return-to-top .icon-chevron-up {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 0px;
+  top: 15px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+  background: #fbc91b;
+  color: white;
+  cursor: pointer;
+}
+
+#return-to-top:hover i {
+  color: #fff;
 }

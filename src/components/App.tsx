@@ -9,6 +9,7 @@ import SponsorsForm from './pages/landing/sponsors-form';
 import { StylesSchema } from '../shared/enums/styles';
 import Footer from "./footer/footer";
 import Partner from "./pages/landing/partner";
+import Global from "./pages/landing/global_business";
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -23,6 +24,7 @@ const App: React.FC = ()  => {
       <Partner />
       <SponsorsForm />
         <MoveOnline />
+        <Global />
         <ApplyFundForm />
       <Footer />
     </AppWrapper>
