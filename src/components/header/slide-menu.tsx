@@ -39,7 +39,7 @@ const NavAnchor = styled.div`
   transition: color 0.3s linear;
 
   &:hover {
-    color: ${StylesSchema.LightGrey};
+    color: ${StylesSchema.Yellow};
   }
 `;
 
