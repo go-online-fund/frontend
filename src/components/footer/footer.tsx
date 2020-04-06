@@ -2,15 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.header`
-  height: 140px;
+  height: 100%;
   background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
   margin: 0 auto;
   text-align: center;
-  padding-top: 20px;
+  padding-bottom: 20px;
   padding-top: 20px;
   color: white;
   font-size: 16px;
   line-height: 2;
+  border-top: 2px solid #fbc91b
 `;
 
 const FooterDescription = styled.p`

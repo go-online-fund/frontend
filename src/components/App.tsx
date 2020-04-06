@@ -8,6 +8,7 @@ import ApplyFundForm from './pages/landing/apply-fund-form';
 import SponsorsForm from './pages/landing/sponsors-form';
 import { StylesSchema } from '../shared/enums/styles';
 import Footer from "./footer/footer";
+import Partner from "./pages/landing/partner";
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -19,9 +20,10 @@ const App: React.FC = ()  => {
     <AppWrapper>
       <Header />
       <CallToAction />
-      <MoveOnline />
-      <ApplyFundForm />
+      <Partner />
       <SponsorsForm />
+        <MoveOnline />
+        <ApplyFundForm />
       <Footer />
     </AppWrapper>
   );

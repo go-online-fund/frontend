@@ -1,11 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ReactComponent as Communication } from '../../../assets/icons/communication.svg';
-import { ReactComponent as Delivery } from '../../../assets/icons/delivery.svg';
-import { ReactComponent as Learning } from '../../../assets/icons/learning.svg';
-import { ReactComponent as Marketing } from '../../../assets/icons/marketing.svg';
-// import { ReactComponent as Website } from '../../../assets/icons/website.svg';
-import Website from '../../../assets/icons/website.svg';
+import Communication from '../../../assets/icons/communication.png';
+import Delivery from '../../../assets/icons/delivery.png';
+import Learning from '../../../assets/icons/learning.png';
+import Marketing from '../../../assets/icons/marketing.png';
+import Website from '../../../assets/icons/website.png';
 
 const MoveOnlineWrapper = styled.section`
   align-items: center;
@@ -25,7 +24,7 @@ const MoveOnlineTitle = styled.h1`
   text-transform: uppercase;
   margin-bottom: 40px;
   font-size: 2em;
-  padding-top: 140px
+  padding-top: 40x
 `;
 
 const MoveOnlineDescription = styled.span`
@@ -59,41 +58,46 @@ const LearningDescription = styled.span`
 `;
 
 const svgSize = css`
-  width: 200px;
+  width: 300px;
   height: 200px;
 `
 
-const CommunicationIcon = styled(Communication)`
-  ${svgSize}
+const CommunicationIcon = styled.img`
+  width: 400px;
+  height: 250px;
 `;
 
-const DeliveryIcon = styled(Delivery)`
-  ${svgSize}
+const DeliveryIcon = styled.img`
+  width: 420px;
+  height: 250px;
 `;
 
 const WebsiteIcon = styled.img`
-  ${svgSize}
+  width: 400px;
+  height: 220px
 `;
 
-const MarketingIcon = styled(Marketing)`
-  ${svgSize}
+const MarketingIcon = styled.img`
+  width: 400px;
+  height: 220px
 `;
 
-const LearningIcon = styled(Learning)`
-  ${svgSize}
+const LearningIcon = styled.img`
+  width: 420px;
+  height: 200px
 `;
 
 const MoveOnline: React.FC = () => {
   return (
     <MoveOnlineWrapper>
-      <MoveOnlineTitle>Your Business is determined to <MoveOnlineDescription>succeed  online </MoveOnlineDescription> BUT you need</MoveOnlineTitle>
+      <MoveOnlineTitle>Your Business is determined to <MoveOnlineDescription>succeed  online</MoveOnlineDescription>, BUT you need</MoveOnlineTitle>
       <LearningPoint>
-        <CommunicationIcon />
+          <CommunicationIcon src={Communication} alt='communication icon' />
         <LearningTitle>Communication Tool</LearningTitle>
         <LearningDescription>Communication tools for your staff</LearningDescription>
       </LearningPoint>
       <LearningPoint>
-        <DeliveryIcon />
+          <DeliveryIcon src={Delivery} alt='delivery icon' />
         <LearningTitle>Delivery</LearningTitle>
         <LearningDescription>A delivery method for your goods/services</LearningDescription>
       </LearningPoint>
@@ -103,12 +107,12 @@ const MoveOnline: React.FC = () => {
         <LearningDescription>Build a website</LearningDescription>
       </LearningPoint>
       <LearningPoint>
-      <MarketingIcon />
+          <MarketingIcon src={Marketing} alt='marketing icon' />
       <LearningTitle>Marketing</LearningTitle>
       <LearningDescription>Market your products/services via social media</LearningDescription>
       </LearningPoint>
       <LearningPoint>
-        <LearningIcon />
+          <LearningIcon src={Learning} alt='learning icon' />
         <LearningTitle>Learning</LearningTitle>
         <LearningDescription>Online learning/teaching platform</LearningDescription>
       </LearningPoint>

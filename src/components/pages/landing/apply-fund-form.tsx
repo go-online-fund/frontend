@@ -27,6 +27,7 @@ const ApplyFundFormHeaderHighLight = styled.span`
 
 const ApplyFundSection = styled.div`
  background: linear-gradient(to bottom, #B3B3B3 -200%, #2A2A2A 100%);
+ border-top: 2px solid #fbc91b
 `;
 
 const defaultForm = {

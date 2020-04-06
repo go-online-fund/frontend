@@ -14,16 +14,18 @@ const CallToActionWrapper = styled.section`
   flex-direction: column;
   padding: 2rem 2rem;  
   position: relative;
-  height: 300px
+  height: 320px;
+  border-bottom: 2px solid white;
 `;
 
 const CallToActionVideo = styled.div`
 
    @media (max-width: 415px) {
-     margin-top: 40px
+     margin-top: 40px;
+     width: 80vw
    }
-  height: 300px;
-  width: 600px;
+  height: 350px;
+  width: 40vw;
   border: 3px solid white;
   border-radius: 5px;
   position: absolute;
