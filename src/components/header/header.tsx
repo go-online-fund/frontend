@@ -8,6 +8,10 @@ const HeaderWrapper = styled.header`
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;
+  @media (min-width: 768px){
+    text-align: center;
+    align-items: center
+  }
 `;
 
 const NavAnchor = styled.a`

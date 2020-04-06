@@ -21,7 +21,7 @@ const ApplyFundFormHeader = styled.h1`
 `;
 
 const ApplyFundFormHeaderHighLight = styled.span`
- color: #fbc91b;
+ color: #fbc91b !important;
  font-weight: bold;
 `;
 

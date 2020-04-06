@@ -24,7 +24,8 @@ const MoveOnlineTitle = styled.h1`
   width: 100%;
   text-transform: uppercase;
   margin-bottom: 40px;
-  font-size: 2em
+  font-size: 2em;
+  padding-top: 140px
 `;
 
 const MoveOnlineDescription = styled.span`

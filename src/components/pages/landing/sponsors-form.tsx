@@ -22,6 +22,7 @@ interface SponsorHelpOption {
 
 const SponsorSection = styled.div`
   margin: 0 auto;
+  padding-top: 60px;
   text-align: center;
   align-items: center;
   height: 100%;
