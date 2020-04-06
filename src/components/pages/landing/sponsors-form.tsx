@@ -25,7 +25,7 @@ const SponsorSection = styled.div`
   text-align: center;
   align-items: center;
   height: 100%;
-  background: f8c446
+  background: #f8c446
   }
 `;
 
