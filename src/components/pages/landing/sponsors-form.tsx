@@ -24,10 +24,8 @@ const SponsorSection = styled.div`
   margin: 0 auto;
   text-align: center;
   align-items: center;
-  
-  @media (max-width: 415px){
-    height: 100%;
-    background: #fbc91b
+  height: 100%;
+  background: #fbc91b
   }
 `;
 
