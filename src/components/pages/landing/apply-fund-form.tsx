@@ -13,11 +13,11 @@ const ApplyFundFormWrapper = styled.form`
 `;
 
 const ApplyFundFormHeader = styled.h1`
- text-align: center;
- font-weight: bold;
- text-transform: uppercase;
- padding-top: 40px;
- color: white
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 40px;
+  color: white
 `;
 
 const ApplyFundFormHeaderHighLight = styled.span`
@@ -43,7 +43,8 @@ const ApplyFundForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fundForm, setFundForm] = useState<FundApplication>(defaultForm);
 
-  const submitForm = async () => {
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const responseStatus = await FormsService.postFundApplication(fundForm);
     if (responseStatus === 200) {
       setFundForm(defaultForm);
@@ -52,36 +53,40 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
-      <ApplyFundSection>
-          <ApplyFundFormHeader id='applyForFund'>We're here to <ApplyFundFormHeaderHighLight>support</ApplyFundFormHeaderHighLight></ApplyFundFormHeader>
-    <ApplyFundFormWrapper>
-      <TextField style={{background: 'white'}}
+    <ApplyFundSection>
+      <ApplyFundFormHeader id='applyForFund'>We're here to <ApplyFundFormHeaderHighLight>support</ApplyFundFormHeaderHighLight></ApplyFundFormHeader>
+      <ApplyFundFormWrapper onSubmit={submitForm}>
+        <TextField
+          style={{background: 'white'}}
           required
-        placeholder='Company'
-        onChange={(e) => setFundForm({
-          ...fundForm,
-          companyName: e.target.value,
-        })}
-      />
-      <TextField style={{background: 'white'}}
-          required
+          placeholder='Company'
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            companyName: e.target.value,
+          })}
+        />
+      <TextField
+        style={{background: 'white'}}
+        required
         placeholder='Company size' 
         onChange={(e) => setFundForm({
           ...fundForm,
           companySize: e.target.value,
         })}
       />
-      <TextField style={{background: 'white'}}
-          required
-          type="email"
+      <TextField
+        style={{background: 'white'}}
+        required
+        type='email'
         placeholder='Company Email'
         onChange={(e) => setFundForm({
           ...fundForm,
           companyEmail: e.target.value,
         })}
       />
-      <TextArea style={{background: 'white'}}
-          required
+      <TextArea
+        style={{background: 'white'}}
+        required
         placeholder='Tell us about your business' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -89,8 +94,9 @@ const ApplyFundForm: React.FC = () => {
           businessDescription: e.target.value,
         })}
       />
-      <TextArea style={{background: 'white'}}
-          required
+      <TextArea
+        style={{background: 'white'}}
+        required
         placeholder='What is the biggest challenge for your business to get online?'
         rows={4} 
         onChange={(e) => setFundForm({
@@ -98,8 +104,9 @@ const ApplyFundForm: React.FC = () => {
           businessChallenge: e.target.value,
         })}
       />
-      <TextArea style={{background: 'white'}}
-          required
+      <TextArea
+        style={{background: 'white'}}
+        required
         placeholder='What is the current top priority for your business?' 
         rows={4} 
         onChange={(e) => setFundForm({
@@ -107,19 +114,21 @@ const ApplyFundForm: React.FC = () => {
           businessPriority: e.target.value,
         })}
       />
-      <PrimaryButton style={{background: '#fbc91b', color: 'black'}}
+      <PrimaryButton
+        style={{background: '#fbc91b', color: 'black'}}
         type='submit'
-        // onClick={submitForm}
       >
         Apply For The Fund
       </PrimaryButton>
-      {isSubmitted && (
+      {
+        isSubmitted && (
         <SuccessText>
           Thank you. Your application has been submitted. We will be in touch with you shortly if we are able to support your application.
         </SuccessText>
-      )}
-    </ApplyFundFormWrapper>
-          </ApplyFundSection>
+        )
+      }
+      </ApplyFundFormWrapper>
+    </ApplyFundSection>
   );
 }
 
