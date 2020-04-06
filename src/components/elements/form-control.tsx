@@ -39,14 +39,14 @@ interface SuccessTextProps {
   type: 'dark' | 'light';
 }
 
-export const SuccessText = styled.span<SuccessTextProps>`
-  color: ${({ type }) => type === 'dark' ? StylesSchema.Black : StylesSchema.White};
+export const SuccessText = styled.div<SuccessTextProps>`
+  color: ${({ type }) => type === 'dark' ? StylesSchema.White : StylesSchema.Yellow};
+  font-weight: bold;
   text-align: center;
-  width: 50%;
-
-  @media (min-width: 768px) {
-    width: 50%;
-  }
+  margin: 0 auto;
+  align-item: center;
+  padding-bottom: 40px;
+  font-size: 20px
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -110,10 +110,33 @@ const SecondaryButton = styled.div`
   width: 200px;
   margin-top: 40px;
   font-weight: bold;
+  
+  &:hover {
+    cursor: pointer
+  }
 `;
+
+// only import polyfill if scrollBehavior is not supported by browser
+if (!('scrollBehavior' in document.documentElement.style)) {
+    import('smoothscroll-polyfill').then((smoothscroll) => {
+        smoothscroll.polyfill();
+    });
+}
 
 
 const Partner: React.FC = () => {
+    const [open, setOpen] = useState(false);
+    const smoothScroll = (target: string) => {
+        if (open) {
+            setOpen(false);
+        }
+        const targetElement = document.getElementById(target)?.offsetTop;
+        window.scrollTo({
+            top: targetElement,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <PartnerWrapper>
             <PartnerHeader>Proudly Supported By</PartnerHeader>
@@ -143,9 +166,9 @@ const Partner: React.FC = () => {
                         end={25}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
                 </PartnerSupport>
             </Carousel>
-            <a href="#beASponsor"><SecondaryButton>
+            <SecondaryButton onClick={() => smoothScroll('beASponsor')}>
                 JOIN THE MOVEMENT
-            </SecondaryButton></a>
+            </SecondaryButton>
         </PartnerWrapper>
     );
 }

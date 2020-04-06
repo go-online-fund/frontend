@@ -54,7 +54,7 @@ const GlobalBusinessDescDiv = styled.div`
   
   @media (min-width: 768px) {
     flex-basis: 42%;
-    padding-top: 100px;
+    padding-top: 80px;
   }   
 `;
 
