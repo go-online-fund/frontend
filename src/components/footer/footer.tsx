@@ -14,27 +14,24 @@ const FooterWrapper = styled.header`
   border-top: 2px solid #fbc91b
 `;
 
-const FooterDescription = styled.p`
-    display: inline-block;
-    margin-top: -10px
-`;
 
 const FooterLogo = styled.img`
-     display: inline-block;
+  display: inline-block;
   height: 25px;
   margin-top: 20px
 `;
 
 const Footer: React.FC = () => {
-    return (
-        <FooterWrapper>
-            <FooterLogo src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg"></FooterLogo>
-            <br/>
-            <span>M<span className="icon-heart"></span>ve Online Together Fund © 2020</span>
-            <br/>
-            <span style={{fontSize: '12px'}}>10 Central Exchange Green, Singapore 138649</span>
-        </FooterWrapper>
-    );
+return (
+  <FooterWrapper>
+    <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
+    <br/>
+    <span>M<span className='icon-heart'>
+    </span>ve Online Together Fund © 2020</span>
+    <br/>
+    <span style={{fontSize: '12px'}}>10 Central Exchange Green, Singapore 138649</span>
+  </FooterWrapper>
+);
 }
 
 export default Footer;
