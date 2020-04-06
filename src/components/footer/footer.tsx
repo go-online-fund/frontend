@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { StylesSchema } from '../../shared/enums/styles';
 
 const FooterWrapper = styled.header`
-  height: 100%;
   background-image: ${StylesSchema.BlackGradient};
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  border-top: 2px solid #fbc91b
   color: white;
   font-size: 16px;
+  height: 100%;
   line-height: 2;
-  border-top: 2px solid #fbc91b
+  margin: 0 auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
 `;
 
 
@@ -22,8 +22,7 @@ const FooterLogo = styled.img`
   margin-top: 20px
 `;
 
-const Footer: React.FC = () => {
-return (
+const Footer: React.FC = () => (
   <FooterWrapper>
     <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
     <br/>
@@ -33,6 +32,5 @@ return (
     <span style={{fontSize: '12px'}}>10 Central Exchange Green, Singapore 138649</span>
   </FooterWrapper>
 );
-}
 
 export default Footer;

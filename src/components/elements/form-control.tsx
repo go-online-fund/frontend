@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { StylesSchema } from "../../shared/enums/styles";
+import React from "react";
 
 const formControlStyles = css`
   border: none;
@@ -38,6 +39,17 @@ export const SuccessText = styled.span`
   text-align: center;
   width: 50%;
 
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const ReactSelect = React.lazy(() => import('react-select'));
+
+export const Select = styled(ReactSelect)`
+  margin: 0.5rem;
+  width: 100%;
+  
   @media (min-width: 768px) {
     width: 50%;
   }

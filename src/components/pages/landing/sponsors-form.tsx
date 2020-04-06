@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
-import { TextField, SuccessText } from '../../elements/form-control';
+import { TextField, SuccessText, Select } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import FormsService from '../../../shared/services/forms.service';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
@@ -37,17 +37,6 @@ const SponsorsFormWrapper = styled.form`
     padding-top: 240px;
     height: 100%;
     background-repeat: no-repeat;
-  }
-`;
-
-const ReactSelect = React.lazy(() => import('react-select'));
-
-const Select = styled(ReactSelect)`
-  margin: 0.5rem;
-  width: 100%;
-  
-  @media (min-width: 768px) {
-    width: 50%;
   }
 `;
 
