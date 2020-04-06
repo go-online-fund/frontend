@@ -29,6 +29,7 @@ const Navigation = styled.div`
     flex-direction: row;
     justify-content: space-around;
     width: 50%;
+    padding-top: 5px
   }
 `;
 
