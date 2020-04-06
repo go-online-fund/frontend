@@ -10,16 +10,6 @@ interface SponsorHelpOption {
   label: string;
 }
 
-// const SponsorTitle = styled.div`
-//   background-color: ${StylesSchema.Yellow};
-//   color: ${StylesSchema.Black};
-//   font-size: 2rem;
-//   font-weight: 1000;
-//   padding: 2rem 0;
-//   text-align: center;
-//   width: 100%;
-// `;
-
 const SponsorSection = styled.div`
   margin: 0 auto;
   padding-top: 60px;
@@ -46,7 +36,7 @@ const SponsorsFormWrapper = styled.form`
     background-size: contain;
     padding-top: 240px;
     height: 100%;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
   }
 `;
 
@@ -62,10 +52,10 @@ const Select = styled(ReactSelect)`
 `;
 
 const options: SponsorHelpOption[] = [
-  { value: 'finance', label: 'Finance' },
-  { value: 'resources, logistics, or operations', label: 'Resources, Logistics, or Operations' },
-  { value: 'talent', label: 'Talent' },
-  { value: 'training', label: 'Training' },
+  { value: 'Finance', label: 'Finance' },
+  { value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations' },
+  { value: 'Talent', label: 'Talent' },
+  { value: 'Training', label: 'Training' },
 ];
 
 const defaultForm = {
@@ -86,7 +76,8 @@ const SponsorsForm: React.FC = () => {
     })
   };
 
-  const submitForm = async () => {
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
     if (responseStatus === 200) {
       setSponsorForm(defaultForm);
@@ -95,19 +86,21 @@ const SponsorsForm: React.FC = () => {
   };
 
   return (
-      <SponsorSection id='beASponsor'>
-      <SponsorsFormWrapper>
-        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
-            required
+    <SponsorSection id='beASponsor'>
+      <SponsorsFormWrapper onSubmit={submitForm}>
+        <TextField 
+          style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+          required
           placeholder='Company name'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
             companyName: e.target.value,
           })}
         />
-        <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
-            required
-            type="email"
+        <TextField 
+          style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
+          required
+          type='email'
           placeholder='Company Email'
           onChange={(e) => setSponsorForm({
             ...sponsorForm,
@@ -115,9 +108,10 @@ const SponsorsForm: React.FC = () => {
           })}
         />
         <Suspense fallback={<div>Loading Options...</div>}>
-          <Select placeholder={<div>What would you like to contribute?</div>}
-                  required
-                  style={{paddingTop: '40px', paddingBottom: '40px', height: '60px'}}
+          <Select 
+            placeholder={<div>What would you like to contribute?</div>}
+            required
+            style={{paddingTop: '40px', paddingBottom: '40px', height: '60px'}}
             options={options}
             isMulti
             onChange={onSelect}
@@ -125,7 +119,6 @@ const SponsorsForm: React.FC = () => {
         </Suspense>
         <PrimaryButton
           type='submit'
-          // onClick={submitForm}
         >
           BE A SPONSOR
         </PrimaryButton>
@@ -137,7 +130,7 @@ const SponsorsForm: React.FC = () => {
           )
         }
       </SponsorsFormWrapper>
-      </SponsorSection>
+    </SponsorSection>
   );
 }
 
