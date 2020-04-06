@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             <br/>
             <span>M<span className="icon-heart"></span>ve Online Together Fund © 2020</span>
             <br/>
-            <span style={{fontSize: '12px'}}>10 Central Green Exchange, Singapore 138649</span>
+            <span style={{fontSize: '12px'}}>10 Central Exchange Green, Singapore 138649</span>
         </FooterWrapper>
     );
 }

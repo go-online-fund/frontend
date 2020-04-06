@@ -23,10 +23,12 @@ interface SponsorHelpOption {
 const SponsorSection = styled.div`
   margin: 0 auto;
   text-align: center;
-  align-items: center
-  background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
+  align-items: center;
+  
+  @media (max-width: 415px){
+    height: 100%;
+    background: #fbc91b
+  }
 `;
 
 const SponsorsFormWrapper = styled.form`
@@ -35,9 +37,16 @@ const SponsorsFormWrapper = styled.form`
   flex-direction: column;
   padding: 2rem 2rem;
   background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   padding-top: 750px;
+  
+  @media (max-width: 415px){
+    background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586131835/mobile_ljxlfe.jpg') !important
+    background-size: contain;
+    padding-top: 240px;
+  background-repeat: no-repeat;
+  }
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));
@@ -85,7 +94,6 @@ const SponsorsForm: React.FC = () => {
   };
 
   return (
-    <>
       <SponsorSection id='beASponsor'>
       <SponsorsFormWrapper>
         <TextField style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
@@ -129,7 +137,6 @@ const SponsorsForm: React.FC = () => {
         }
       </SponsorsFormWrapper>
       </SponsorSection>
-    </>
   );
 }
 
