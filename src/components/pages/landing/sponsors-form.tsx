@@ -78,7 +78,7 @@ const NormalTextHeader = styled.p`
 
 
 const options: SponsorHelpOption[] = [
-    {value: 'Finance', label: 'Finance'},
+    {value: 'Capital', label: 'Capital'},
     {value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations'},
     {value: 'Training', label: 'Training'},
 ];

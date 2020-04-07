@@ -20,7 +20,7 @@ const StyledMenu = styled.nav<StyledMenuProps>`
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
   transition: transform 0.3s ease-in-out;
   width: 100vw;
-  z-index: 1;
+  z-index: 100;
 
   @media (min-width: 768px){
     display: none;
