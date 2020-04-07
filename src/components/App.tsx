@@ -1,15 +1,11 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Header from './header/header';
-import CallToAction from './pages/landing/call-to-action';
-import MoveOnline from './pages/landing/move-online';
-import ApplyFundForm from './pages/landing/apply-fund-form';
-import SponsorsForm from './pages/landing/sponsors-form';
-import {StylesSchema} from '../shared/enums/styles';
+import { StylesSchema } from '../shared/enums/styles';
+import './App.css';
 import Footer from "./footer/footer";
-import Partner from "./pages/landing/partner";
-import WhoWeSupport from "./pages/landing/who-need-help";
+import Header from './header/header';
+import Landing from './pages/landing';
+import ReactGA from 'react-ga';
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -17,18 +13,17 @@ const AppWrapper = styled.div`
 `;
 
 const App: React.FC = () => {
-    return (
-        <AppWrapper>
-            <Header/>
-            <CallToAction/>
-            <Partner/>
-            <SponsorsForm/>
-            <MoveOnline/>
-            <WhoWeSupport/>
-            <ApplyFundForm/>
-            <Footer/>
-        </AppWrapper>
-    );
+  useEffect(() => {
+    ReactGA.initialize('UA-162979146-1');
+  }, []);
+
+  return (
+    <AppWrapper>
+      <Header/>
+      <Landing />
+      <Footer/>
+    </AppWrapper>
+  );
 }
 
 export default App;

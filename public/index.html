@@ -18,7 +18,6 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;800&display=swap" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -45,19 +44,19 @@
     -->
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  // ===== Scroll to Top ====
-  $(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-      $('#return-to-top').fadeIn(200);    // Fade in the arrow
-    } else {
-      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-    }
-  });
-  $('#return-to-top').click(function() {      // When arrow is clicked
-    $('body,html').animate({
-      scrollTop : 0                       // Scroll to top of body
-    }, 500);
-  });
-</script>
+  <script>
+    // ===== Scroll to Top ====
+    $(window).scroll(function() {
+      if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+    });
+    $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+      }, 500);
+    });
+  </script>
 </html>
