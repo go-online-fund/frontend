@@ -60,6 +60,13 @@ const SponsorsForm: React.FC = () => {
 
   const onSelect = (e: SponsorHelpOption[]) => {
     setSelectValues(e);
+    if (!e) {
+      setSponsorForm({
+        ...sponsorForm,
+        contributionArea: '',
+      });
+      return;
+    }
     const contributionArea = e.map(({ value }) => value).join(',');
     setSponsorForm({
       ...sponsorForm,

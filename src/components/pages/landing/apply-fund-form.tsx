@@ -4,7 +4,6 @@ import { TextField, TextArea, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import { StylesSchema } from '../../../shared/enums/styles';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;
