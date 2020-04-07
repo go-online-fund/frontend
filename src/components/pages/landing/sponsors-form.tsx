@@ -45,6 +45,10 @@ const SponsorsFormWrapper = styled.form`
     height: 100%;
     background-repeat: no-repeat;
   }
+  
+  @media (min-width: 1800px){
+    background-size: cover
+  }
 `;
 
 const options: SponsorHelpOption[] = [
