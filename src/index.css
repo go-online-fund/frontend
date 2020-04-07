@@ -33,6 +33,7 @@ a {
 }
 
 #return-to-top {
+  -webkit-tap-highlight-color: transparent;
   position: fixed;
   bottom: 50px;
   right: 5%;

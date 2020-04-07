@@ -1,14 +1,14 @@
-import React, {Suspense, useState} from 'react';
+import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
-import {TextField, SuccessText, Select} from '../../elements/form-control';
-import {PrimaryButton} from '../../elements/buttons';
+import { TextField, SuccessText, Select } from '../../elements/form-control';
+import { PrimaryButton } from '../../elements/buttons';
 import FormsService from '../../../shared/services/forms.service';
-import {SponsorApplication} from '../../../shared/interfaces/forms.interface';
+import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 import Loading from "../../common/loading";
 
 interface SponsorHelpOption {
-    value: string;
-    label: string;
+  value: string;
+  label: string;
 }
 
 const SponsorSection = styled.div`
@@ -78,111 +78,111 @@ const NormalTextHeader = styled.p`
 
 
 const options: SponsorHelpOption[] = [
-    {value: 'Capital', label: 'Capital'},
-    {value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations'},
-    {value: 'Training', label: 'Training'},
+  { value: 'Capital', label: 'Capital' },
+  { value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations' },
+  { value: 'Training', label: 'Training' },
 ];
 
 const defaultForm = {
-    companyName: '',
-    companyEmail: '',
-    contributionArea: '',
+  companyName: '',
+  companyEmail: '',
+  contributionArea: '',
 };
 
 const SponsorsForm: React.FC = () => {
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [selectValues, setSelectValues] = useState<SponsorHelpOption[]>([]);
-    const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectValues, setSelectValues] = useState<SponsorHelpOption[]>([]);
+  const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
 
-    const onSelect = (e: SponsorHelpOption[]) => {
-        setSelectValues(e);
-        const contributionArea = e.map(({value}) => value).join(',');
-        setSponsorForm({
-            ...sponsorForm,
-            contributionArea
-        })
-    };
+  const onSelect = (e: SponsorHelpOption[]) => {
+    setSelectValues(e);
+    const contributionArea = e.map(({ value }) => value).join(',');
+    setSponsorForm({
+      ...sponsorForm,
+      contributionArea
+    })
+  };
 
-    const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        setIsLoading(true);
-        const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
-        if (responseStatus === 200) {
-            setIsLoading(false);
-            setSponsorForm(defaultForm);
-            setSelectValues([]);
-            setIsSubmitted(true);
-        }
-    };
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+    const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
+    if (responseStatus === 200) {
+      setIsLoading(false);
+      setSponsorForm(defaultForm);
+      setSelectValues([]);
+      setIsSubmitted(true);
+    }
+  };
 
-    return (
-        <SponsorSection id='beASponsor'>
-            <BigTextHeader>Big Business</BigTextHeader>
-            <NormalTextHeader>Helps</NormalTextHeader>
-            <SmallTextHeader>Small Business</SmallTextHeader>
-            {
-                !isLoading && !isSubmitted && (
-                    <SponsorsFormWrapper onSubmit={submitForm}>
-                        <TextField
-                            style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
-                            required
-                            placeholder='Company name'
-                            value={sponsorForm.companyName}
-                            onChange={(e) => setSponsorForm({
-                                ...sponsorForm,
-                                companyName: e.target.value,
-                            })}
-                        />
-                        <TextField
-                            style={{background: 'white', paddingTop: '15px', paddingBottom: '15px'}}
-                            required
-                            type='email'
-                            placeholder='Company Email'
-                            value={sponsorForm.companyEmail}
-                            onChange={(e) => setSponsorForm({
-                                ...sponsorForm,
-                                companyEmail: e.target.value,
-                            })}
-                        />
-                        <Suspense fallback={<div>Loading Options...</div>}>
-                            <Select
-                                placeholder={<div>What would you like to contribute?</div>}
-                                required
-                                style={{paddingTop: '40px', paddingBottom: '40px', height: '60px'}}
-                                options={options}
-                                isMulti
-                                onChange={onSelect}
-                                value={selectValues}
-                            />
-                        </Suspense>
-                        <PrimaryButton
-                            type='submit'
-                        >
-                            BE A SPONSOR
+  return (
+    <SponsorSection id='beASponsor'>
+      <BigTextHeader>Big Business</BigTextHeader>
+      <NormalTextHeader>Helps</NormalTextHeader>
+      <SmallTextHeader>Small Business</SmallTextHeader>
+      {
+        !isLoading && !isSubmitted && (
+          <SponsorsFormWrapper onSubmit={submitForm}>
+            <TextField
+              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              required
+              placeholder='Company name'
+              value={sponsorForm.companyName}
+              onChange={(e) => setSponsorForm({
+                ...sponsorForm,
+                companyName: e.target.value,
+              })}
+            />
+            <TextField
+              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              required
+              type='email'
+              placeholder='Company Email'
+              value={sponsorForm.companyEmail}
+              onChange={(e) => setSponsorForm({
+                ...sponsorForm,
+                companyEmail: e.target.value,
+              })}
+            />
+            <Suspense fallback={<div>Loading Options...</div>}>
+              <Select
+                placeholder={<div>What would you like to contribute?</div>}
+                required
+                style={{ paddingTop: '40px', paddingBottom: '40px', height: '60px' }}
+                options={options}
+                isMulti
+                onChange={onSelect}
+                value={selectValues}
+              />
+            </Suspense>
+            <PrimaryButton
+              type='submit'
+            >
+              BE A SPONSOR
                         </PrimaryButton>
-                    </SponsorsFormWrapper>
-                )
-            }
-            {
-                isLoading && !isSubmitted && (
-                    <LoadingDiv>
-                        <Loading/>
-                    </LoadingDiv>
-                )
-            }
-            {
-                isSubmitted && !isLoading && (
-                    <LoadingDiv>
-                        <SuccessText type='dark'>
-                            Thank you for. Your response has been submitted. <br/>We will be in touch with you shortly to discuss
+          </SponsorsFormWrapper>
+        )
+      }
+      {
+        isLoading && !isSubmitted && (
+          <LoadingDiv>
+            <Loading />
+          </LoadingDiv>
+        )
+      }
+      {
+        isSubmitted && !isLoading && (
+          <LoadingDiv>
+            <SuccessText type='dark'>
+              Thank you for. Your response has been submitted. <br />We will be in touch with you shortly to discuss
                             how you can support this initiative.
                         </SuccessText>
-                    </LoadingDiv>
-                )
-            }
-        </SponsorSection>
-    );
+          </LoadingDiv>
+        )
+      }
+    </SponsorSection>
+  );
 }
 
 export default SponsorsForm;
