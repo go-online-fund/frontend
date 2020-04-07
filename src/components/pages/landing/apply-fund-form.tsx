@@ -18,7 +18,11 @@ const ApplyFundFormHeader = styled.h1`
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 40px;
-  color: white
+  color: white;
+  
+  @media (max-width: 415px) {
+    font-size: 1.8em
+  }
 `;
 
 const ApplyFundSection = styled.div`

@@ -1,30 +1,26 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Communication from '../../../assets/icons/communication.png';
-import Delivery from '../../../assets/icons/delivery.png';
-import Learning from '../../../assets/icons/learning.png';
-import Marketing from '../../../assets/icons/marketing.png';
-import Website from '../../../assets/icons/website.png';
+import Communication from '../../../assets/icons/communication.svg';
+import Delivery from '../../../assets/icons/delivery.svg';
+import Learning from '../../../assets/icons/learning.svg';
+import Marketing from '../../../assets/icons/marketing.svg';
+import Website from '../../../assets/icons/website.svg';
 
 const MoveOnlineWrapper = styled.section`
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: center;
   padding: 2rem 2rem;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 `;
 
 const MoveOnlineTitle = styled.h1`
   text-align: center;
-  width: 100%;
-  text-transform: uppercase;
-  margin-bottom: 40px;
   font-size: 2em;
+  margin-bottom: 40px;
   padding-top: 40x
+  text-transform: uppercase;
+  width: 100%;
 `;
 
 const MoveOnlineDescription = styled.span`
@@ -35,24 +31,21 @@ const MoveOnlineDescription = styled.span`
 
 const LearningPointHalfFlex = styled.div`
   align-items: center;
+  align-self: flex-start;
   display: flex;
+  flex: 1 0 50%;
   flex-direction: column;
+  max-width: 50%;
   padding: 1rem 0;
   text-transform: uppercase;
-  
-  @media (max-width: 415px) {
-    flex: 1 0 50%;
-  }
-
-  @media (min-width: 768px) {
-    flex: 1 0 50%;
-  }
 `;
 
 const LearningPointThirdFlex = styled.div`
   align-items: center;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
+  max-width: 50%;
   padding: 1rem 0;
   text-transform: uppercase;
 
@@ -66,6 +59,7 @@ const LearningTitle = styled.span`
   font-weight: 700;
   padding: 1rem 0;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 const LearningDescription = styled.span`
@@ -73,40 +67,40 @@ const LearningDescription = styled.span`
   text-align: center;
 `;
 
-const svgSize = css`
-  width: 300px;
-  height: 200px;
+const imageSize = css`
+  width: 100px;
+  height: 100px;
+
+  @media (min-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 `
 
 const CommunicationIcon = styled.img`
-  width: 400px;
-  height: 250px;
+  ${imageSize}
 `;
 
 const DeliveryIcon = styled.img`
-  width: 420px;
-  height: 250px;
+  ${imageSize}
 `;
 
 const WebsiteIcon = styled.img`
-  width: 400px;
-  height: 220px
+  ${imageSize}
 `;
 
 const MarketingIcon = styled.img`
-  width: 400px;
-  height: 220px
+  ${imageSize}
 `;
 
 const LearningIcon = styled.img`
-  width: 420px;
-  height: 200px
+  ${imageSize}
 `;
 
 const MoveOnline: React.FC = () => {
   return (
     <MoveOnlineWrapper>
-      <MoveOnlineTitle>Your Business is determined to <MoveOnlineDescription>succeed  online</MoveOnlineDescription>, BUT you need</MoveOnlineTitle>
+      <MoveOnlineTitle><MoveOnlineDescription>The Fund</MoveOnlineDescription> will be used to help small businesses succeed online</MoveOnlineTitle>
       <LearningPointHalfFlex>
           <CommunicationIcon src={Communication} alt='communication icon' />
         <LearningTitle>Communication Tool</LearningTitle>

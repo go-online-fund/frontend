@@ -34,11 +34,10 @@ const SupportHeader = styled.h1`
   color: black;
   font-weight: bold;
   font-size: 2em;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   
    @media (max-width: 415px) {
-       font-size: 1.5em;
-       padding-bottom: 40px;
+       font-size: 1.4em;
    }
 `;
 
