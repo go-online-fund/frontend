@@ -62,14 +62,13 @@ const src = [
     {
         name: 'video',
         source: [{
-            source: 'https://res.cloudinary.com/dhoy4ync0/video/upload/v1584441229/nas_company_final_gn0txs.mp4',
+            source: 'https://res.cloudinary.com/doaxab4ly/video/upload/v1586277876/online_fund_fxondq.mp4',
             type: VideoSourceType.video_mp4
         }]
     }
 ]
 
 const CallToAction: React.FC = () => {
-    // @ts-ignore
     return (
         <CallToActionWrapper>
             <CallToActionHeader>HELP <CallToActionHighlight>BUSINESS</CallToActionHighlight> MOVE <CallToActionHighlight>ONLINE</CallToActionHighlight></CallToActionHeader>
