@@ -45,7 +45,6 @@ const NavAnchorHighlight = styled.a`
 
 const Navigation = styled.nav`
   display: none;
-  font-weight: bold;
 
   @media (min-width: 768px){
     display: flex;

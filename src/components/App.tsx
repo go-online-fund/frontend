@@ -6,29 +6,29 @@ import CallToAction from './pages/landing/call-to-action';
 import MoveOnline from './pages/landing/move-online';
 import ApplyFundForm from './pages/landing/apply-fund-form';
 import SponsorsForm from './pages/landing/sponsors-form';
-import { StylesSchema } from '../shared/enums/styles';
+import {StylesSchema} from '../shared/enums/styles';
 import Footer from "./footer/footer";
 import Partner from "./pages/landing/partner";
-import Global from "./pages/landing/global_business";
+import WhoWeSupport from "./pages/landing/who-need-help";
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
   height: 100%;
 `;
 
-const App: React.FC = ()  => {
-  return (
-    <AppWrapper>
-      <Header />
-      <CallToAction />
-      <Partner />
-      <SponsorsForm />
-        <MoveOnline />
-        <Global />
-        <ApplyFundForm />
-      <Footer />
-    </AppWrapper>
-  );
+const App: React.FC = () => {
+    return (
+        <AppWrapper>
+            <Header/>
+            <CallToAction/>
+            <Partner/>
+            <SponsorsForm/>
+            <MoveOnline/>
+            <WhoWeSupport/>
+            <ApplyFundForm/>
+            <Footer/>
+        </AppWrapper>
+    );
 }
 
 export default App;

@@ -76,3 +76,8 @@ a {
 #return-to-top:hover i {
   color: #fff;
 }
+
+/* Video */
+video {
+  height: 100%;
+}

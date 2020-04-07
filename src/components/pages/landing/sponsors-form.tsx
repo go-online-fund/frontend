@@ -17,7 +17,7 @@ const SponsorSection = styled.div`
   text-align: center;
   align-items: center;
   height: 100%;
-  background: #f8c446
+  background: #fbc91b
   }
 `;
 
@@ -32,16 +32,14 @@ const SponsorsFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
-  background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586095383/go-online-fund_tgapcj.jpg');
+  background: #fbc91b;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left -20px;
-  padding-top: 680px;
   
   @media (max-width: 415px){
-    background: url('https://res.cloudinary.com/doaxab4ly/image/upload/v1586131835/mobile_ljxlfe.jpg') !important
+    background: #fbc91b !important
     background-size: contain;
-    padding-top: 240px;
     height: 100%;
     background-repeat: no-repeat;
   }
@@ -51,10 +49,37 @@ const SponsorsFormWrapper = styled.form`
   }
 `;
 
+const BigTextHeader = styled.p`
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+`;
+
+const SmallTextHeader = styled.p`
+    font-size: 71px;
+    font-weight: bold;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    
+    @media (max-width: 415px) {
+       font-size: 57px;
+    }
+`;
+
+const NormalTextHeader = styled.p`
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+`;
+
+
 const options: SponsorHelpOption[] = [
     {value: 'Finance', label: 'Finance'},
     {value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations'},
-    {value: 'Talent', label: 'Talent'},
     {value: 'Training', label: 'Training'},
 ];
 
@@ -93,6 +118,9 @@ const SponsorsForm: React.FC = () => {
 
     return (
         <SponsorSection id='beASponsor'>
+            <BigTextHeader>Big Business</BigTextHeader>
+            <NormalTextHeader>Helps</NormalTextHeader>
+            <SmallTextHeader>Small Business</SmallTextHeader>
             {
                 !isLoading && !isSubmitted && (
                     <SponsorsFormWrapper onSubmit={submitForm}>

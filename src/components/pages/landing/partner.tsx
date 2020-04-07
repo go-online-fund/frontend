@@ -90,12 +90,12 @@ const PartnerSupport = styled.div`
   }
 `;
 
-const MoneyIcon = styled.img`
-    width: 40px;
-    height: 37px;
-    margin-right: 15px;
-    padding-top: 5px
-    
+const PartnerText = styled.p`
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white
 `;
 
 const SecondaryButton = styled.div`
@@ -140,34 +140,30 @@ const Partner: React.FC = () => {
     return (
         <PartnerWrapper>
             <PartnerHeader>Proudly Supported By</PartnerHeader>
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive} infinite>
                 <PartnerIcon
-                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/facebook_pckthg.svg"></PartnerIcon>
-                <PartnerIcon
-                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147117/logo/lark_ywj9oi.png"></PartnerIcon>
-                <PartnerIcon
-                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
-                <PartnerIcon
-                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586147116/logo/nice_z9impn.svg"></PartnerIcon>
+                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg"></PartnerIcon>
+                <PartnerText>Add <br/> your company</PartnerText>
+                <PartnerText>Add <br/>your company</PartnerText>
+                <PartnerText>Add <br/>your company</PartnerText>
+                <PartnerText>Add <br/>your company</PartnerText>
             </Carousel>
             <PartnerHeader>Thanks to your support</PartnerHeader>
             <Carousel responsive={responsiveSupport}>
                 <PartnerSupport>
-                    <MoneyIcon
-                        src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586173103/logo/icon_money_aeedca.svg"
-                        alt="money icon"/><CountUp
+                   SGD <CountUp
                     formattingFn={(e) => e.toLocaleString('en-US')} start={100}
-                    end={1000000}
+                    end={10000}
                 /> <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
                 </PartnerSupport>
                 <PartnerSupport>
                     <CountUp
                         formattingFn={(e) => e.toLocaleString('en-US')} start={0}
-                        end={25}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SMEs supported</span>
+                        end={1}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SME supported</span>
                 </PartnerSupport>
             </Carousel>
             <SecondaryButton onClick={() => smoothScroll('beASponsor')}>
-                JOIN THE MOVEMENT
+                SUPPORT THE FUND
             </SecondaryButton>
         </PartnerWrapper>
     );
