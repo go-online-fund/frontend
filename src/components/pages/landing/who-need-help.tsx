@@ -71,8 +71,8 @@ const SupportBusinessTitle = styled.h1`
 `;
 
 const SupportBusinessImg = styled.img`
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
 `;
 
 const SecondaryButton = styled.div`
