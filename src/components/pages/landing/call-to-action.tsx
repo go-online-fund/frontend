@@ -42,11 +42,7 @@ const CallToActionVideo = styled.div`
    @media (max-width: 411px) {
      margin-top: 100px;
      width: 90vw;
-     height: 190px;
-   }
-   
-   @media only screen and (min-device-width: 411px) and (max-device-width: 415px) {
-       height: 210px;
+     height: 210px;
    }
   height: 308px;
   width: 38vw;
