@@ -166,7 +166,7 @@ const SponsorsForm: React.FC = () => {
               type='submit'
             >
               BE A SPONSOR
-                        </PrimaryButton>
+            </PrimaryButton>
           </SponsorsFormWrapper>
         )
       }
