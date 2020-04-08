@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CountUp from 'react-countup';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const responsive = {
   superLargeDesktop: {
@@ -44,10 +45,9 @@ const responsiveSupport = {
   },
 };
 
-
-const PartnerWrapper = styled.header`
+const PartnerWrapper = styled.div`
   height: 100%;
-  background: #2c2c2c;
+  background: ${StylesSchema.DarkGrey};
   margin: 0 auto;
   text-align: center;
   padding-top: 120px;
@@ -122,11 +122,10 @@ const SecondaryButton = styled.div`
 
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
-    import('smoothscroll-polyfill').then((smoothscroll) => {
-      smoothscroll.polyfill();
-    });
+  import('smoothscroll-polyfill').then((smoothscroll) => {
+    smoothscroll.polyfill();
+  });
 }
-
 
 const Partner: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -144,7 +143,11 @@ const Partner: React.FC = () => {
   return (
     <PartnerWrapper>
       <PartnerHeader>Proudly Supported By</PartnerHeader>
-      <Carousel responsive={responsive} infinite>
+      <Carousel
+        responsive={responsive}
+        infinite
+        itemClass='sponsor-icon'
+      >
         <PartnerIcon
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />

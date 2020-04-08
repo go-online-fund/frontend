@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
   z-index: 100;
   top: 0;
   width: 100%;
-  background: #2c2c2c;
+  background: ${StylesSchema.DarkGrey};
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;
   justify-content: space-between;

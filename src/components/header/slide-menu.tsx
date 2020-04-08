@@ -28,6 +28,7 @@ const StyledMenu = styled.nav<StyledMenuProps>`
 `;
 
 const NavAnchor = styled.div`
+  -webkit-tap-highlight-color: transparent;
   color: ${StylesSchema.Black};
   cursor: pointer;
   font-size: 2rem;
@@ -53,7 +54,7 @@ const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => (
     <NavAnchor onClick={() => onNavigation('applyForFund')}>
       Apply For Fund
     </NavAnchor>
-    <NavAnchor onClick={() => onNavigation('applyForFund')}>
+    <NavAnchor onClick={() => onNavigation('beASponsor')}>
       Be a Sponsor
     </NavAnchor>
   </StyledMenu>

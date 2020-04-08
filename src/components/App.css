@@ -7,11 +7,17 @@
   transition: opacity .1s;
 }
 
-.lnavigate-topert-exit {
+.navigate-top-exit {
   opacity: 1;
 }
 
 .navigate-top-exit-active {
   opacity: 0;
   transition: opacity .1s;
+}
+
+.sponsor-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

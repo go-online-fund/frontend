@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../shared/enums/styles';
 
 const FooterWrapper = styled.footer`
   height: 100%;
-  background: #2c2c2c;
+  background: ${StylesSchema.DarkGrey};
   margin: 0 auto;
   text-align: center;
   padding-bottom: 20px;
