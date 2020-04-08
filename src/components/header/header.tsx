@@ -96,7 +96,7 @@ const Header: React.FC = () => {
 
   return (
     <HeaderWrapper>
-      <NasCompanyLogo />
+        <a href="https://nasdaily.com" target="_blank"><NasCompanyLogo /></a>
       <Navigation>
         <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
         <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>

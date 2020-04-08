@@ -45,7 +45,7 @@ const CallToActionVideo = styled.div`
      height: 190px;
    }
    
-   @media (min-width: 2000px) {
+  @media (min-width: 2000px) {
     height: 405px;
   }
   
