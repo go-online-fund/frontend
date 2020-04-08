@@ -85,6 +85,7 @@ const options: SponsorHelpOption[] = [
 const defaultForm = {
   companyName: '',
   companyEmail: '',
+  contactNumber: '',
   contributionArea: '',
 };
 
@@ -149,6 +150,16 @@ const SponsorsForm: React.FC = () => {
               onChange={(e) => setSponsorForm({
                 ...sponsorForm,
                 companyEmail: e.target.value,
+              })}
+            />
+            <TextField
+              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              type='tel'
+              placeholder='Contact number'
+              value={sponsorForm.contactNumber}
+              onChange={(e) => setSponsorForm({
+                ...sponsorForm,
+                contactNumber: e.target.value,
               })}
             />
             <Suspense fallback={<div>Loading Options...</div>}>

@@ -40,12 +40,14 @@ class FormsService {
     const { 
       companyName: company_name,
       companyEmail: company_email,
+      contactNumber: phone,
       contributionArea: contribution_area,
     } = sponsorApplication;
 
     const body = {
       company_name,
       company_email,
+      phone,
       contribution_area
     };
     
