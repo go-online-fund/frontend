@@ -16,8 +16,8 @@ export const PrimaryButton = styled.button`
   font-weight: bold;
   
   &:hover {
-  cursor: pointer;
-  opacity: 0.9
+    cursor: pointer;
+    opacity: 0.9;
   }
 
   &:active, &:focus {
@@ -27,4 +27,10 @@ export const PrimaryButton = styled.button`
   @media (min-width: 768px) {
     width: 50%;
   }
+`;
+
+export const SecondaryButton = styled(PrimaryButton)`
+  background-color: ${StylesSchema.Yellow};
+  background-image: none;
+  color: ${StylesSchema.Black};
 `;

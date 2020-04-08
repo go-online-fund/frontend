@@ -3,31 +3,37 @@ import styled from 'styled-components';
 import { StylesSchema } from '../../shared/enums/styles';
 
 const FooterWrapper = styled.footer`
-  height: 100%;
   background: ${StylesSchema.DarkGrey};
-  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 40px 0 30px;
   color: white;
   font-size: 16px;
-  line-height: 2;
+  height: 160px;
+
+  > span {
+    font-size: 1rem;
+
+    &:last-of-type {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 const FooterLogo = styled.img`
-  display: inline-block;
   height: 25px;
   width: 200px;
-  margin-top: 20px
 `;
 
 const Footer: React.FC = () => (
   <FooterWrapper>
     <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
-    <br />
     <span>All Rights Reserved © 2020</span>
-    <br />
-    <span style={{ fontSize: '12px' }}>10 Central Exchange Green, Singapore 138649</span>
+    <span>10 Central Exchange Green, Singapore 138649</span>
   </FooterWrapper>
 );
 

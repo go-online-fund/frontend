@@ -6,7 +6,7 @@ const formControlStyles = css`
   border: none;
   border-radius: 1px;
   box-sizing: border-box;
-  background-color: ${StylesSchema.Yellow};
+  background-color: ${StylesSchema.White};
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   margin: 0.5rem;

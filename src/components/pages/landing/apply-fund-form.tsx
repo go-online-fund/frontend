@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { TextField, TextArea, SuccessText } from '../../elements/form-control';
-import { PrimaryButton } from '../../elements/buttons';
+import { StylesSchema } from '../../../shared/enums/styles';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
 import Loading from '../../common/loading';
-import { StylesSchema } from '../../../shared/enums/styles';
+import { SecondaryButton } from '../../elements/buttons';
+import { SuccessText, TextArea, TextField } from '../../elements/form-control';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;
@@ -15,14 +15,15 @@ const ApplyFundFormWrapper = styled.form`
 `;
 
 const ApplyFundFormHeader = styled.h1`
+  font-size: 1.8em;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 40px;
   color: white;
   
-  @media (max-width: 415px) {
-    font-size: 1.8em
+  @media (min-width: 415px) {
+    font-size: 2rem;
   }
 `;
 
@@ -58,15 +59,14 @@ const ApplyFundForm: React.FC = () => {
   };
 
   return (
-    <ApplyFundSection>
-      <ApplyFundFormHeader id='applyForFund'>
+    <ApplyFundSection id='applyForFund'>
+      <ApplyFundFormHeader>
         APPLY FOR THE FUND
       </ApplyFundFormHeader>
       {
         !isLoading && !isSubmitted && (
           <ApplyFundFormWrapper onSubmit={submitForm}>
             <TextField
-              style={{ background: 'white' }}
               required
               placeholder='Company'
               value={fundForm.companyName}
@@ -76,7 +76,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <TextField
-              style={{ background: 'white' }}
               required
               placeholder='Company size'
               value={fundForm.companySize}
@@ -86,7 +85,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <TextField
-              style={{ background: 'white' }}
               required
               type='email'
               placeholder='Company Email'
@@ -97,7 +95,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <TextArea
-              style={{ background: 'white' }}
               required
               placeholder='Tell us about your business'
               rows={4}
@@ -108,7 +105,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <TextArea
-              style={{ background: 'white' }}
               required
               placeholder='What is the biggest challenge for your business to get online?'
               rows={4}
@@ -119,7 +115,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <TextArea
-              style={{ background: 'white' }}
               required
               placeholder='What is the current top priority for your business?'
               rows={4}
@@ -129,12 +124,12 @@ const ApplyFundForm: React.FC = () => {
                 businessPriority: e.target.value,
               })}
             />
-            <PrimaryButton
-              style={{ background: '#fbc91b', color: 'black' }}
+            <SecondaryButton
+              // style={{ background: '#fbc91b', color: 'black' }}
               type='submit'
             >
               Submit
-            </PrimaryButton>
+            </SecondaryButton>
           </ApplyFundFormWrapper>
         )
       }

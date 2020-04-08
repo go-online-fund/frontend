@@ -19,7 +19,6 @@ const NavigateToTopWrapper = styled.div`
   border-radius: 35px;
   transition: all 0.3s ease;
 
-
   &:hover {
     background: #fbc91b;
     color: white;
