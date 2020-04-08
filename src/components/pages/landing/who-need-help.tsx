@@ -71,8 +71,8 @@ const SupportBusinessTitle = styled.h1`
 `;
 
 const SupportBusinessImg = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 `;
 
 const SecondaryButton = styled.div`
@@ -120,7 +120,7 @@ const WhoWeSupport: React.FC = () => {
                 <SupportBusiness>
                     <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586243859/food_delivery_circle_j53j3f.png" alt="singapore hawker center"/>
                     <SupportBusinessTitle>
-                        The Hawker Owners
+                        The Hawker Store Owners
                     </SupportBusinessTitle>
                     <SupportBusinessDesc>
                         Help them get on all delivery apps - and offset some of the delivery fees so they remain profitable.
