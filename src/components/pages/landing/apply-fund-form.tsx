@@ -125,7 +125,6 @@ const ApplyFundForm: React.FC = () => {
               })}
             />
             <SecondaryButton
-              // style={{ background: '#fbc91b', color: 'black' }}
               type='submit'
             >
               Submit

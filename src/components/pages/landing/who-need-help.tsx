@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
+import { RoundedPrimaryButton } from '../../elements/buttons';
 
 const responsive = {
   superLargeDesktop: {
@@ -74,24 +75,6 @@ const SupportBusinessImg = styled.img`
   height: 250px;
 `;
 
-const SecondaryButton = styled.div`
-  background: black;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px transparent solid;
-  border-radius: 20px;
-  text-align: center;
-  margin: 0 auto;
-  width: 200px;
-  margin-top: 40px;
-  font-weight: bold;
-  
-  &:hover {
-    cursor: pointer
-  }
-`;
-
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
   import('smoothscroll-polyfill').then((smoothscroll) => {
@@ -115,7 +98,11 @@ const WhoWeSupport: React.FC = () => {
   return (
     <Support>
       <SupportHeader>WHO WILL THE FUND HELP?</SupportHeader>
-      <Carousel responsive={responsive} infinite>
+      <Carousel
+        containerClass='carousel-support-container'
+        responsive={responsive}
+        infinite
+      >
         <SupportBusiness>
           <SupportBusinessImg
             src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586243859/food_delivery_circle_j53j3f.png'
@@ -166,11 +153,11 @@ const WhoWeSupport: React.FC = () => {
           </SupportBusinessDesc>
         </SupportBusiness>
       </Carousel>
-      <SecondaryButton
+      <RoundedPrimaryButton
         onClick={() => smoothScroll('applyForFund')}
       >
         APPLY
-      </SecondaryButton>
+      </RoundedPrimaryButton>
     </Support>
   );
 };

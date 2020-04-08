@@ -5,13 +5,14 @@ import Delivery from '../../../assets/icons/delivery.svg';
 import Learning from '../../../assets/icons/learning.svg';
 import Marketing from '../../../assets/icons/marketing.svg';
 import Website from '../../../assets/icons/website.svg';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const MoveOnlineWrapper = styled.section`
   align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 2rem 2rem;
+  padding: 2rem;
 `;
 
 const MoveOnlineTitle = styled.h1`
@@ -24,7 +25,7 @@ const MoveOnlineTitle = styled.h1`
 `;
 
 const MoveOnlineDescription = styled.span`
-  color: #FBC91B;
+  color: ${StylesSchema.Yellow};
   font-weight: bold;
   text-transform: uppercase;
 `;

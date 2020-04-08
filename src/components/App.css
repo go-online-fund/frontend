@@ -21,3 +21,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.carousel-support-container,
+.carousel-partner-support-container {
+  margin-bottom: 40px;
+}

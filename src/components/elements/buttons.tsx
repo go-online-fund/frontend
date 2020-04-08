@@ -34,3 +34,25 @@ export const SecondaryButton = styled(PrimaryButton)`
   background-image: none;
   color: ${StylesSchema.Black};
 `;
+
+export const RoundedPrimaryButton = styled.button`
+  background-color: ${StylesSchema.Black};
+  border: 1px transparent solid;
+  border-radius: 20px;
+  box-sizing: content-box;
+  color: ${StylesSchema.White};
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  
+  &:hover {
+    cursor: pointer
+  }
+`;
+
+export const RoundedSecondaryButton = styled(RoundedPrimaryButton)`
+  background: ${StylesSchema.Yellow};
+  color: ${StylesSchema.Black};
+`;

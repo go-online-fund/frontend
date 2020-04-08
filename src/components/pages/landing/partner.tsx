@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import CountUp from 'react-countup';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import CountUp from 'react-countup';
+import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
+import { RoundedSecondaryButton } from '../../elements/buttons';
 
 const responsive = {
   superLargeDesktop: {
@@ -102,24 +103,6 @@ const PartnerText = styled.p`
   color: white
 `;
 
-const SecondaryButton = styled.div`
-  background: #fbc91b;
-  color: black;
-  padding: 10px 10px 10px 10px;
-  font-size: 16px;
-  border: 1px transparent solid;
-  border-radius: 20px;
-  text-align: center;
-  margin: 0 auto;
-  width: 200px;
-  margin-top: 40px;
-  font-weight: bold;
-  
-  &:hover {
-    cursor: pointer
-  }
-`;
-
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
   import('smoothscroll-polyfill').then((smoothscroll) => {
@@ -178,7 +161,10 @@ const Partner: React.FC = () => {
         </PartnerText>
       </Carousel>
       <PartnerHeader>Thanks to your support</PartnerHeader>
-      <Carousel responsive={responsiveSupport}>
+      <Carousel
+        responsive={responsiveSupport}
+        containerClass='carousel-partner-support-container'
+      >
         <PartnerSupport>
           SGD
           {' '}
@@ -202,9 +188,11 @@ const Partner: React.FC = () => {
           <span style={{ color: 'white', fontSize: '20px' }}>SME supported</span>
         </PartnerSupport>
       </Carousel>
-      <SecondaryButton onClick={() => smoothScroll('beASponsor')}>
+      <RoundedSecondaryButton
+        onClick={() => smoothScroll('beASponsor')}
+      >
         SUPPORT THE FUND
-      </SecondaryButton>
+      </RoundedSecondaryButton>
     </PartnerWrapper>
   );
 };
