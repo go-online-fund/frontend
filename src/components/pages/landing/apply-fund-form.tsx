@@ -4,7 +4,7 @@ import { TextField, TextArea, SuccessText } from '../../elements/form-control';
 import { PrimaryButton } from '../../elements/buttons';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import Loading from "../../common/loading";
+import Loading from '../../common/loading';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;
@@ -60,7 +60,7 @@ const ApplyFundForm: React.FC = () => {
     <ApplyFundSection>
       <ApplyFundFormHeader id='applyForFund'>
         APPLY FOR THE FUND
-          </ApplyFundFormHeader>
+      </ApplyFundFormHeader>
       {
         !isLoading && !isSubmitted && (
           <ApplyFundFormWrapper onSubmit={submitForm}>
@@ -133,7 +133,7 @@ const ApplyFundForm: React.FC = () => {
               type='submit'
             >
               Submit
-                </PrimaryButton>
+            </PrimaryButton>
           </ApplyFundFormWrapper>
         )
       }
@@ -145,13 +145,17 @@ const ApplyFundForm: React.FC = () => {
       {
         isSubmitted && !isLoading && (
           <SuccessText type='light'>
-            Thank you. Your application has been submitted. <br /> We will be in touch with you shortly if we
-                are able to support your application.
+            Thank you. Your application has been submitted.
+            {' '}
+            <br />
+            {' '}
+            We will be in touch with you shortly if we
+            are able to support your application.
           </SuccessText>
         )
       }
     </ApplyFundSection>
   );
-}
+};
 
 export default ApplyFundForm;

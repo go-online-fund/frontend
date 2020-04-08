@@ -1,47 +1,47 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CountUp from 'react-countup';
 
 const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: {max: 4000, min: 3000},
-        items: 5,
-    },
-    desktop: {
-        breakpoint: {max: 3000, min: 1024},
-        items: 3,
-    },
-    tablet: {
-        breakpoint: {max: 1024, min: 464},
-        items: 2,
-    },
-    mobile: {
-        breakpoint: {max: 464, min: 0},
-        items: 1,
-    },
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
 };
 
 const responsiveSupport = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: {max: 4000, min: 3000},
-        items: 2,
-    },
-    desktop: {
-        breakpoint: {max: 3000, min: 1024},
-        items: 2,
-    },
-    tablet: {
-        breakpoint: {max: 1024, min: 464},
-        items: 2,
-    },
-    mobile: {
-        breakpoint: {max: 464, min: 0},
-        items: 1,
-    },
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 2,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
 };
 
 
@@ -124,54 +124,87 @@ const SecondaryButton = styled.div`
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
     import('smoothscroll-polyfill').then((smoothscroll) => {
-        smoothscroll.polyfill();
+      smoothscroll.polyfill();
     });
 }
 
 
 const Partner: React.FC = () => {
-    const [open, setOpen] = useState(false);
-    const smoothScroll = (target: string) => {
-        if (open) {
-            setOpen(false);
-        }
-        const targetElement = document.getElementById(target)?.offsetTop;
-        window.scrollTo({
-            top: targetElement,
-            behavior: 'smooth'
-        });
-    };
+  const [open, setOpen] = useState(false);
+  const smoothScroll = (target: string) => {
+    if (open) {
+      setOpen(false);
+    }
+    const targetElement = document.getElementById(target)?.offsetTop;
+    window.scrollTo({
+      top: targetElement,
+      behavior: 'smooth',
+    });
+  };
 
-    return (
-        <PartnerWrapper>
-            <PartnerHeader>Proudly Supported By</PartnerHeader>
-            <Carousel responsive={responsive} infinite>
-                <PartnerIcon
-                    src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg"></PartnerIcon>
-                <PartnerText>Add <br/> your company</PartnerText>
-                <PartnerText>Add <br/>your company</PartnerText>
-                <PartnerText>Add <br/>your company</PartnerText>
-                <PartnerText>Add <br/>your company</PartnerText>
-            </Carousel>
-            <PartnerHeader>Thanks to your support</PartnerHeader>
-            <Carousel responsive={responsiveSupport}>
-                <PartnerSupport>
-                   SGD <CountUp
-                    formattingFn={(e) => e.toLocaleString('en-US')} start={100}
-                    end={10000}
-                /> <br/><span style={{color: 'white', fontSize: '20px'}}>raised</span>
-                </PartnerSupport>
-                <PartnerSupport>
-                    <CountUp
-                        formattingFn={(e) => e.toLocaleString('en-US')} start={0}
-                        end={1}/> <br/><span style={{color: 'white', fontSize: '20px'}}>SME supported</span>
-                </PartnerSupport>
-            </Carousel>
-            <SecondaryButton onClick={() => smoothScroll('beASponsor')}>
-                SUPPORT THE FUND
-            </SecondaryButton>
-        </PartnerWrapper>
-    );
-}
+  return (
+    <PartnerWrapper>
+      <PartnerHeader>Proudly Supported By</PartnerHeader>
+      <Carousel responsive={responsive} infinite>
+        <PartnerIcon
+          src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
+        />
+        <PartnerText>
+          Add
+          {' '}
+          <br />
+          {' '}
+          your company
+        </PartnerText>
+        <PartnerText>
+          Add
+          {' '}
+          <br />
+          your company
+        </PartnerText>
+        <PartnerText>
+          Add
+          {' '}
+          <br />
+          your company
+        </PartnerText>
+        <PartnerText>
+          Add
+          {' '}
+          <br />
+          your company
+        </PartnerText>
+      </Carousel>
+      <PartnerHeader>Thanks to your support</PartnerHeader>
+      <Carousel responsive={responsiveSupport}>
+        <PartnerSupport>
+          SGD
+          {' '}
+          <CountUp
+            formattingFn={(e) => e.toLocaleString('en-US')}
+            start={100}
+            end={10000}
+          />
+          {' '}
+          <br />
+          <span style={{ color: 'white', fontSize: '20px' }}>raised</span>
+        </PartnerSupport>
+        <PartnerSupport>
+          <CountUp
+            formattingFn={(e) => e.toLocaleString('en-US')}
+            start={0}
+            end={1}
+          />
+          {' '}
+          <br />
+          <span style={{ color: 'white', fontSize: '20px' }}>SME supported</span>
+        </PartnerSupport>
+      </Carousel>
+      <SecondaryButton onClick={() => smoothScroll('beASponsor')}>
+        SUPPORT THE FUND
+      </SecondaryButton>
+    </PartnerWrapper>
+  );
+};
 
 export default Partner;

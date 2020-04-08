@@ -75,7 +75,7 @@ const imageSize = css`
     width: 200px;
     height: 200px;
   }
-`
+`;
 
 const CommunicationIcon = styled.img`
   ${imageSize}
@@ -97,37 +97,39 @@ const LearningIcon = styled.img`
   ${imageSize}
 `;
 
-const MoveOnline: React.FC = () => {
-  return (
-    <MoveOnlineWrapper>
-      <MoveOnlineTitle><MoveOnlineDescription>The Fund</MoveOnlineDescription> will be used to help small businesses succeed online</MoveOnlineTitle>
-      <LearningPointHalfFlex>
-          <CommunicationIcon src={Communication} alt='communication icon' />
-        <LearningTitle>Communication Tool</LearningTitle>
-        <LearningDescription>Communication tools for your staff</LearningDescription>
-      </LearningPointHalfFlex>
-      <LearningPointHalfFlex>
-          <DeliveryIcon src={Delivery} alt='delivery icon' />
-        <LearningTitle>Delivery</LearningTitle>
-        <LearningDescription>A delivery method for your goods/services</LearningDescription>
-      </LearningPointHalfFlex>
-      <LearningPointThirdFlex>
-        <WebsiteIcon src={Website} alt='website icon' />
-        <LearningTitle>Website</LearningTitle>
-        <LearningDescription>Build a website</LearningDescription>
-      </LearningPointThirdFlex>
-      <LearningPointThirdFlex>
-          <MarketingIcon src={Marketing} alt='marketing icon' />
+const MoveOnline: React.FC = () => (
+  <MoveOnlineWrapper>
+    <MoveOnlineTitle>
+      <MoveOnlineDescription>The Fund</MoveOnlineDescription>
+      {' '}
+      will be used to help small businesses succeed online
+    </MoveOnlineTitle>
+    <LearningPointHalfFlex>
+      <CommunicationIcon src={Communication} alt='communication icon' />
+      <LearningTitle>Communication Tool</LearningTitle>
+      <LearningDescription>Communication tools for your staff</LearningDescription>
+    </LearningPointHalfFlex>
+    <LearningPointHalfFlex>
+      <DeliveryIcon src={Delivery} alt='delivery icon' />
+      <LearningTitle>Delivery</LearningTitle>
+      <LearningDescription>A delivery method for your goods/services</LearningDescription>
+    </LearningPointHalfFlex>
+    <LearningPointThirdFlex>
+      <WebsiteIcon src={Website} alt='website icon' />
+      <LearningTitle>Website</LearningTitle>
+      <LearningDescription>Build a website</LearningDescription>
+    </LearningPointThirdFlex>
+    <LearningPointThirdFlex>
+      <MarketingIcon src={Marketing} alt='marketing icon' />
       <LearningTitle>Marketing</LearningTitle>
       <LearningDescription>Market your products/services via social media</LearningDescription>
-      </LearningPointThirdFlex>
-      <LearningPointThirdFlex>
-          <LearningIcon src={Learning} alt='learning icon' />
-        <LearningTitle>Learning</LearningTitle>
-        <LearningDescription>Online learning/teaching platform</LearningDescription>
-      </LearningPointThirdFlex>
-    </MoveOnlineWrapper>
-  );
-}
+    </LearningPointThirdFlex>
+    <LearningPointThirdFlex>
+      <LearningIcon src={Learning} alt='learning icon' />
+      <LearningTitle>Learning</LearningTitle>
+      <LearningDescription>Online learning/teaching platform</LearningDescription>
+    </LearningPointThirdFlex>
+  </MoveOnlineWrapper>
+);
 
 export default MoveOnline;

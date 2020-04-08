@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export enum StylesSchema {
   Yellow = '#fbc91b',
   Black = '#000',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Carousel from "react-multi-carousel";
+import Carousel from 'react-multi-carousel';
 
 const responsive = {
   superLargeDesktop: {
@@ -108,7 +108,7 @@ const WhoWeSupport: React.FC = () => {
     const targetElement = document.getElementById(target)?.offsetTop;
     window.scrollTo({
       top: targetElement,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -117,7 +117,10 @@ const WhoWeSupport: React.FC = () => {
       <SupportHeader>WHO WILL THE FUND HELP?</SupportHeader>
       <Carousel responsive={responsive} infinite>
         <SupportBusiness>
-          <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586243859/food_delivery_circle_j53j3f.png" alt="singapore hawker center" />
+          <SupportBusinessImg
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586243859/food_delivery_circle_j53j3f.png'
+            alt='singapore hawker center'
+          />
           <SupportBusinessTitle>
             The Hawker Owners
           </SupportBusinessTitle>
@@ -126,16 +129,23 @@ const WhoWeSupport: React.FC = () => {
           </SupportBusinessDesc>
         </SupportBusiness>
         <SupportBusiness>
-          <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586250220/small_business_circle_mcn2ky.png" alt="singapore hawker center" />
+          <SupportBusinessImg
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586250220/small_business_circle_mcn2ky.png'
+            alt='singapore hawker center'
+          />
           <SupportBusinessTitle>
             The Small Business
           </SupportBusinessTitle>
           <SupportBusinessDesc>
-            Teach them how to use online marketing more effectively through Facebook, Youtube, and Instagram advertising help.
+            Teach them how to use online marketing more effectively through Facebook,
+            Youtube, and Instagram advertising help.
           </SupportBusinessDesc>
         </SupportBusiness>
         <SupportBusiness>
-          <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586246638/video_maker_freelance_circle_z09vy7.png" alt="singapore hawker center" />
+          <SupportBusinessImg
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586246638/video_maker_freelance_circle_z09vy7.png'
+            alt='singapore hawker center'
+          />
           <SupportBusinessTitle>
             The Freelance Producers
           </SupportBusinessTitle>
@@ -144,7 +154,10 @@ const WhoWeSupport: React.FC = () => {
           </SupportBusinessDesc>
         </SupportBusiness>
         <SupportBusiness>
-          <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586251450/freelance_teacher_circle_tghd6b.png" alt="singapore hawker center" />
+          <SupportBusinessImg
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586251450/freelance_teacher_circle_tghd6b.png'
+            alt='singapore hawker center'
+          />
           <SupportBusinessTitle>
             The Independent Teachers
           </SupportBusinessTitle>
@@ -153,13 +166,13 @@ const WhoWeSupport: React.FC = () => {
           </SupportBusinessDesc>
         </SupportBusiness>
       </Carousel>
-      <SecondaryButton 
+      <SecondaryButton
         onClick={() => smoothScroll('applyForFund')}
       >
         APPLY
-       </SecondaryButton>
+      </SecondaryButton>
     </Support>
   );
-}
+};
 
 export default WhoWeSupport;

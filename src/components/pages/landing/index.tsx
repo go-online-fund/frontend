@@ -6,14 +6,14 @@ import Partner from './partner';
 import SponsorsForm from './sponsors-form';
 import WhoWeSupport from './who-need-help';
 
-const Landing: React.FC = ()  => (
+const Landing: React.FC = () => (
   <>
-    <CallToAction/>
-    <Partner/>
-    <SponsorsForm/>
-    <MoveOnline/>
-    <WhoWeSupport/>
-    <ApplyFundForm/>
+    <CallToAction />
+    <Partner />
+    <SponsorsForm />
+    <MoveOnline />
+    <WhoWeSupport />
+    <ApplyFundForm />
   </>
 );
 

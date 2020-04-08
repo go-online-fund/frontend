@@ -2,7 +2,7 @@ import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import Loading from "../../common/loading";
+import Loading from '../../common/loading';
 import { PrimaryButton } from '../../elements/buttons';
 import { Select, SuccessText, TextField } from '../../elements/form-control';
 
@@ -107,8 +107,8 @@ const SponsorsForm: React.FC = () => {
     const contributionArea = e.map(({ value }) => value).join(',');
     setSponsorForm({
       ...sponsorForm,
-      contributionArea
-    })
+      contributionArea,
+    });
   };
 
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -202,6 +202,6 @@ const SponsorsForm: React.FC = () => {
       }
     </SponsorSection>
   );
-}
+};
 
 export default SponsorsForm;

@@ -23,6 +23,11 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off',
-    'jsx-quotes': ['error', 'prefer-single']
+    'jsx-quotes': ['error', 'prefer-single'],
+    'max-len': ['error', { 
+      'code': 120,
+    }],
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   }
 };
