@@ -24,7 +24,11 @@ const StyledBurger = styled.button`
   justify-content: space-around;
   padding: 0;
   width: 2rem;
-  z-index: 10;
+  z-index: 101;
+  
+  @media (max-width: 415px) {
+   margin-right: 25px
+  }
   
   @media (min-width: 768px){
     display: none;

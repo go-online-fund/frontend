@@ -5,6 +5,7 @@ import {ReactVideoPlay, VideoSourceType} from 'react-video-play';
 import 'react-video-play/public/css/react-video-play.css';
 
 const CallToActionHeader = styled.p`
+  padding-top: 20px;
   text-align: justify;
   font-size: 2.5em;
   font-weight: bold;
@@ -12,6 +13,7 @@ const CallToActionHeader = styled.p`
    @media (max-width: 415px) {
     font-size: 22px;
     text-align: left;
+    padding-top: 40px;
    }
 }
 `;
@@ -28,22 +30,26 @@ const CallToActionWrapper = styled.section`
   flex-direction: column;
   padding: 2rem 2rem;  
   position: relative;
-  height: 350px;
+  height: 370px;
   border-bottom: 2px solid white;
+  
+  @media (max-width: 415px) {
+    height: 390px;
+  }
 `;
 
 const CallToActionVideo = styled.div`
    @media (max-width: 415px) {
-     margin-top: 80px;
+     margin-top: 100px;
      width: 90vw;
      height: 190px;
    }
-  height: 360px;
-  width: 40vw;
+  height: 320px;
+  width: 38vw;
   border: 3px solid white;
   border-radius: 5px;
   position: absolute;
-  top: 240px  
+  top: 260px  
 `;
 
 const HighlightDescription = styled.span`

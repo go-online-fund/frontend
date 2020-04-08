@@ -86,3 +86,7 @@ video {
 .ui-video-player-component {
     min-height: 100% !important;
 }
+
+.ui-video-player-component .ui-video-player-controls .controllers-block .hq {
+  display: none !important;
+}

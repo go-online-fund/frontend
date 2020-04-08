@@ -6,6 +6,10 @@ import Burger from './burger';
 import SlideMenu from './slide-menu';
 
 const HeaderWrapper = styled.header`
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
   background: #2c2c2c;
   display: flex;
   padding: 1rem 2rem 1rem 0.5rem;

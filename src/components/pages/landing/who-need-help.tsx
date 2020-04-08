@@ -129,7 +129,7 @@ const WhoWeSupport: React.FC = () => {
                 <SupportBusiness>
                     <SupportBusinessImg src="https://res.cloudinary.com/doaxab4ly/image/upload/v1586250220/small_business_circle_mcn2ky.png" alt="singapore hawker center"/>
                     <SupportBusinessTitle>
-                        The Small Business
+                        The Small Businesses
                     </SupportBusinessTitle>
                     <SupportBusinessDesc>
                         Teach them how to use online marketing more effectively through Facebook, Youtube, and Instagram advertising help.
