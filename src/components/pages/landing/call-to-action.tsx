@@ -68,7 +68,7 @@ const src = [
     {
         name: 'video',
         source: [{
-            source: 'https://res.cloudinary.com/doaxab4ly/video/upload/v1586277876/online_fund_fxondq.mp4',
+            source: 'https://res.cloudinary.com/doaxab4ly/video/upload/v1586312300/move_online_fund_zfgobo.mp4',
             type: VideoSourceType.video_mp4
         }]
     }
