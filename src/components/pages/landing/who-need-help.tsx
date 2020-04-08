@@ -137,8 +137,7 @@ const WhoWeSupport: React.FC = () => {
             The Small Business
           </SupportBusinessTitle>
           <SupportBusinessDesc>
-            Teach them how to use online marketing more effectively through Facebook,
-            Youtube, and Instagram advertising help.
+            Teach them how to use online marketing more effectively through Facebook, Youtube, and Instagram advertising help.
           </SupportBusinessDesc>
         </SupportBusiness>
         <SupportBusiness>
