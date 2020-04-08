@@ -69,7 +69,7 @@ const PartnerHeader = styled.h1`
   }
   
    @media (min-width: 2000px) {
-    padding-top: 160px;
+    padding-top: 200px;
   }
   
 `;
