@@ -26,14 +26,12 @@ const LoadingDot = styled.div`
 `;
 
 
-const Loading: React.FC = () => {
-    return (
-        <LoadingWrapper>
-            <LoadingDot/>
-            <LoadingDot/>
-            <LoadingDot/>
-        </LoadingWrapper>
-    );
-}
+const Loading: React.FC = () => (
+  <LoadingWrapper>
+    <LoadingDot />
+    <LoadingDot />
+    <LoadingDot />
+  </LoadingWrapper>
+);
 
 export default Loading;

@@ -73,35 +73,33 @@ const src = [
     name: 'video',
     source: [{
       source: 'https://res.cloudinary.com/dhoy4ync0/video/upload/v1584441229/nas_company_final_gn0txs.mp4',
-      type: VideoSourceType.video_mp4
-    }]
-  }
-]
+      type: VideoSourceType.video_mp4,
+    }],
+  },
+];
 
-const CallToAction: React.FC = () => {
-  return (
-    <CallToActionWrapper>
-      <CallToActionHeader>
-        HELP 
-        <CallToActionHighlight>
-          BUSINESS
-        </CallToActionHighlight>
-          MOVE 
-        <CallToActionHighlight>
-          ONLINE
-        </CallToActionHighlight>
-      </CallToActionHeader>
-      <HighlightDescription>
-        Many small businesses are struggling with COVID-19 Circuit Breaker.
-        They don’t know how to move online or they can’t afford to.
-        <br />
-        The Online Fund is meant to help small businesses in Singapore move their operations online.
-      </HighlightDescription>
-      <CallToActionVideo>
-        <ReactVideoPlay sources={src} />
-      </CallToActionVideo>
-    </CallToActionWrapper>
-  );
-}
+const CallToAction: React.FC = () => (
+  <CallToActionWrapper>
+    <CallToActionHeader>
+      HELP
+      <CallToActionHighlight>
+        BUSINESS
+      </CallToActionHighlight>
+      MOVE
+      <CallToActionHighlight>
+        ONLINE
+      </CallToActionHighlight>
+    </CallToActionHeader>
+    <HighlightDescription>
+      Many small businesses are struggling with COVID-19 Circuit Breaker.
+      They don’t know how to move online or they can’t afford to.
+      <br />
+      The Online Fund is meant to help small businesses in Singapore move their operations online.
+    </HighlightDescription>
+    <CallToActionVideo>
+      <ReactVideoPlay sources={src} />
+    </CallToActionVideo>
+  </CallToActionWrapper>
+);
 
 export default CallToAction;

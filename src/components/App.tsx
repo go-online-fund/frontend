@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import { StylesSchema } from '../shared/enums/styles';
 import './App.css';
-import Footer from "./footer/footer";
+import Footer from './footer/footer';
 import Header from './header/header';
 import Landing from './pages/landing';
-import ReactGA from 'react-ga';
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -19,11 +19,11 @@ const App: React.FC = () => {
 
   return (
     <AppWrapper>
-      <Header/>
+      <Header />
       <Landing />
-      <Footer/>
+      <Footer />
     </AppWrapper>
   );
-}
+};
 
 export default App;
