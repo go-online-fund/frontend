@@ -1,10 +1,10 @@
 import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
-import { TextField, SuccessText, Select } from '../../elements/form-control';
-import { PrimaryButton } from '../../elements/buttons';
-import FormsService from '../../../shared/services/forms.service';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
+import FormsService from '../../../shared/services/forms.service';
 import Loading from "../../common/loading";
+import { PrimaryButton } from '../../elements/buttons';
+import { Select, SuccessText, TextField } from '../../elements/form-control';
 
 interface SponsorHelpOption {
   value: string;
@@ -17,8 +17,7 @@ const SponsorSection = styled.div`
   text-align: center;
   align-items: center;
   height: 100%;
-  background: #fbc91b
-  }
+  background: #fbc91b;
 `;
 
 
@@ -50,30 +49,30 @@ const SponsorsFormWrapper = styled.form`
 `;
 
 const BigTextHeader = styled.p`
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 `;
 
 const SmallTextHeader = styled.p`
-    font-size: 71px;
-    font-weight: bold;
-    margin-top: 0px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    
-    @media (max-width: 415px) {
-       font-size: 57px;
-    }
+  font-size: 71px;
+  font-weight: bold;
+  margin-top: 0px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  
+  @media (max-width: 415px) {
+    font-size: 57px;
+  }
 `;
 
 const NormalTextHeader = styled.p`
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 `;
 
 
@@ -97,6 +96,13 @@ const SponsorsForm: React.FC = () => {
 
   const onSelect = (e: SponsorHelpOption[]) => {
     setSelectValues(e);
+    if (!e) {
+      setSponsorForm({
+        ...sponsorForm,
+        contributionArea: '',
+      });
+      return;
+    }
     const contributionArea = e.map(({ value }) => value).join(',');
     setSponsorForm({
       ...sponsorForm,
@@ -175,9 +181,11 @@ const SponsorsForm: React.FC = () => {
         isSubmitted && !isLoading && (
           <LoadingDiv>
             <SuccessText type='dark'>
-              Thank you for. Your response has been submitted. <br />We will be in touch with you shortly to discuss
-                            how you can support this initiative.
-                        </SuccessText>
+              Thank you for. Your response has been submitted.
+              <br />
+              We will be in touch with you shortly to discuss
+              how you can support this initiative.
+            </SuccessText>
           </LoadingDiv>
         )
       }
