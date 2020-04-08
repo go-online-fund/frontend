@@ -10,5 +10,6 @@ export interface FundApplication {
 export interface SponsorApplication {
   companyName: string;
   companyEmail: string;
+  contactNumber: string;
   contributionArea: string;
 }
