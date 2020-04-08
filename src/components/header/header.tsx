@@ -6,13 +6,14 @@ import Burger from './burger';
 import SlideMenu from './slide-menu';
 
 const HeaderWrapper = styled.header`
+  box-sizing: border-box;
   position: fixed;
   z-index: 100;
   top: 0;
   width: 100%;
   background: ${StylesSchema.DarkGrey};
   display: flex;
-  padding: 1rem 2rem 1rem 0.5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
   justify-content: space-between;
 
   @media (min-width: 768px){
@@ -22,7 +23,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const NavAnchor = styled.a`
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
   color: ${StylesSchema.LightGrey};

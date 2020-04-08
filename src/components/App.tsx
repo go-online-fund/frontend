@@ -31,6 +31,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     ReactGA.initialize('UA-162979146-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
     window.addEventListener('scroll', () => onScroll());
 
     return () => {

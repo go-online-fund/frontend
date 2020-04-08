@@ -26,10 +26,6 @@ const StyledBurger = styled.button`
   width: 2rem;
   z-index: 101;
   
-  @media (max-width: 415px) {
-   margin-right: 25px
-  }
-  
   @media (min-width: 768px){
     display: none;
   }
