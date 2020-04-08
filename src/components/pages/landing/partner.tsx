@@ -67,6 +67,11 @@ const PartnerHeader = styled.h1`
   @media (max-width: 415px) {
     padding-top: 40px;
   }
+  
+   @media (min-width: 2000px) {
+    padding-top: 80px;
+  }
+  
 `;
 
 const PartnerIcon = styled.img`
