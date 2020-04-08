@@ -20,7 +20,6 @@ const SponsorSection = styled.div`
   background: #fbc91b;
 `;
 
-
 const LoadingDiv = styled.div`
  height: 400px;
  padding-top: 400px;
@@ -37,14 +36,14 @@ const SponsorsFormWrapper = styled.form`
   background-position: left -20px;
   
   @media (max-width: 415px){
-    background: #fbc91b !important
+    background: #fbc91b !important;
     background-size: contain;
     height: 100%;
     background-repeat: no-repeat;
   }
   
   @media (min-width: 1800px){
-    background-size: cover
+    background-size: cover;
   }
 `;
 

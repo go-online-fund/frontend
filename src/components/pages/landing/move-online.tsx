@@ -18,7 +18,7 @@ const MoveOnlineTitle = styled.h1`
   text-align: center;
   font-size: 2em;
   margin-bottom: 40px;
-  padding-top: 40x
+  padding-top: 40px;
   text-transform: uppercase;
   width: 100%;
 `;

@@ -75,13 +75,12 @@ const PartnerHeader = styled.h1`
 `;
 
 const PartnerIcon = styled.img`
+  cursor: pointer;
+  transition: transform 0.5s ease;
   width: 200px;
-  
+
   &:hover {
-    cursor: pointer;
     transform: scale(1.1);
-    transform-duration: 500
-    
   }
 `;
 

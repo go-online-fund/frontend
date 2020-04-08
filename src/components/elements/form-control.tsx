@@ -44,7 +44,6 @@ export const SuccessText = styled.div<SuccessTextProps>`
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
-  align-item: center;
   padding-bottom: 40px;
   font-size: 20px
 `;
