@@ -21,4 +21,8 @@ module.exports = {
     'airbnb/hooks',
     'plugin:jsx-a11y/recommended',
   ],
+  rules: {
+    'react/prop-types': 'off',
+    'jsx-quotes': ['error', 'prefer-single']
+  }
 };

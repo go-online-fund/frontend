@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const FooterWrapper = styled.footer`
   height: 100%;
@@ -30,19 +30,17 @@ const ChevronUpIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const Footer: React.FC = () => {
-  return (
-    <FooterWrapper>
-      <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
-      <br />
-      <span>All Rights Reserved © 2020</span>
-      <br />
-      <span style={{ fontSize: '12px' }}>10 Central Exchange Green, Singapore 138649</span>
-      <div id='return-to-top'>
-        <ChevronUpIcon icon={faChevronUp} />
-      </div>
-    </FooterWrapper>
-  );
-}
+const Footer: React.FC = () => (
+  <FooterWrapper>
+    <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
+    <br />
+    <span>All Rights Reserved © 2020</span>
+    <br />
+    <span style={{ fontSize: '12px' }}>10 Central Exchange Green, Singapore 138649</span>
+    <div id='return-to-top'>
+      <ChevronUpIcon icon={faChevronUp} />
+    </div>
+  </FooterWrapper>
+);
 
 export default Footer;

@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import { StylesSchema } from "../../shared/enums/styles";
-import React from "react";
+import styled, { css } from 'styled-components';
+import React from 'react';
+import { StylesSchema } from '../../shared/enums/styles';
 
 const formControlStyles = css`
   border: none;
@@ -40,7 +40,7 @@ interface SuccessTextProps {
 }
 
 export const SuccessText = styled.div<SuccessTextProps>`
-  color: ${({ type }) => type === 'dark' ? StylesSchema.White : StylesSchema.Yellow};
+  color: ${({ type }) => (type === 'dark' ? StylesSchema.White : StylesSchema.Yellow)};
   font-weight: bold;
   text-align: center;
   margin: 0 auto;

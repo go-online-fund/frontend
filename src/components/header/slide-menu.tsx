@@ -17,7 +17,7 @@ const StyledMenu = styled.nav<StyledMenuProps>`
   position: absolute;
   text-align: center;
   top: 0;
-  transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
+  transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
   transition: transform 0.3s ease-in-out;
   width: 100vw;
   z-index: 100;
@@ -48,17 +48,15 @@ interface SlideMenuProps {
   onNavigation: (id: string) => void;
 }
 
-const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => {
-  return (
-    <StyledMenu open={open}>
-      <NavAnchor onClick={() => onNavigation('applyForFund')}>
-        Apply For Fund
-      </NavAnchor>
-      <NavAnchor onClick={() => onNavigation('applyForFund')}>
-        Be a Sponsor
-      </NavAnchor>
-    </StyledMenu>
-  )
-}
+const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => (
+  <StyledMenu open={open}>
+    <NavAnchor onClick={() => onNavigation('applyForFund')}>
+      Apply For Fund
+    </NavAnchor>
+    <NavAnchor onClick={() => onNavigation('applyForFund')}>
+      Be a Sponsor
+    </NavAnchor>
+  </StyledMenu>
+);
 
 export default SlideMenu;

@@ -66,7 +66,7 @@ const NasCompanyLogo = styled(NasCompanyImage)`
 
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
-	import('smoothscroll-polyfill').then((smoothscroll) => {
+  import('smoothscroll-polyfill').then((smoothscroll) => {
     smoothscroll.polyfill();
   });
 }
@@ -88,23 +88,30 @@ const Header: React.FC = () => {
       setOpen(false);
     }
     const targetElement = document.getElementById(target)?.offsetTop;
-    window.scrollTo({ 
-      top: targetElement, 
-      behavior: 'smooth'
+    window.scrollTo({
+      top: targetElement,
+      behavior: 'smooth',
     });
   };
 
   return (
     <HeaderWrapper>
-        <a href="https://nasdaily.com" target="_blank"><NasCompanyLogo /></a>
+      <a
+        href='https://nasdaily.com'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <NasCompanyLogo />
+
+      </a>
       <Navigation>
         <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
         <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
-      </Navigation> 
+      </Navigation>
       <Burger open={open} setOpen={setOpen} />
       <SlideMenu open={open} onNavigation={smoothScroll} />
     </HeaderWrapper>
   );
-}
+};
 
 export default Header;

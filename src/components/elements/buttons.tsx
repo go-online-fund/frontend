@@ -1,7 +1,9 @@
-import styled from "styled-components";
-import { StylesSchema } from "../../shared/enums/styles";
+import styled from 'styled-components';
+import { StylesSchema } from '../../shared/enums/styles';
 
-export const PrimaryButton = styled.button `
+// to do, include other button styles
+// eslint-disable-next-line import/prefer-default-export
+export const PrimaryButton = styled.button`
   background-image: ${StylesSchema.BlackGradient};
   border: 0;
   color: ${StylesSchema.White};
