@@ -39,12 +39,12 @@ const CallToActionWrapper = styled.section`
 `;
 
 const CallToActionVideo = styled.div`
-   @media (max-width: 411px) {
+   @media (max-width: 415px) {
      margin-top: 100px;
      width: 90vw;
-     height: 210px;
+     height: 190px;
    }
-  height: 308px;
+  height: 320px;
   width: 38vw;
   border: 3px solid white;
   border-radius: 5px;
