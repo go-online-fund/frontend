@@ -34,7 +34,7 @@ const CallToActionWrapper = styled.section`
   border-bottom: 2px solid white;
   
   @media (max-width: 415px) {
-    height: 410px;
+    height: 390px;
   }
 `;
 
@@ -46,7 +46,7 @@ const CallToActionVideo = styled.div`
    }
    
   @media (min-width: 2000px) {
-    height: 550px;
+    height: 405px;
   }
   
   height: 310px;
