@@ -15,7 +15,6 @@ const CallToActionHeader = styled.p`
     text-align: left;
     padding-top: 40px;
   }
-}
 `;
 
 const CallToActionHighlight = styled.span`
