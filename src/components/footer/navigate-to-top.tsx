@@ -20,7 +20,7 @@ const NavigateToTopWrapper = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
-    background: #fbc91b;
+    background: ${StylesSchema.Yellow};
     color: white;
   }
 `;

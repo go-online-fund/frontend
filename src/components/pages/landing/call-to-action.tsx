@@ -5,15 +5,15 @@ import { StylesSchema } from '../../../shared/enums/styles';
 import 'react-video-play/public/css/react-video-play.css';
 
 const CallToActionHeader = styled.p`
-  padding-top: 20px;
-  text-align: justify;
-  font-size: 2.5em;
-  font-weight: bold;
-  
-  @media (max-width: 415px) {
-    font-size: 22px;
-    text-align: left;
-    padding-top: 40px;
+  font-weight: bold;  
+  font-size: 1.4rem;
+  text-align: left;
+  padding-top: 40px;
+
+  @media (min-width: 415px) {
+    font-size: 2.5em;
+    text-align: justify;
+    padding-top: 20px;
   }
 `;
 
@@ -27,7 +27,7 @@ const CallToActionWrapper = styled.section`
   background-color: ${StylesSchema.Yellow};
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;  
+  padding: 2rem;  
   position: relative;
   height: 370px;
   border-bottom: 2px solid white;
@@ -38,33 +38,34 @@ const CallToActionWrapper = styled.section`
 `;
 
 const CallToActionVideo = styled.div`
-  @media (max-width: 415px) {
-    margin-top: 100px;
-    width: 90vw;
-    height: 190px;
+  border: 3px solid white;
+  border-radius: 5px;
+  height: 190px;
+  margin-top: 100px;
+  position: absolute;
+  top: 260px;
+  width: 90vw;
+
+  @media (min-width: 415px) {
+    margin-top: 0px;
+    height: 340px;
+    width: 38vw;
   }
    
   @media (min-width: 2000px) {
     height: 470px;
   }
-  
-  height: 340px;
-  width: 38vw;
-  border: 3px solid white;
-  border-radius: 5px;
-  position: absolute;
-  top: 260px  
 `;
 
 const HighlightDescription = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
-  text-align: center;
-  
-  @media (max-width: 415px) {
-    font-size: 16px;
-    text-align: justify
+  text-align: justify;
+
+  @media (min-width: 415px) {
+    font-size: 18px;
+    text-align: center;
   }
 `;
 
@@ -82,9 +83,11 @@ const CallToAction: React.FC = () => (
   <CallToActionWrapper>
     <CallToActionHeader>
       HELP
+      {' '}
       <CallToActionHighlight>BUSINESS</CallToActionHighlight>
       {' '}
       MOVE
+      {' '}
       <CallToActionHighlight>ONLINE</CallToActionHighlight>
     </CallToActionHeader>
     <HighlightDescription>
