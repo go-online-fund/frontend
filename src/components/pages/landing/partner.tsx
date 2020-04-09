@@ -132,6 +132,7 @@ const Partner: React.FC = () => {
         itemClass='sponsor-icon'
       >
         <PartnerIcon
+          alt='Nas Daily'
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />
         <PartnerText>

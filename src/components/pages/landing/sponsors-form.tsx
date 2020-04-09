@@ -131,7 +131,8 @@ const SponsorsForm: React.FC = () => {
         !isLoading && !isSubmitted && (
           <SponsorsFormWrapper onSubmit={submitForm}>
             <TextField
-              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              aria-label='Company name'
+              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               required
               placeholder='Company name'
               value={sponsorForm.companyName}
@@ -141,7 +142,8 @@ const SponsorsForm: React.FC = () => {
               })}
             />
             <TextField
-              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              aria-label='Company Email'
+              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               required
               type='email'
               placeholder='Company Email'
@@ -152,7 +154,8 @@ const SponsorsForm: React.FC = () => {
               })}
             />
             <TextField
-              style={{ background: 'white', paddingTop: '15px', paddingBottom: '15px' }}
+              aria-label='Contact Number'
+              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               type='tel'
               placeholder='Contact number'
               value={sponsorForm.contactNumber}
@@ -163,9 +166,9 @@ const SponsorsForm: React.FC = () => {
             />
             <Suspense fallback={<div>Loading Options...</div>}>
               <Select
-                placeholder={<div>What would you like to contribute?</div>}
+                aria-label='Contribution'
+                placeholder='What would you like to contribute?'
                 required
-                style={{ paddingTop: '40px', paddingBottom: '40px', height: '60px' }}
                 options={options}
                 isMulti
                 onChange={onSelect}

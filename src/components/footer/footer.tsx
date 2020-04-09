@@ -31,7 +31,10 @@ const FooterLogo = styled.img`
 
 const Footer: React.FC = () => (
   <FooterWrapper>
-    <FooterLogo src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg' />
+    <FooterLogo
+      alt='Nas Company Logo'
+      src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586099620/thenascompany_crbo5u.svg'
+    />
     <span>All Rights Reserved © 2020</span>
     <span>10 Central Exchange Green, Singapore 138649</span>
   </FooterWrapper>

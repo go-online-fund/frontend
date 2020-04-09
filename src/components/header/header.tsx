@@ -101,6 +101,7 @@ const Header: React.FC = () => {
         href='https://nasdaily.com'
         target='_blank'
         rel='noopener noreferrer'
+        aria-label='Nas Company Logo'
       >
         <NasCompanyLogo />
 

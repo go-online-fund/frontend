@@ -59,7 +59,10 @@ interface BurgerProps {
 }
 
 const Burger: React.FC<BurgerProps> = ({ open, setOpen }) => (
-  <StyledBurger onClick={() => setOpen(!open)}>
+  <StyledBurger
+    aria-label='menu'
+    onClick={() => setOpen(!open)}
+  >
     <Bun open={open} />
     <Patty open={open} />
     <Bun open={open} />

@@ -69,6 +69,7 @@ const ApplyFundForm: React.FC = () => {
             <TextField
               required
               placeholder='Company'
+              aria-label='Company Name'
               value={fundForm.companyName}
               onChange={(e) => setFundForm({
                 ...fundForm,
@@ -78,6 +79,7 @@ const ApplyFundForm: React.FC = () => {
             <TextField
               required
               placeholder='Company size'
+              aria-label='Company Size'
               value={fundForm.companySize}
               onChange={(e) => setFundForm({
                 ...fundForm,
@@ -88,6 +90,7 @@ const ApplyFundForm: React.FC = () => {
               required
               type='email'
               placeholder='Company Email'
+              aria-label='Company Email'
               value={fundForm.companyEmail}
               onChange={(e) => setFundForm({
                 ...fundForm,
@@ -96,6 +99,7 @@ const ApplyFundForm: React.FC = () => {
             />
             <TextArea
               required
+              aria-label='Business Description'
               placeholder='Tell us about your business'
               rows={4}
               value={fundForm.businessDescription}
@@ -106,6 +110,7 @@ const ApplyFundForm: React.FC = () => {
             />
             <TextArea
               required
+              aria-label='Business Challenge'
               placeholder='What is the biggest challenge for your business to get online?'
               rows={4}
               value={fundForm.businessChallenge}
@@ -116,6 +121,7 @@ const ApplyFundForm: React.FC = () => {
             />
             <TextArea
               required
+              aria-label='Business Priority'
               placeholder='What is the current top priority for your business?'
               rows={4}
               value={fundForm.businessPriority}
