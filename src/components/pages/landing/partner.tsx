@@ -135,13 +135,10 @@ const Partner: React.FC = () => {
           alt='Nas Daily'
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          {' '}
-          your company
-        </PartnerText>
+        <PartnerIcon
+            alt='Nas Daily'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
+        />
         <PartnerText>
           Add
           {' '}
@@ -172,7 +169,7 @@ const Partner: React.FC = () => {
           <CountUp
             formattingFn={(e) => e.toLocaleString('en-US')}
             start={100}
-            end={10000}
+            end={20000}
           />
           {' '}
           <br />
