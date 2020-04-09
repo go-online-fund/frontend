@@ -69,10 +69,9 @@ const PartnerHeader = styled.h1`
     padding-top: 40px;
   }
   
-   @media (min-width: 2000px) {
+  @media (min-width: 2000px) {
     padding-top: 200px;
   }
-  
 `;
 
 const PartnerIcon = styled.img`
@@ -90,7 +89,7 @@ const PartnerSupport = styled.div`
   font-size: 3em;
   font-weight: bold !important;
   
-   span {
+  span {
     font-weight: bold !important
   }
 `;
@@ -136,8 +135,8 @@ const Partner: React.FC = () => {
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />
         <PartnerIcon
-            alt='Nas Daily'
-            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
+          alt='Ayden'
+          src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
         />
         <PartnerText>
           Add
