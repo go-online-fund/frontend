@@ -82,10 +82,13 @@ const CallToAction: React.FC = () => (
   <CallToActionWrapper>
     <CallToActionHeader>
       HELP
+      {' '}
       <CallToActionHighlight>
         BUSINESS
+        {' '}
       </CallToActionHighlight>
       MOVE
+      {' '}
       <CallToActionHighlight>
         ONLINE
       </CallToActionHighlight>
