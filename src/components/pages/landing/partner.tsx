@@ -57,21 +57,22 @@ const PartnerWrapper = styled.div`
 `;
 
 const PartnerHeader = styled.h1`
-  color: ${StylesSchema.Yellow};
   font-size: 2em;
   text-transform: uppercase;
-  font-weight: bold;
   line-height: 1.5;
+  padding-top: 80px;
   padding-bottom: 40px;
-  padding-top: 40px;
+  font-weight: bold;
+  color: #fbc91b;
   
-  @media (min-width: 415px) {
-    padding-top: 80px;
+  @media (max-width: 415px) {
+    padding-top: 40px;
   }
-
-  @media (min-width: 2000px) {
+  
+   @media (min-width: 2000px) {
     padding-top: 200px;
   }
+  
 `;
 
 const PartnerIcon = styled.img`
@@ -85,29 +86,18 @@ const PartnerIcon = styled.img`
 `;
 
 const PartnerSupport = styled.div`
-  color: ${StylesSchema.Yellow};
-  display: flex;
-  flex-direction: column;
+  color: #fbc91b;
   font-size: 3em;
-  font-weight: bold;
-
-  > div {
-    margin-bottom: 1.8rem;
-  }
-
-  > span {
-    color: ${StylesSchema.White};
-    font-size: 1.2rem;
-  }
-
-  span {
-    font-weight: bold;
+  font-weight: bold !important;
+  
+   span {
+    font-weight: bold !important
   }
 `;
 
 const PartnerText = styled.p`
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
   color: white
@@ -146,27 +136,25 @@ const Partner: React.FC = () => {
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />
         <PartnerIcon
-          alt='Ayden'
-          src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
+            alt='Adyen'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
         />
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
+        <PartnerIcon
+            alt='Product Pixels'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/product_pixels_zf79wo.png'
+        />
+        <PartnerIcon
+            alt='ByKido'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png'
+        />
+        <PartnerIcon
+            alt='Wattah'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/wattah_c6ucsa.png'
+        />
+        <PartnerIcon
+            alt='E-alchemist'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/e-alchemist_nuxvus.png'
+        />
       </Carousel>
       <PartnerHeader>Thanks to your support</PartnerHeader>
       <Carousel
@@ -174,27 +162,26 @@ const Partner: React.FC = () => {
         containerClass='carousel-partner-support-container'
       >
         <PartnerSupport>
-          <div>
-            SGD
-            {' '}
-            <CountUp
-              formattingFn={(e) => e.toLocaleString('en-US')}
-              start={100}
-              end={20000}
-            />
-          </div>
-          <span>raised</span>
+          SGD
+          {' '}
+          <CountUp
+            formattingFn={(e) => e.toLocaleString('en-US')}
+            start={100}
+            end={44000}
+          />
+          {' '}
+          <br />
+          <span style={{ color: 'white', fontSize: '20px' }}>amount of resources raised</span>
         </PartnerSupport>
         <PartnerSupport>
-          <div>
-            <CountUp
-              formattingFn={(e) => e.toLocaleString('en-US')}
-              start={0}
-              end={1}
-            />
-          </div>
+          <CountUp
+            formattingFn={(e) => e.toLocaleString('en-US')}
+            start={0}
+            end={1}
+          />
           {' '}
-          <span>SME supported</span>
+          <br />
+          <span style={{ color: 'white', fontSize: '20px' }}>SME supported</span>
         </PartnerSupport>
       </Carousel>
       <RoundedSecondaryButton
