@@ -106,14 +106,6 @@ const PartnerSupport = styled.div`
   }
 `;
 
-const PartnerText = styled.p`
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white
-`;
-
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
   import('smoothscroll-polyfill').then((smoothscroll) => {
@@ -146,29 +138,12 @@ const Partner: React.FC = () => {
           partnersList.map(({ companyName, companyLogo }) => (
             <PartnerIcon
               alt={companyName}
+              title={companyName}
               src={companyLogo}
               key={`${companyName.replace(/\s+/g, '')}`}
             />
           ))
         }
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
       </Carousel>
       <PartnerHeader>Thanks to your support</PartnerHeader>
       <Carousel
@@ -176,16 +151,16 @@ const Partner: React.FC = () => {
         containerClass='carousel-partner-support-container'
       >
         <PartnerSupport>
-          <div>
-            SGD
-            {' '}
-            <CountUp
-              formattingFn={(e) => e.toLocaleString('en-US')}
-              start={100}
-              end={20000}
-            />
-          </div>
-          <span>raised</span>
+          SGD
+          {' '}
+          <CountUp
+            formattingFn={(e) => e.toLocaleString('en-US')}
+            start={100}
+            end={44000}
+          />
+          {' '}
+          <br />
+          <span style={{ color: 'white', fontSize: '20px' }}>amount of resources raised</span>
         </PartnerSupport>
         <PartnerSupport>
           <div>
