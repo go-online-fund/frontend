@@ -29,7 +29,7 @@ const ApplyFundFormHeader = styled.h1`
 
 const ApplyFundSection = styled.div`
   background-color: ${StylesSchema.DarkGrey};
-  border-top: 2px solid #fbc91b;
+  border-top: 2px solid ${StylesSchema.Yellow};
   padding-bottom: 40px
 `;
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
 import { RoundedPrimaryButton } from '../../elements/buttons';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const responsive = {
   superLargeDesktop: {
@@ -24,8 +25,8 @@ const responsive = {
 };
 
 const Support = styled.div`
+  background: ${StylesSchema.Yellow};
   height: 100%;
-  background: #fbc91b;
   text-align: center;
   padding: 40px 0;
 `;
