@@ -151,15 +151,15 @@ const Partner: React.FC = () => {
         containerClass='carousel-partner-support-container'
       >
         <PartnerSupport>
-          SGD
-          {' '}
-          <CountUp
-            formattingFn={(e) => e.toLocaleString('en-US')}
-            start={100}
-            end={44000}
-          />
-          {' '}
-          <br />
+          <div>
+            SGD
+            {' '}
+            <CountUp
+              formattingFn={(e) => e.toLocaleString('en-US')}
+              start={100}
+              end={44000}
+            />
+          </div>
           <span style={{ color: 'white', fontSize: '20px' }}>amount of resources raised</span>
         </PartnerSupport>
         <PartnerSupport>
