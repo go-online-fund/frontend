@@ -136,27 +136,25 @@ const Partner: React.FC = () => {
           src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
         />
         <PartnerIcon
-            alt='Nas Daily'
+            alt='Adyen'
             src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
         />
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
-        <PartnerText>
-          Add
-          {' '}
-          <br />
-          your company
-        </PartnerText>
+        <PartnerIcon
+            alt='Product Pixels'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/product_pixels_zf79wo.png'
+        />
+        <PartnerIcon
+            alt='ByKido'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png'
+        />
+        <PartnerIcon
+            alt='Wattah'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/wattah_c6ucsa.png'
+        />
+        <PartnerIcon
+            alt='E-alchemist'
+            src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/e-alchemist_nuxvus.png'
+        />
       </Carousel>
       <PartnerHeader>Thanks to your support</PartnerHeader>
       <Carousel
@@ -169,11 +167,11 @@ const Partner: React.FC = () => {
           <CountUp
             formattingFn={(e) => e.toLocaleString('en-US')}
             start={100}
-            end={20000}
+            end={44000}
           />
           {' '}
           <br />
-          <span style={{ color: 'white', fontSize: '20px' }}>raised</span>
+          <span style={{ color: 'white', fontSize: '20px' }}>amount of resources raised</span>
         </PartnerSupport>
         <PartnerSupport>
           <CountUp
