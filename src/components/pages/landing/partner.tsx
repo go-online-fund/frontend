@@ -3,6 +3,7 @@ import CountUp from 'react-countup';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styled from 'styled-components';
+import partnersList from './partners.json';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { RoundedSecondaryButton } from '../../elements/buttons';
 
@@ -141,14 +142,15 @@ const Partner: React.FC = () => {
         infinite
         itemClass='sponsor-icon'
       >
-        <PartnerIcon
-          alt='Nas Daily'
-          src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg'
-        />
-        <PartnerIcon
-          alt='Ayden'
-          src='https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png'
-        />
+        {
+          partnersList.map(({ companyName, companyLogo }) => (
+            <PartnerIcon
+              alt={companyName}
+              src={companyLogo}
+              key={`${companyName.replace(/\s+/g, '')}`}
+            />
+          ))
+        }
         <PartnerText>
           Add
           {' '}
