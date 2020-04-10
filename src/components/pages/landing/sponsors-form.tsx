@@ -5,6 +5,7 @@ import FormsService from '../../../shared/services/forms.service';
 import Loading from '../../common/loading';
 import { PrimaryButton } from '../../elements/buttons';
 import { Select, SuccessText, TextField } from '../../elements/form-control';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 interface SponsorHelpOption {
   value: string;
@@ -12,65 +13,48 @@ interface SponsorHelpOption {
 }
 
 const SponsorSection = styled.div`
+  background-color: ${StylesSchema.Yellow};
   margin: 0 auto;
   padding-top: 60px;
   text-align: center;
-  align-items: center;
-  height: 100%;
-  background: #fbc91b;
 `;
 
 const LoadingDiv = styled.div`
- height: 400px;
- padding-top: 400px;
+  height: 400px;
+  padding-top: 400px;
 `;
 
 const SponsorsFormWrapper = styled.form`
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
-  background: #fbc91b;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left -20px;
-  
-  @media (max-width: 415px){
-    background: #fbc91b !important;
-    background-size: contain;
-    height: 100%;
-    background-repeat: no-repeat;
-  }
-  
-  @media (min-width: 1800px){
-    background-size: cover;
-  }
+  padding: 2rem;
+  background-color: ${StylesSchema.Yellow};
 `;
 
 const BigTextHeader = styled.p`
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 15px;
   text-transform: uppercase;
 `;
 
 const SmallTextHeader = styled.p`
-  font-size: 71px;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin-top: 0px;
+  margin: 0px 0px 40px;
   text-transform: uppercase;
-  margin-bottom: 40px;
-  
-  @media (max-width: 415px) {
-    font-size: 57px;
+
+  @media (min-width: 415px) {
+    font-size: 71px;
   }
 `;
 
 const NormalTextHeader = styled.p`
-  font-size: 22px;
+  font-size: 1.4rem;
   font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 15px;
+  margin: 0px 0px 15px;
+
   text-transform: uppercase;
 `;
 
@@ -132,7 +116,6 @@ const SponsorsForm: React.FC = () => {
           <SponsorsFormWrapper onSubmit={submitForm}>
             <TextField
               aria-label='Company name'
-              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               required
               placeholder='Company name'
               value={sponsorForm.companyName}
@@ -143,7 +126,6 @@ const SponsorsForm: React.FC = () => {
             />
             <TextField
               aria-label='Company Email'
-              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               required
               type='email'
               placeholder='Company Email'
@@ -155,7 +137,6 @@ const SponsorsForm: React.FC = () => {
             />
             <TextField
               aria-label='Contact Number'
-              style={{ paddingTop: '15px', paddingBottom: '15px' }}
               type='tel'
               placeholder='Contact number'
               value={sponsorForm.contactNumber}
