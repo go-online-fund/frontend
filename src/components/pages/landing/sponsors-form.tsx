@@ -76,6 +76,10 @@ const SponsorsForm: React.FC = () => {
   const [selectValues, setSelectValues] = useState<SponsorHelpOption[]>([]);
   const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
 
+  /**
+   * update state with selected options from react-select
+   * @param e selected options
+   */
   const onSelect = (e: SponsorHelpOption[]) => {
     setSelectValues(e);
     if (!e) {
@@ -92,6 +96,11 @@ const SponsorsForm: React.FC = () => {
     });
   };
 
+  /**
+   * set loading state when awaiting response.
+   * show success message, reset form after response is returned
+   * @param event
+   */
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
@@ -104,6 +113,16 @@ const SponsorsForm: React.FC = () => {
     }
   };
 
+  /**
+   * removes form submittion success text upon re-focusing of form
+   */
+  const clearSubmitMessage = () => {
+    if (!isSubmitted) {
+      return;
+    }
+    setIsSubmitted(false);
+  };
+
   return (
     <SponsorSection id='beASponsor'>
       <BigTextHeader>Big Business</BigTextHeader>
@@ -111,6 +130,7 @@ const SponsorsForm: React.FC = () => {
       <SmallTextHeader>Small Business</SmallTextHeader>
       <SponsorsFormWrapper
         onSubmit={submitForm}
+        onFocus={clearSubmitMessage}
       >
         <TextField
           aria-label='Company name'

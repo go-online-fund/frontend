@@ -51,6 +51,11 @@ const ApplyFundForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fundForm, setFundForm] = useState<FundApplication>(defaultForm);
 
+  /**
+   * set loading state when awaiting response.
+   * show success message, reset form after response is returned
+   * @param event
+   */
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
@@ -62,12 +67,25 @@ const ApplyFundForm: React.FC = () => {
     }
   };
 
+  /**
+   * removes form submittion success text upon re-focusing of form
+   */
+  const clearSubmitMessage = () => {
+    if (!isSubmitted) {
+      return;
+    }
+    setIsSubmitted(false);
+  };
+
   return (
     <ApplyFundSection id='applyForFund'>
       <ApplyFundFormHeader>
         APPLY FOR THE FUND
       </ApplyFundFormHeader>
-      <ApplyFundFormWrapper onSubmit={submitForm}>
+      <ApplyFundFormWrapper
+        onSubmit={submitForm}
+        onFocus={clearSubmitMessage}
+      >
         <TextField
           required
           placeholder='Company'
