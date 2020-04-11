@@ -1,11 +1,11 @@
 import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../../shared/enums/styles';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import Loading from '../../common/loading';
 import { PrimaryButton } from '../../elements/buttons';
 import { Select, SuccessText, TextField } from '../../elements/form-control';
-import { StylesSchema } from '../../../shared/enums/styles';
+import { LoadingSpinner } from '../../elements/loading';
 
 interface SponsorHelpOption {
   value: string;
@@ -17,11 +17,6 @@ const SponsorSection = styled.div`
   margin: 0 auto;
   padding-top: 60px;
   text-align: center;
-`;
-
-const LoadingDiv = styled.div`
-  height: 400px;
-  padding-top: 400px;
 `;
 
 const SponsorsFormWrapper = styled.form`
@@ -54,10 +49,8 @@ const NormalTextHeader = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0px 0px 15px;
-
   text-transform: uppercase;
 `;
-
 
 const options: SponsorHelpOption[] = [
   { value: 'Capital', label: 'Capital' },
@@ -111,78 +104,76 @@ const SponsorsForm: React.FC = () => {
       <BigTextHeader>Big Business</BigTextHeader>
       <NormalTextHeader>Helps</NormalTextHeader>
       <SmallTextHeader>Small Business</SmallTextHeader>
-      {
-        !isLoading && !isSubmitted && (
-          <SponsorsFormWrapper onSubmit={submitForm}>
-            <TextField
-              aria-label='Company name'
-              required
-              placeholder='Company name'
-              value={sponsorForm.companyName}
-              onChange={(e) => setSponsorForm({
-                ...sponsorForm,
-                companyName: e.target.value,
-              })}
-            />
-            <TextField
-              aria-label='Company Email'
-              required
-              type='email'
-              placeholder='Company Email'
-              value={sponsorForm.companyEmail}
-              onChange={(e) => setSponsorForm({
-                ...sponsorForm,
-                companyEmail: e.target.value,
-              })}
-            />
-            <TextField
-              aria-label='Contact Number'
-              type='tel'
-              placeholder='Contact number'
-              value={sponsorForm.contactNumber}
-              onChange={(e) => setSponsorForm({
-                ...sponsorForm,
-                contactNumber: e.target.value,
-              })}
-            />
-            <Suspense fallback={<div>Loading Options...</div>}>
-              <Select
-                aria-label='Contribution'
-                placeholder='What would you like to contribute?'
-                required
-                options={options}
-                isMulti
-                onChange={onSelect}
-                value={selectValues}
-              />
-            </Suspense>
-            <PrimaryButton
-              type='submit'
-            >
-              BE A SPONSOR
-            </PrimaryButton>
-          </SponsorsFormWrapper>
-        )
-      }
-      {
-        isLoading && !isSubmitted && (
-          <LoadingDiv>
-            <Loading />
-          </LoadingDiv>
-        )
-      }
-      {
-        isSubmitted && !isLoading && (
-          <LoadingDiv>
+      <SponsorsFormWrapper
+        onSubmit={submitForm}
+      >
+        <TextField
+          aria-label='Company name'
+          required
+          placeholder='Company name'
+          disabled={isLoading}
+          value={sponsorForm.companyName}
+          onChange={(e) => setSponsorForm({
+            ...sponsorForm,
+            companyName: e.target.value,
+          })}
+        />
+        <TextField
+          aria-label='Company Email'
+          required
+          type='email'
+          placeholder='Company Email'
+          disabled={isLoading}
+          value={sponsorForm.companyEmail}
+          onChange={(e) => setSponsorForm({
+            ...sponsorForm,
+            companyEmail: e.target.value,
+          })}
+        />
+        <TextField
+          aria-label='Contact Number'
+          type='tel'
+          placeholder='Contact number'
+          disabled={isLoading}
+          value={sponsorForm.contactNumber}
+          onChange={(e) => setSponsorForm({
+            ...sponsorForm,
+            contactNumber: e.target.value,
+          })}
+        />
+        <Suspense fallback={<div>Loading Options...</div>}>
+          <Select
+            aria-label='Contribution'
+            placeholder='What would you like to contribute?'
+            required
+            options={options}
+            isMulti
+            onChange={onSelect}
+            value={selectValues}
+            disabled={isLoading}
+          />
+        </Suspense>
+        <PrimaryButton
+          type='submit'
+          disabled={isLoading}
+        >
+          {
+            isLoading
+              ? <LoadingSpinner />
+              : 'BE A SPONSOR'
+          }
+        </PrimaryButton>
+        {
+          isSubmitted && (
             <SuccessText type='dark'>
               Thank you for. Your response has been submitted.
               <br />
               We will be in touch with you shortly to discuss
               how you can support this initiative.
             </SuccessText>
-          </LoadingDiv>
-        )
-      }
+          )
+        }
+      </SponsorsFormWrapper>
     </SponsorSection>
   );
 };

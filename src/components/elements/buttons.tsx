@@ -4,11 +4,14 @@ import { StylesSchema } from '../../shared/enums/styles';
 // to do, include other button styles
 // eslint-disable-next-line import/prefer-default-export
 export const PrimaryButton = styled.button`
+  align-items: center;
   background-image: ${StylesSchema.BlackGradient};
   border: 0;
   color: ${StylesSchema.White};
+  display: flex;
   font-family: 'Proxima Nova', sans-serif;
   font-size: 1.2rem;
+  justify-content: center;
   margin: 2rem 0;
   padding: 1rem 0;
   width: 100%;
