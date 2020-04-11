@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import styled from 'styled-components';
 import partnersList from './partners.json';
 import { StylesSchema } from '../../../shared/enums/styles';
-import { RoundedSecondaryButton } from '../../elements/buttons';
+import { RoundedSecondaryButton } from '../../elements';
 
 const responsive = {
   superLargeDesktop: {

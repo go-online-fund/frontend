@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import { SecondaryButton } from '../../elements/buttons';
-import { SuccessText, TextArea, TextField } from '../../elements/form-control';
-import { LoadingSpinner } from '../../elements/loading';
+import {
+  LoadingSpinner,
+  SecondaryButton,
+  SuccessText,
+  TextArea,
+  TextField,
+} from '../../elements';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;

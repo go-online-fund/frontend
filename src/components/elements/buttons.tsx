@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { StylesSchema } from '../../shared/enums/styles';
 
-// to do, include other button styles
-// eslint-disable-next-line import/prefer-default-export
 export const PrimaryButton = styled.button`
   align-items: center;
   background-image: ${StylesSchema.BlackGradient};

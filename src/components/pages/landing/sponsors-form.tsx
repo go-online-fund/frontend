@@ -3,9 +3,14 @@ import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import { PrimaryButton } from '../../elements/buttons';
-import { Select, SuccessText, TextField } from '../../elements/form-control';
-import { LoadingSpinner } from '../../elements/loading';
+import {
+  PrimaryButton,
+  Select,
+  SuccessText,
+  TextField,
+  LoadingSpinner,
+} from '../../elements';
+
 
 interface SponsorHelpOption {
   value: string;

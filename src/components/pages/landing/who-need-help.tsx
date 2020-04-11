@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-multi-carousel';
-import { RoundedPrimaryButton } from '../../elements/buttons';
+import { RoundedPrimaryButton } from '../../elements';
 import { StylesSchema } from '../../../shared/enums/styles';
 
 const responsive = {
