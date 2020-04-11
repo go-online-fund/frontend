@@ -159,7 +159,7 @@ const SponsorsForm: React.FC = () => {
         >
           {
             isLoading
-              ? <LoadingSpinner />
+              ? <LoadingSpinner type='primary' />
               : 'BE A SPONSOR'
           }
         </PrimaryButton>
