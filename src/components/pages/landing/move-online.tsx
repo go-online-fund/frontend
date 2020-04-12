@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Communication from '../../../assets/icons/communication.svg';
 import Delivery from '../../../assets/icons/delivery.svg';
 import Learning from '../../../assets/icons/learning.svg';
@@ -145,7 +145,7 @@ const MoveOnline: React.FC = () => (
       LEARNING_POINTS_TOP_ROW.map(({
         title, description, alt, icon,
       }) => (
-        <LearningPointHalfFlex>
+        <LearningPointHalfFlex key={title}>
           <LearningPoint title={title} description={description} alt={alt} icon={icon} />
         </LearningPointHalfFlex>
       ))
@@ -154,7 +154,7 @@ const MoveOnline: React.FC = () => (
       LEARNING_POINTS_BOTTOM_ROW.map(({
         title, description, alt, icon,
       }) => (
-        <LearningPointThirdFlex>
+        <LearningPointThirdFlex key={title}>
           <LearningPoint title={title} description={description} alt={alt} icon={icon} />
         </LearningPointThirdFlex>
       ))
