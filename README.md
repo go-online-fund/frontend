@@ -24,3 +24,7 @@ Contributions and volunteers are [welcomed](https://github.com/go-online-fund/fr
     ```
     npm start
     ```
+
+----
+
+README is WIP

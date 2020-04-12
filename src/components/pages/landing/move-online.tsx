@@ -7,6 +7,49 @@ import Marketing from '../../../assets/icons/marketing.svg';
 import Website from '../../../assets/icons/website.svg';
 import { StylesSchema } from '../../../shared/enums/styles';
 
+interface LearningPointProps {
+  title: string;
+  description: string;
+  alt: string;
+  icon: string;
+}
+
+const LEARNING_POINTS_TOP_ROW = [
+  {
+    title: 'Communication Tool',
+    description: 'Communication tools for your staff',
+    alt: 'communication icon',
+    icon: Communication,
+  },
+  {
+    title: 'Delivery',
+    description: 'A delivery method for your goods/services',
+    alt: 'delivery icon',
+    icon: Delivery,
+  },
+];
+
+const LEARNING_POINTS_BOTTOM_ROW = [
+  {
+    title: 'Website',
+    description: 'Build a website',
+    alt: 'website icon',
+    icon: Website,
+  },
+  {
+    title: 'Marketing',
+    description: 'Market your products/services via social media',
+    alt: 'marketing icon',
+    icon: Marketing,
+  },
+  {
+    title: 'Learning',
+    description: 'Online learning/teaching platform',
+    alt: 'learning icon',
+    icon: Learning,
+  },
+];
+
 const MoveOnlineWrapper = styled.section`
   align-items: center;
   display: flex;
@@ -68,7 +111,7 @@ const LearningDescription = styled.span`
   text-align: center;
 `;
 
-const imageSize = css`
+const LearningPointIcon = styled.img`
   width: 100px;
   height: 100px;
 
@@ -78,25 +121,18 @@ const imageSize = css`
   }
 `;
 
-const CommunicationIcon = styled.img`
-  ${imageSize}
-`;
-
-const DeliveryIcon = styled.img`
-  ${imageSize}
-`;
-
-const WebsiteIcon = styled.img`
-  ${imageSize}
-`;
-
-const MarketingIcon = styled.img`
-  ${imageSize}
-`;
-
-const LearningIcon = styled.img`
-  ${imageSize}
-`;
+const LearningPoint = ({
+  icon, alt, title, description,
+}: LearningPointProps) => (
+  <>
+    <LearningPointIcon
+      src={icon}
+      alt={alt}
+    />
+    <LearningTitle>{title}</LearningTitle>
+    <LearningDescription>{description}</LearningDescription>
+  </>
+);
 
 const MoveOnline: React.FC = () => (
   <MoveOnlineWrapper>
@@ -105,31 +141,24 @@ const MoveOnline: React.FC = () => (
       {' '}
       will be used to help small businesses succeed online
     </MoveOnlineTitle>
-    <LearningPointHalfFlex>
-      <CommunicationIcon src={Communication} alt='communication icon' />
-      <LearningTitle>Communication Tool</LearningTitle>
-      <LearningDescription>Communication tools for your staff</LearningDescription>
-    </LearningPointHalfFlex>
-    <LearningPointHalfFlex>
-      <DeliveryIcon src={Delivery} alt='delivery icon' />
-      <LearningTitle>Delivery</LearningTitle>
-      <LearningDescription>A delivery method for your goods/services</LearningDescription>
-    </LearningPointHalfFlex>
-    <LearningPointThirdFlex>
-      <WebsiteIcon src={Website} alt='website icon' />
-      <LearningTitle>Website</LearningTitle>
-      <LearningDescription>Build a website</LearningDescription>
-    </LearningPointThirdFlex>
-    <LearningPointThirdFlex>
-      <MarketingIcon src={Marketing} alt='marketing icon' />
-      <LearningTitle>Marketing</LearningTitle>
-      <LearningDescription>Market your products/services via social media</LearningDescription>
-    </LearningPointThirdFlex>
-    <LearningPointThirdFlex>
-      <LearningIcon src={Learning} alt='learning icon' />
-      <LearningTitle>Learning</LearningTitle>
-      <LearningDescription>Online learning/teaching platform</LearningDescription>
-    </LearningPointThirdFlex>
+    {
+      LEARNING_POINTS_TOP_ROW.map(({
+        title, description, alt, icon,
+      }) => (
+        <LearningPointHalfFlex>
+          <LearningPoint title={title} description={description} alt={alt} icon={icon} />
+        </LearningPointHalfFlex>
+      ))
+    }
+    {
+      LEARNING_POINTS_BOTTOM_ROW.map(({
+        title, description, alt, icon,
+      }) => (
+        <LearningPointThirdFlex>
+          <LearningPoint title={title} description={description} alt={alt} icon={icon} />
+        </LearningPointThirdFlex>
+      ))
+    }
   </MoveOnlineWrapper>
 );
 

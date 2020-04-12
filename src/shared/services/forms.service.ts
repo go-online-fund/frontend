@@ -3,6 +3,11 @@ import { FundApplication, SponsorApplication } from '../interfaces/forms.interfa
 
 const BASE_URL = 'https://nasdailyworker.herokuapp.com/api/go-online-fund';
 const AUTHORIZATION_TOKEN = 'g0Gc6HdwC3';
+const HEADERS = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+  Authorization: AUTHORIZATION_TOKEN,
+};
 
 class FormsService {
   async postFundApplication(fundApplication: FundApplication) {
@@ -25,11 +30,7 @@ class FormsService {
     };
 
     const response = await fetch(`${BASE_URL}/application`, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: AUTHORIZATION_TOKEN,
-      },
+      headers: HEADERS,
       method: 'POST',
       body: JSON.stringify(body),
     });
@@ -53,11 +54,7 @@ class FormsService {
     };
 
     const response = await fetch(`${BASE_URL}/sponsors`, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: AUTHORIZATION_TOKEN,
-      },
+      headers: HEADERS,
       method: 'POST',
       body: JSON.stringify(body),
     });
