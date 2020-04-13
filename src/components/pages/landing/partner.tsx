@@ -108,7 +108,7 @@ const PartnerSupport = styled.div`
 `;
 
 const PartnersGrid = styled.div`
-  background-color: rgba(255, 204, 0, 0.3);
+  background-color: rgb(254, 238, 188);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -143,12 +143,11 @@ const Partner: React.FC = () => {
       <PartnersGrid>
         {
           partnersList.map(({ companyName, companyLogo }) => (
-            <PartnerIconContainer>
+            <PartnerIconContainer key={`${companyName.replace(/\s+/g, '')}`}>
               <PartnerIcon
                 alt={companyName}
                 title={companyName}
                 src={companyLogo}
-                key={`${companyName.replace(/\s+/g, '')}`}
               />
             </PartnerIconContainer>
           ))
