@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { FundApplication } from '../../../shared/interfaces/forms.interface';
 import FormsService from '../../../shared/services/forms.service';
-import Loading from '../../common/loading';
-import { SecondaryButton } from '../../elements/buttons';
-import { SuccessText, TextArea, TextField } from '../../elements/form-control';
+import {
+  LoadingSpinner,
+  SecondaryButton,
+  SuccessText,
+  TextArea,
+  TextField,
+} from '../../elements';
 
 const ApplyFundFormWrapper = styled.form`
   align-items: center;
@@ -47,6 +51,11 @@ const ApplyFundForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [fundForm, setFundForm] = useState<FundApplication>(defaultForm);
 
+  /**
+   * set loading state when awaiting response.
+   * show success message, reset form after response is returned
+   * @param event
+   */
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
@@ -58,103 +67,119 @@ const ApplyFundForm: React.FC = () => {
     }
   };
 
+  /**
+   * removes form submittion success text upon re-focusing of form
+   */
+  const clearSubmitMessage = () => {
+    if (!isSubmitted) {
+      return;
+    }
+    setIsSubmitted(false);
+  };
+
   return (
     <ApplyFundSection id='applyForFund'>
       <ApplyFundFormHeader>
         APPLY FOR THE FUND
       </ApplyFundFormHeader>
-      {
-        !isLoading && !isSubmitted && (
-          <ApplyFundFormWrapper onSubmit={submitForm}>
-            <TextField
-              required
-              placeholder='Company'
-              aria-label='Company Name'
-              value={fundForm.companyName}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                companyName: e.target.value,
-              })}
-            />
-            <TextField
-              required
-              placeholder='Company size'
-              aria-label='Company Size'
-              value={fundForm.companySize}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                companySize: e.target.value,
-              })}
-            />
-            <TextField
-              required
-              type='email'
-              placeholder='Company Email'
-              aria-label='Company Email'
-              value={fundForm.companyEmail}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                companyEmail: e.target.value,
-              })}
-            />
-            <TextArea
-              required
-              aria-label='Business Description'
-              placeholder='Tell us about your business'
-              rows={4}
-              value={fundForm.businessDescription}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                businessDescription: e.target.value,
-              })}
-            />
-            <TextArea
-              required
-              aria-label='Business Challenge'
-              placeholder='What is the biggest challenge for your business to get online?'
-              rows={4}
-              value={fundForm.businessChallenge}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                businessChallenge: e.target.value,
-              })}
-            />
-            <TextArea
-              required
-              aria-label='Business Priority'
-              placeholder='What is the current top priority for your business?'
-              rows={4}
-              value={fundForm.businessPriority}
-              onChange={(e) => setFundForm({
-                ...fundForm,
-                businessPriority: e.target.value,
-              })}
-            />
-            <SecondaryButton
-              type='submit'
-            >
-              Submit
-            </SecondaryButton>
-          </ApplyFundFormWrapper>
-        )
-      }
-      {
-        isLoading && !isSubmitted && (
-          <Loading />
-        )
-      }
-      {
-        isSubmitted && !isLoading && (
-          <SuccessText type='light'>
-            Thank you. Your application has been submitted.
-            {' '}
-            <br />
-            {' '}
-            We will be in touch with you shortly if we
-            are able to support your application.
-          </SuccessText>
-        )
-      }
+      <ApplyFundFormWrapper
+        onSubmit={submitForm}
+        onFocus={clearSubmitMessage}
+      >
+        <TextField
+          required
+          placeholder='Company'
+          aria-label='Company Name'
+          value={fundForm.companyName}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            companyName: e.target.value,
+          })}
+        />
+        <TextField
+          required
+          placeholder='Company size'
+          aria-label='Company Size'
+          value={fundForm.companySize}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            companySize: e.target.value,
+          })}
+        />
+        <TextField
+          required
+          type='email'
+          placeholder='Company Email'
+          aria-label='Company Email'
+          value={fundForm.companyEmail}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            companyEmail: e.target.value,
+          })}
+        />
+        <TextArea
+          required
+          aria-label='Business Description'
+          placeholder='Tell us about your business'
+          rows={4}
+          value={fundForm.businessDescription}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            businessDescription: e.target.value,
+          })}
+        />
+        <TextArea
+          required
+          aria-label='Business Challenge'
+          placeholder='What is the biggest challenge for your business to get online?'
+          rows={4}
+          value={fundForm.businessChallenge}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            businessChallenge: e.target.value,
+          })}
+        />
+        <TextArea
+          required
+          aria-label='Business Priority'
+          placeholder='What is the current top priority for your business?'
+          rows={4}
+          value={fundForm.businessPriority}
+          disabled={isLoading}
+          onChange={(e) => setFundForm({
+            ...fundForm,
+            businessPriority: e.target.value,
+          })}
+        />
+        <SecondaryButton
+          type='submit'
+          disabled={isLoading}
+        >
+          {
+            isLoading
+              ? <LoadingSpinner type='secondary' />
+              : 'Submit'
+          }
+        </SecondaryButton>
+        {
+          isSubmitted && (
+            <SuccessText type='light'>
+              Thank you. Your application has been submitted.
+              {' '}
+              <br />
+              {' '}
+              We will be in touch with you shortly if we
+              are able to support your application.
+            </SuccessText>
+          )
+        }
+      </ApplyFundFormWrapper>
+
     </ApplyFundSection>
   );
 };
