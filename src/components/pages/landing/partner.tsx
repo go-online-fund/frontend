@@ -114,6 +114,10 @@ const PartnersGrid = styled.div`
   justify-content: center;
   padding: 1rem 0;
   width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 2.4rem;
+  }
 `;
 
 
