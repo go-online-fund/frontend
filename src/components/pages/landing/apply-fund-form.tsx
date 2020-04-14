@@ -25,7 +25,7 @@ const ApplyFundFormHeader = styled.h1`
   text-transform: uppercase;
   padding-top: 40px;
   color: white;
-  
+
   @media (min-width: 415px) {
     font-size: 2rem;
   }
@@ -34,7 +34,7 @@ const ApplyFundFormHeader = styled.h1`
 const ApplyFundSection = styled.div`
   background-color: ${StylesSchema.DarkGrey};
   border-top: 2px solid ${StylesSchema.Yellow};
-  padding-bottom: 40px
+  padding-bottom: 40px;
 `;
 
 const defaultForm = {

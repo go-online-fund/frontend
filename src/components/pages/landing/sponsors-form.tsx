@@ -42,7 +42,7 @@ const BigTextHeader = styled.p`
 const SmallTextHeader = styled.p`
   font-size: 3.5rem;
   font-weight: bold;
-  margin: 0px 0px 40px;
+  margin: 0 0 40px;
   text-transform: uppercase;
 
   @media (min-width: 415px) {
@@ -53,7 +53,7 @@ const SmallTextHeader = styled.p`
 const NormalTextHeader = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
-  margin: 0px 0px 15px;
+  margin: 0 0 15px;
   text-transform: uppercase;
 `;
 

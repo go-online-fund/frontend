@@ -9,10 +9,10 @@ const VIDEO_HEIGHT_MD = '340px';
 const VIDEO_HEIGHT_LG = '470px';
 
 const CallToActionHeader = styled.p`
-  font-weight: bold;  
+  font-weight: bold;
   font-size: 1.4rem;
   text-align: left;
-  padding: 0px;
+  padding: 0;
   margin: calc(1.8rem + 66px - 2rem) 0 1.8rem;
 
   @media (min-width: 415px) {
@@ -24,7 +24,7 @@ const CallToActionHeader = styled.p`
 
 const CallToActionHighlight = styled.span`
   font-weight: bold;
-  color: white;  
+  color: white;
 `;
 
 const CallToActionWrapper = styled.section`
@@ -32,10 +32,10 @@ const CallToActionWrapper = styled.section`
   background-color: ${StylesSchema.Yellow};
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem calc(2rem + ${VIDEO_HEIGHT} / 2);  
+  padding: 2rem 2rem calc(2rem + ${VIDEO_HEIGHT} / 2);
   position: relative;
   border-bottom: 2px solid white;
-  
+
   @media (min-width: 415px) {
     padding-bottom: calc(2rem + ${VIDEO_HEIGHT_MD} / 2);
   }
@@ -52,7 +52,7 @@ const CallToActionVideo = styled.div`
   width: 90vw;
   position: absolute;
   bottom: calc(-${VIDEO_HEIGHT} / 2);
-  
+
   @media (min-width: 415px) {
     bottom: calc(-${VIDEO_HEIGHT_MD} / 2);
     height: ${VIDEO_HEIGHT_MD};
@@ -62,7 +62,7 @@ const CallToActionVideo = styled.div`
   @media (min-width: 736px) {
     width: 50%;
   }
-   
+
   @media (min-width: 2000px) {
     bottom: calc(-${VIDEO_HEIGHT_LG} / 2);
     height: ${VIDEO_HEIGHT_LG};

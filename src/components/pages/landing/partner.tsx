@@ -34,7 +34,7 @@ const PartnerWrapper = styled.div`
   text-align: center;
   padding-top: 120px;
   align-items: center;
-  padding-bottom: 80px
+  padding-bottom: 80px;
 `;
 
 const PartnerHeader = styled.h1`
@@ -45,7 +45,7 @@ const PartnerHeader = styled.h1`
   line-height: 1.5;
   padding-bottom: 40px;
   padding-top: 40px;
-  
+
   @media (min-width: 415px) {
     padding-top: 80px;
   }
@@ -67,7 +67,6 @@ const PartnerIcon = styled.img`
     transform: scale(1.1);
   }
 
-
   @media (min-width: 768px) {
     padding: 1.4rem;
     width: 150px;
@@ -76,7 +75,7 @@ const PartnerIcon = styled.img`
   @media (min-width: 1366px) {
     width: 180px;
   }
- `;
+`;
 
 const PartnerIconContainer = styled.div`
   display: flex;

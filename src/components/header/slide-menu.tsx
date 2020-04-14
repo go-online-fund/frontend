@@ -22,7 +22,7 @@ const StyledMenu = styled.nav<StyledMenuProps>`
   width: 100vw;
   z-index: 100;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     display: none;
   }
 `;
