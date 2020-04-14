@@ -56,6 +56,7 @@ const PartnerHeader = styled.h1`
 `;
 
 const PartnerIcon = styled.img`
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   transition: transform 0.5s ease;
   padding: 1em;
