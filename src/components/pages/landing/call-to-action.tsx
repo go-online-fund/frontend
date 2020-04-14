@@ -32,17 +32,16 @@ const CallToActionWrapper = styled.section`
   background-color: ${StylesSchema.Yellow};
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem calc(2rem + ${VIDEO_HEIGHT} /2) 2rem;  
+  padding: 2rem 2rem calc(2rem + ${VIDEO_HEIGHT} / 2);  
   position: relative;
   border-bottom: 2px solid white;
   
   @media (min-width: 415px) {
-    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_MD} /2)
+    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_MD} / 2);
   }
 
   @media (min-width: 2000px) {
-    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_LG} /2)
-
+    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_LG} / 2);
   }
 `;
 
@@ -50,7 +49,6 @@ const CallToActionVideo = styled.div`
   border: 3px solid white;
   border-radius: 5px;
   height: ${VIDEO_HEIGHT};
-  // margin-top: 1.8rem;
   width: 90vw;
   position: absolute;
   bottom: calc(-${VIDEO_HEIGHT} / 2);
