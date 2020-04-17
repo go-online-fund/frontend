@@ -9,7 +9,7 @@ const NetworkDiv = styled.div`
   display: flex;
   flex-direction: row;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     display: flex;
     flex-direction: column
   }
@@ -25,7 +25,7 @@ const Company = styled.div`
   padding-left: 40px;
   padding-bottom: 100px;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     flex-basis: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -40,7 +40,7 @@ const NetworkCompanyHeader = styled.h2`
   margin-bottom: 0px;
   font-weight: bold;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 82px;
     padding-top: 0px
   }
@@ -51,7 +51,7 @@ const CompanySmallHeader = styled.h1`
   font-weight: bold;
   margin-top: 0px;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 22px;
   }
   
@@ -64,7 +64,7 @@ const CompanyDesc = styled.p`
   font-weight: normal;
   text-align: justify;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 18px;
   }
 `;
@@ -78,7 +78,7 @@ const Sponsor = styled.div`
   background: #fbc91b;
   padding-bottom: 100px;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     flex-basis: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -94,7 +94,7 @@ const NetworkSponsorHeader = styled.h2`
   margin-bottom: 0px;
   font-weight: bold;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 82px;
     padding-top: 0px
   }
@@ -106,7 +106,7 @@ const SponsorSmallHeader = styled.h1`
   font-weight: bold;
   margin-top: 0px;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 22px;
   }
 `;
@@ -118,7 +118,7 @@ const SponsorDesc = styled.p`
   font-weight: normal;
   text-align: justify;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 18px;
   }
 `;
