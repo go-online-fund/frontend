@@ -2,12 +2,15 @@ import React, { useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
+import { Route, Router, Switch } from 'react-router-dom';
+import history from './history';
 import { StylesSchema } from '../shared/enums/styles';
 import './App.css';
 import Footer from './footer/footer';
 import NavigateToTop from './footer/navigate-to-top';
 import Header from './header/header';
 import Landing from './pages/landing';
+import TheFund from './pages/the_fund';
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -42,7 +45,16 @@ const App: React.FC = () => {
   return (
     <AppWrapper>
       <Header />
-      <Landing />
+      <Router history={history}>
+        <Switch>
+          <Route exact path='/'>
+            <Landing />
+          </Route>
+          <Route exact path='/how-the-fund-works'>
+            <TheFund />
+          </Route>
+        </Switch>
+      </Router>
       <CSSTransition
         unmountOnExit
         in={showNavigateTop}

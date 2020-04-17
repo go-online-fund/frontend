@@ -16,9 +16,9 @@ const HeaderWrapper = styled.header`
   padding: 1rem 1rem 1rem 0.5rem;
   justify-content: space-between;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px){
     text-align: center;
-    align-items: center;
+    align-items: center
   }
 `;
 
@@ -29,8 +29,7 @@ const NavAnchor = styled.a`
   color: ${StylesSchema.LightGrey};
   padding-top: 5px;
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     color: ${StylesSchema.Yellow};
   }
 `;
@@ -40,25 +39,24 @@ const NavAnchorHighlight = styled.a`
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  background: ${StylesSchema.Yellow};
+  background:  ${StylesSchema.Yellow};
   padding: 5px 10px 5px 10px;
   border-radius: 3px;
 
-  &:hover,
-  &:focus {
-    opacity: 0.9;
+  &:hover, &:focus {
+    opacity: 0.9
   }
 `;
 
 const Navigation = styled.nav`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px){
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 25%;
-    padding-top: 5px;
+    width: 35%;
+    padding-top: 5px
   }
 `;
 
@@ -100,17 +98,20 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <a
-        href='https://nasdaily.com'
-        target='_blank'
-        rel='noopener noreferrer'
+        href='/'
         aria-label='Nas Company Logo'
       >
         <NasCompanyLogo />
 
       </a>
       <Navigation>
-        <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
-        <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
+        <a href='/how-the-fund-works' style={{ paddingTop: '5px' }}><NavAnchor>How the fund works</NavAnchor></a>
+        <a href='/#applyForFund' style={{ paddingTop: '5px' }}>
+          <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
+        </a>
+        <a href='/#beASponsor' style={{ paddingTop: '5px' }}>
+          <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
+        </a>
       </Navigation>
       <Burger open={open} setOpen={setOpen} />
       <SlideMenu open={open} onNavigation={smoothScroll} />
