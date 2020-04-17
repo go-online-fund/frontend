@@ -25,11 +25,11 @@ const StyledBurger = styled.button`
   padding: 0;
   width: 2rem;
   z-index: 101;
-  
-  @media (min-width: 768px){
+
+  @media (min-width: 768px) {
     display: none;
   }
-  
+
   &:focus {
     outline: none;
   }

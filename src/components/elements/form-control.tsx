@@ -44,7 +44,7 @@ export const SuccessText = styled.div<SuccessTextProps>`
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
-  font-size: 20px
+  font-size: 20px;
 `;
 
 const ReactSelect = React.lazy(() => import('react-select'));
@@ -52,7 +52,7 @@ const ReactSelect = React.lazy(() => import('react-select'));
 export const Select = styled(ReactSelect)`
   margin: 0.5rem;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     width: 50%;
   }

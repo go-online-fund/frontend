@@ -15,14 +15,15 @@ export const PrimaryButton = styled.button`
   width: 100%;
   text-transform: uppercase;
   font-weight: bold;
-  
+
   &:hover {
     cursor: pointer;
     opacity: 0.9;
   }
 
-  &:active, &:focus {
-    outline-color: ${StylesSchema.Yellow}; 
+  &:active,
+  &:focus {
+    outline-color: ${StylesSchema.Yellow};
   }
 
   @media (min-width: 768px) {
@@ -47,9 +48,9 @@ export const RoundedPrimaryButton = styled.button`
   padding: 10px;
   text-align: center;
   width: 200px;
-  
+
   &:hover {
-    cursor: pointer
+    cursor: pointer;
   }
 `;
 

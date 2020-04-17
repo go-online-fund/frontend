@@ -1,26 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
-import {StylesSchema} from '../../../shared/enums/styles';
-import {ReactVideoPlay, VideoSourceType} from 'react-video-play';
+import { ReactVideoPlay, VideoSourceType } from 'react-video-play';
+import { StylesSchema } from '../../../shared/enums/styles';
 import 'react-video-play/public/css/react-video-play.css';
 
+const VIDEO_HEIGHT = '190px';
+const VIDEO_HEIGHT_MD = '340px';
+const VIDEO_HEIGHT_LG = '470px';
+
 const CallToActionHeader = styled.p`
-  padding-top: 20px;
-  text-align: justify;
-  font-size: 2.5em;
   font-weight: bold;
-  
-   @media (max-width: 415px) {
-    font-size: 22px;
-    text-align: left;
-    padding-top: 40px;
-   }
-}
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 0;
+  margin: calc(1.8rem + 66px - 2rem) 0 1.8rem;
+
+  @media (min-width: 415px) {
+    font-size: 2.5em;
+    text-align: center;
+    margin: calc(2.5rem + 66px - 2rem) 0 2.5rem;
+  }
 `;
 
 const CallToActionHighlight = styled.span`
   font-weight: bold;
-  color: white;  
+  color: white;
 `;
 
 const CallToActionWrapper = styled.section`
@@ -28,70 +32,91 @@ const CallToActionWrapper = styled.section`
   background-color: ${StylesSchema.Yellow};
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;  
+  padding: 2rem 2rem calc(2rem + ${VIDEO_HEIGHT} / 2);
   position: relative;
-  height: 370px;
   border-bottom: 2px solid white;
-  
-  @media (max-width: 415px) {
-    height: 390px;
+
+  @media (min-width: 415px) {
+    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_MD} / 2);
+  }
+
+  @media (min-width: 2000px) {
+    padding-bottom: calc(2rem + ${VIDEO_HEIGHT_LG} / 2);
   }
 `;
 
 const CallToActionVideo = styled.div`
-   @media (max-width: 415px) {
-     margin-top: 100px;
-     width: 90vw;
-     height: 190px;
-   }
-   
-  @media (min-width: 2000px) {
-    height: 470px;
-  }
-  
-  height: 340px;
-  width: 38vw;
   border: 3px solid white;
   border-radius: 5px;
+  height: ${VIDEO_HEIGHT};
+  width: 90vw;
   position: absolute;
-  top: 260px  
+  bottom: calc(-${VIDEO_HEIGHT} / 2);
+
+  @media (min-width: 415px) {
+    bottom: calc(-${VIDEO_HEIGHT_MD} / 2);
+    height: ${VIDEO_HEIGHT_MD};
+    width: 60%;
+  }
+
+  @media (min-width: 736px) {
+    width: 50%;
+  }
+
+  @media (min-width: 2000px) {
+    bottom: calc(-${VIDEO_HEIGHT_LG} / 2);
+    height: ${VIDEO_HEIGHT_LG};
+    width: 50%;
+  }
 `;
 
 const HighlightDescription = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
-  text-align: center;
-  
-  @media (max-width: 415px) {
-    font-size: 16px;
-    text-align: justify
+  text-align: justify;
+
+  @media (min-width: 415px) {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    width: 80%;
   }
 `;
 
 const src = [
-    {
-        name: 'video',
-        source: [{
-            source: 'https://res.cloudinary.com/doaxab4ly/video/upload/v1586312300/move_online_fund_zfgobo.mp4',
-            type: VideoSourceType.video_mp4
-        }]
-    }
-]
+  {
+    name: 'video',
+    source: [{
+      source: 'https://res.cloudinary.com/doaxab4ly/video/upload/v1586312300/move_online_fund_zfgobo.mp4',
+      type: VideoSourceType.video_mp4,
+    }],
+  },
+];
 
-const CallToAction: React.FC = () => {
-    return (
-        <CallToActionWrapper>
-            <CallToActionHeader>HELP <CallToActionHighlight>BUSINESS</CallToActionHighlight> MOVE <CallToActionHighlight>ONLINE</CallToActionHighlight></CallToActionHeader>
-            <HighlightDescription>Many small businesses are struggling with COVID-19 Circuit Breaker.
-                They don’t know how to move online or they can’t afford to.<br/>
-                The Online Fund is meant to help small businesses in Singapore move their operations online.
-            </HighlightDescription>
-            <CallToActionVideo>
-                <ReactVideoPlay sources={src}/>
-            </CallToActionVideo>
-        </CallToActionWrapper>
-    );
-}
+const CallToAction: React.FC = () => (
+  <CallToActionWrapper>
+    <CallToActionHeader>
+      HELP
+      {' '}
+      <CallToActionHighlight>BUSINESSES</CallToActionHighlight>
+      {' '}
+      MOVE
+      {' '}
+      <CallToActionHighlight>ONLINE</CallToActionHighlight>
+    </CallToActionHeader>
+    <HighlightDescription>
+      Many small businesses are struggling with COVID-19 Circuit Breaker.
+      They don’t know how to move online or they can’t afford to.
+      <br />
+      The Online Fund is meant to help small businesses in Singapore move their operations online.
+    </HighlightDescription>
+    <CallToActionVideo>
+      <ReactVideoPlay sources={src} />
+    </CallToActionVideo>
+  </CallToActionWrapper>
+);
 
 export default CallToAction;

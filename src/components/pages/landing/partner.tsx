@@ -7,26 +7,6 @@ import partnersList from './partners.json';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { RoundedSecondaryButton } from '../../elements';
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
-
 const responsiveSupport = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -54,7 +34,7 @@ const PartnerWrapper = styled.div`
   text-align: center;
   padding-top: 120px;
   align-items: center;
-  padding-bottom: 80px
+  padding-bottom: 80px;
 `;
 
 const PartnerHeader = styled.h1`
@@ -65,7 +45,7 @@ const PartnerHeader = styled.h1`
   line-height: 1.5;
   padding-bottom: 40px;
   padding-top: 40px;
-  
+
   @media (min-width: 415px) {
     padding-top: 80px;
   }
@@ -76,14 +56,35 @@ const PartnerHeader = styled.h1`
 `;
 
 const PartnerIcon = styled.img`
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   transition: transform 0.5s ease;
-  width: 200px;
+  padding: 1em;
+  width: 130px;
+  max-width: 100%;
 
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (min-width: 768px) {
+    padding: 1.4rem;
+    width: 150px;
+  }
+
+  @media (min-width: 1366px) {
+    width: 180px;
+  }
 `;
+
+const PartnerIconContainer = styled.div`
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+`;
+
 
 const PartnerSupport = styled.div`
   color: ${StylesSchema.Yellow};
@@ -105,6 +106,20 @@ const PartnerSupport = styled.div`
     font-weight: bold;
   }
 `;
+
+const PartnersGrid = styled.div`
+  background-color: rgb(254, 238, 188);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 2.4rem;
+  }
+`;
+
 
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
@@ -129,22 +144,19 @@ const Partner: React.FC = () => {
   return (
     <PartnerWrapper>
       <PartnerHeader>Proudly Supported By</PartnerHeader>
-      <Carousel
-        responsive={responsive}
-        infinite
-        itemClass='sponsor-icon'
-      >
+      <PartnersGrid>
         {
           partnersList.map(({ companyName, companyLogo }) => (
-            <PartnerIcon
-              alt={companyName}
-              title={companyName}
-              src={companyLogo}
-              key={`${companyName.replace(/\s+/g, '')}`}
-            />
+            <PartnerIconContainer key={`${companyName.replace(/\s+/g, '')}`}>
+              <PartnerIcon
+                alt={companyName}
+                title={companyName}
+                src={companyLogo}
+              />
+            </PartnerIconContainer>
           ))
         }
-      </Carousel>
+      </PartnersGrid>
       <PartnerHeader>Thanks to your support</PartnerHeader>
       <Carousel
         responsive={responsiveSupport}
@@ -157,17 +169,17 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={100}
-              end={44000}
+              end={70000}
             />
           </div>
-          <span style={{ color: 'white', fontSize: '20px' }}>amount of resources raised</span>
+          <span>amount of resources raised</span>
         </PartnerSupport>
         <PartnerSupport>
           <div>
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={0}
-              end={1}
+              end={3}
             />
           </div>
           {' '}

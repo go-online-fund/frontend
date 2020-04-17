@@ -36,7 +36,7 @@ const SupportHeader = styled.h1`
   font-size: 1.4em;
   font-weight: bold;
   padding-bottom: 40px;
-  
+
   @media (min-width: 415px) {
     font-size: 2em;
   }
