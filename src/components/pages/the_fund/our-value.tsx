@@ -13,7 +13,7 @@ const OurValueDiv = styled.section`
   display: flex;
   flex-direction: row;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     display: block;
   }
 `;

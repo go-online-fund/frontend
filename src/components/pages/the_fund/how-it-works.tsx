@@ -14,7 +14,7 @@ const HowItWorksHeader = styled.h1`
   font-weight: bold;
   padding-bottom: 20px;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 2em;
   }
 `;
@@ -26,7 +26,7 @@ const HowItWorksSection = styled.section`
   flex-basis: wrap;
   align-items: center;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     display: block
   }
 `;
@@ -34,7 +34,7 @@ const HowItWorksSection = styled.section`
 const Business = styled.div`
   flex-basis: 30%;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     flex-basis: 100%;
   }
 `;
@@ -57,7 +57,7 @@ const BusinessDesc = styled.p`
 const Connection = styled.div`
   flex-basis: 40%;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     flex-basis: 100%
   }
 `;
@@ -68,7 +68,7 @@ const ConnectionDiv = styled.div`
   flex-basis: wrap;
   flex-direction: row;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     display: block
   }  
 `;
@@ -76,7 +76,7 @@ const ConnectionDiv = styled.div`
 const ConnectionDotDiv = styled.div`
   flex-basis: 30%;
   padding-top: 60px;
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     flex-basis: 100%;
   }
 `;
@@ -88,7 +88,7 @@ const ConnectionDot = styled.div`
   width: 170px;
   height: 0.5%;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     margin-top: -40px;
     left: 50%;
     position: absolute;
@@ -102,7 +102,7 @@ const ConnectionDesc = styled.div`
   flex-basis: 40%;
   text-align: center;
   
-   @media (max-width: 415px) {
+   @media (max-width: 600px) {
     flex-basis: 100%
   }
 `;

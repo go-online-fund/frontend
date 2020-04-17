@@ -14,7 +14,7 @@ const ResourcesHeader = styled.h1`
   font-weight: bold;
   padding-bottom: 20px;
   
-  @media (max-width: 415px) {
+  @media (max-width: 600px) {
     font-size: 2em;
   }
 `;
