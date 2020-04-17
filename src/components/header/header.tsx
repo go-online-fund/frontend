@@ -55,7 +55,7 @@ const Navigation = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 25%;
+    width: 35%;
     padding-top: 5px
   }
 `;
@@ -98,17 +98,20 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <a
-        href='https://nasdaily.com'
-        target='_blank'
-        rel='noopener noreferrer'
+        href='/'
         aria-label='Nas Company Logo'
       >
         <NasCompanyLogo />
 
       </a>
       <Navigation>
-        <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
-        <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
+        <a href='/how-the-fund-works' style={{ paddingTop: '5px' }}><NavAnchor>How the fund works</NavAnchor></a>
+        <a href='/#applyForFund' style={{ paddingTop: '5px' }}>
+          <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
+        </a>
+        <a href='/#beASponsor' style={{ paddingTop: '5px' }}>
+          <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
+        </a>
       </Navigation>
       <Burger open={open} setOpen={setOpen} />
       <SlideMenu open={open} onNavigation={smoothScroll} />
