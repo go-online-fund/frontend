@@ -86,7 +86,7 @@ const ConnectionDot = styled.div`
   background-image: url(https://d5htvn7530ipt.cloudfront.net/netflix/spoilers/8/images/dotted.png);
   background-size: 10px;
   width: 170px;
-  height: 0.5%;
+  height: 0.4%;
   
   @media (max-width: 600px) {
     margin-top: -40px;
