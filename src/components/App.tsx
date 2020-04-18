@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
-import { Route, Router, Switch } from 'react-router-dom';
-import history from './history';
 import { StylesSchema } from '../shared/enums/styles';
 import './App.css';
 import Footer from './footer/footer';
@@ -43,9 +42,9 @@ const App: React.FC = () => {
   }, [onScroll]);
 
   return (
-    <AppWrapper>
-      <Header />
-      <Router history={history}>
+    <Router>
+      <AppWrapper>
+        <Header />
         <Switch>
           <Route exact path='/'>
             <Landing />
@@ -54,17 +53,17 @@ const App: React.FC = () => {
             <TheFund />
           </Route>
         </Switch>
-      </Router>
-      <CSSTransition
-        unmountOnExit
-        in={showNavigateTop}
-        timeout={100}
-        classNames='navigate-top'
-      >
-        <NavigateToTop />
-      </CSSTransition>
-      <Footer />
-    </AppWrapper>
+        <CSSTransition
+          unmountOnExit
+          in={showNavigateTop}
+          timeout={100}
+          classNames='navigate-top'
+        >
+          <NavigateToTop />
+        </CSSTransition>
+        <Footer />
+      </AppWrapper>
+    </Router>
   );
 };
 

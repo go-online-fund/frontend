@@ -4,7 +4,7 @@ import SmallBusiness from './small-business';
 import HowItWorks from './how-it-works';
 import OurValue from './our-value';
 import Network from './network';
-import Resources from "./resouces";
+import Resources from './resouces';
 
 const TheFundWrapper = styled.section`
   font-family: Montserrat, sans-serif;

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useHistory, Link } from 'react-router-dom';
 import { StylesSchema } from '../../shared/enums/styles';
 import { ReactComponent as NasCompanyImage } from '../../assets/images/thenascompany.svg';
 import Burger from './burger';
 import SlideMenu from './slide-menu';
+import { RouterState } from '../../shared/interfaces/router.interface';
 
 const HeaderWrapper = styled.header`
   box-sizing: border-box;
@@ -16,9 +18,9 @@ const HeaderWrapper = styled.header`
   padding: 1rem 1rem 1rem 0.5rem;
   justify-content: space-between;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     text-align: center;
-    align-items: center
+    align-items: center;
   }
 `;
 
@@ -29,34 +31,47 @@ const NavAnchor = styled.a`
   color: ${StylesSchema.LightGrey};
   padding-top: 5px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: ${StylesSchema.Yellow};
+  }
+
+  :first-child {
+    margin-left: 0;
   }
 `;
 
 const NavAnchorHighlight = styled.a`
+  background: ${StylesSchema.Yellow};
+  border-radius: 3px;
   color: ${StylesSchema.Black};
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  background:  ${StylesSchema.Yellow};
   padding: 5px 10px 5px 10px;
-  border-radius: 3px;
 
-  &:hover, &:focus {
-    opacity: 0.9
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
 const Navigation = styled.nav`
   display: none;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 35%;
-    padding-top: 5px
+    padding-top: 5px;
+
+    > * {
+      margin: 0 0.5rem;
+    }
   }
 `;
 
@@ -74,6 +89,7 @@ if (!('scrollBehavior' in document.documentElement.style)) {
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     if (open) {
@@ -84,37 +100,45 @@ const Header: React.FC = () => {
     }
   }, [open]);
 
-  const smoothScroll = (target: string) => {
+  const navigateTo = (route: string, state?: RouterState) => {
     if (open) {
       setOpen(false);
     }
-    const targetElement = document.getElementById(target)?.offsetTop;
-    window.scrollTo({
-      top: targetElement,
-      behavior: 'smooth',
-    });
+    history.push(route, state);
   };
 
   return (
     <HeaderWrapper>
-      <a
-        href='/'
+      <Link
+        to='/'
         aria-label='Nas Company Logo'
       >
         <NasCompanyLogo />
 
-      </a>
+      </Link>
       <Navigation>
-        <a href='/how-the-fund-works' style={{ paddingTop: '5px' }}><NavAnchor>How the fund works</NavAnchor></a>
-        <a href='/#applyForFund' style={{ paddingTop: '5px' }}>
-          <NavAnchor onClick={() => smoothScroll('applyForFund')}>Apply for fund</NavAnchor>
-        </a>
-        <a href='/#beASponsor' style={{ paddingTop: '5px' }}>
-          <NavAnchorHighlight onClick={() => smoothScroll('beASponsor')}>Be a sponsor</NavAnchorHighlight>
-        </a>
+        <NavAnchor
+          onClick={() => navigateTo('/how-the-fund-works')}
+        >
+          How the fund works
+        </NavAnchor>
+        <NavAnchor
+          onClick={() => navigateTo('/', {
+            scrollTo: 'applyForFund',
+          })}
+        >
+          Apply for fund
+        </NavAnchor>
+        <NavAnchorHighlight
+          onClick={() => navigateTo('/', {
+            scrollTo: 'beASponsor',
+          })}
+        >
+          Be a sponsor
+        </NavAnchorHighlight>
       </Navigation>
       <Burger open={open} setOpen={setOpen} />
-      <SlideMenu open={open} onNavigation={smoothScroll} />
+      <SlideMenu open={open} onNavigation={navigateTo} />
     </HeaderWrapper>
   );
 };

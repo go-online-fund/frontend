@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StylesSchema } from '../../shared/enums/styles';
+import { RouterState } from '../../shared/interfaces/router.interface';
 
 type StyledMenuProps = Omit<SlideMenuProps, 'onNavigation'>;
 
@@ -46,15 +47,28 @@ const NavAnchor = styled.div`
 
 interface SlideMenuProps {
   open: boolean;
-  onNavigation: (id: string) => void;
+  onNavigation: (route: string, state?: RouterState) => void;
 }
 
 const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => (
   <StyledMenu open={open}>
-    <NavAnchor onClick={() => onNavigation('applyForFund')}>
+    <NavAnchor
+      onClick={() => onNavigation('/how-the-fund-works')}
+    >
+      How the fund works
+    </NavAnchor>
+    <NavAnchor
+      onClick={() => onNavigation('/', {
+        scrollTo: 'applyForFund',
+      })}
+    >
       Apply For Fund
     </NavAnchor>
-    <NavAnchor onClick={() => onNavigation('beASponsor')}>
+    <NavAnchor
+      onClick={() => onNavigation('/', {
+        scrollTo: 'beASponsor',
+      })}
+    >
       Be a Sponsor
     </NavAnchor>
   </StyledMenu>
