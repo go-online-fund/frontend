@@ -17,7 +17,7 @@ const HowItWorksHeader = styled.h1`
   font-size: 2em;
   font-weight: bold;
   padding-bottom: 20px;
-  
+
   @media (min-width: 576px) {
     font-size: 2.5em;
   }
@@ -31,11 +31,10 @@ const HowItWorksSection = styled.section`
   justify-content: space-between;
   padding: 0 2rem;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     flex-flow: row wrap;
   }
-
 
   @media (min-width: 1366px) {
     max-width: 80vw;
@@ -76,7 +75,7 @@ const ConnectionDiv = styled.div`
 
   @media (min-width: 1366px) {
     padding: 0;
-  }  
+  }
 `;
 
 const ConnectionDot = styled.div`
@@ -85,11 +84,11 @@ const ConnectionDot = styled.div`
   background-size: 10px;
   width: 10px;
   height: 60px;
-  
+
   @media (min-width: 768px) {
     height: 10px;
     flex: 1 0 auto;
-  }  
+  }
 `;
 
 const ConnectionHeader = styled.h1`
@@ -102,7 +101,7 @@ const ConnectionHeader = styled.h1`
 
   @media (min-width: 768px) {
     padding: 0 0.5rem;
-  }  
+  }
 
   @media (min-width: 1366px) {
     padding: 0 2rem;

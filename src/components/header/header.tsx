@@ -70,7 +70,13 @@ const Navigation = styled.nav`
     padding-top: 5px;
 
     > * {
-      margin: 0 0.5rem;
+      margin: 0 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    > * {
+      margin: 0 1.5rem;
     }
   }
 `;

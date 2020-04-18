@@ -120,7 +120,6 @@ const PartnersGrid = styled.div`
   }
 `;
 
-
 // only import polyfill if scrollBehavior is not supported by browser
 if (!('scrollBehavior' in document.documentElement.style)) {
   import('smoothscroll-polyfill').then((smoothscroll) => {
@@ -169,7 +168,7 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={100}
-              end={70000}
+              end={140000}
             />
           </div>
           <span>amount of resources raised</span>
@@ -179,7 +178,7 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={0}
-              end={3}
+              end={17}
             />
           </div>
           {' '}
