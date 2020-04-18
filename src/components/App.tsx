@@ -9,7 +9,7 @@ import Footer from './footer/footer';
 import NavigateToTop from './footer/navigate-to-top';
 import Header from './header/header';
 import Landing from './pages/landing';
-import TheFund from './pages/the_fund';
+import TheFund from './pages/the-fund';
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};

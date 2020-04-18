@@ -1,41 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const HowItWorksWrapper = styled.section`
+  align-items: center;
   text-align: center;
+  display: flex;
+  flex-flow: column wrap;
   padding-top: 40px;
   padding-bottom: 80px;
-  background: white
+  background: ${StylesSchema.White};
 `;
 
 const HowItWorksHeader = styled.h1`
   color: black;
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   padding-bottom: 20px;
   
-  @media (max-width: 600px) {
-    font-size: 2em;
+  @media (min-width: 576px) {
+    font-size: 2.5em;
   }
 `;
 
 const HowItWorksSection = styled.section`
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-basis: wrap;
   align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
   
-   @media (max-width: 600px) {
-    display: block
+  @media (min-width: 768px) {
+    flex-flow: row wrap;
+  }
+
+
+  @media (min-width: 1366px) {
+    max-width: 80vw;
   }
 `;
 
 const Business = styled.div`
-  flex-basis: 30%;
-  
-   @media (max-width: 600px) {
-    flex-basis: 100%;
+  @media (min-width: 576px) {
+    flex-basis: 25%;
   }
 `;
 
@@ -44,67 +53,43 @@ const BusinessHeader = styled.h1`
   font-weight: bold;
   font-family: Montserrat, sans-serif;
   line-height: 1.5;
-  margin-bottom: 10px
+  margin: 0.5rem 0 0 0;
 `;
 
 const BusinessDesc = styled.p`
   font-size: 18px;
   font-family: Montserrat, sans-serif;
   line-height: 1.5;
-  margin-top: 10px
-`;
-
-const Connection = styled.div`
-  flex-basis: 40%;
-  
-   @media (max-width: 600px) {
-    flex-basis: 100%
-  }
 `;
 
 const ConnectionDiv = styled.div`
-  width: 100%;
+  align-items: center;
   display: flex;
-  flex-basis: wrap;
-  flex-direction: row;
-  
-   @media (max-width: 600px) {
-    display: block
-  }  
-`;
+  flex: 1 1 auto;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 0 0.5rem;
 
-const ConnectionDotDiv = styled.div`
-  flex-basis: 30%;
-  padding-top: 60px;
-   @media (max-width: 600px) {
-    flex-basis: 100%;
+  @media (min-width: 768px) {
+    flex-flow: row wrap;
   }
+
+  @media (min-width: 1366px) {
+    padding: 0;
+  }  
 `;
 
 const ConnectionDot = styled.div`
-  position: absolute; 
   background-image: url(https://d5htvn7530ipt.cloudfront.net/netflix/spoilers/8/images/dotted.png);
+  background-repeat: space;
   background-size: 10px;
-  width: 170px;
-  height: 0.4%;
+  width: 10px;
+  height: 60px;
   
-  @media (max-width: 600px) {
-    margin-top: -40px;
-    left: 50%;
-    position: absolute;
-    height: 2%;
-    width: 10px;
+  @media (min-width: 768px) {
+    height: 10px;
+    flex: 1 0 auto;
   }  
-
-`;
-
-const ConnectionDesc = styled.div`  
-  flex-basis: 40%;
-  text-align: center;
-  
-   @media (max-width: 600px) {
-    flex-basis: 100%
-  }
 `;
 
 const ConnectionHeader = styled.h1`
@@ -112,14 +97,23 @@ const ConnectionHeader = styled.h1`
   font-weight: bold;
   font-family: Montserrat, sans-serif;
   line-height: 1.5;
+  margin: 0;
+  padding: 0.5rem 0;
+
+  @media (min-width: 768px) {
+    padding: 0 0.5rem;
+  }  
+
+  @media (min-width: 1366px) {
+    padding: 0 2rem;
+  }
 `;
 
 const HighlightYellow = styled.span`
-  color: #fbc91b;
+  color: ${StylesSchema.Yellow};
   font-size: 26px;
-  font-weight: bold
+  font-weight: bold;
 `;
-
 
 const HowItWorks: React.FC = () => (
   <HowItWorksWrapper>
@@ -138,26 +132,16 @@ const HowItWorks: React.FC = () => (
           challenges/needs
         </BusinessDesc>
       </Business>
-      <Connection>
-        <ConnectionDiv>
-          <ConnectionDotDiv>
-            <ConnectionDot />
-            <ConnectionDot />
-          </ConnectionDotDiv>
-          <ConnectionDesc>
-            <ConnectionHeader>
-              Let us
-              <HighlightYellow> SUPPORT </HighlightYellow>
-              <br />
-              each other through COVID-19
-            </ConnectionHeader>
-          </ConnectionDesc>
-          <ConnectionDotDiv>
-            <ConnectionDot />
-            <ConnectionDot />
-          </ConnectionDotDiv>
-        </ConnectionDiv>
-      </Connection>
+      <ConnectionDiv>
+        <ConnectionDot />
+        <ConnectionHeader>
+          Let us
+          <HighlightYellow> SUPPORT </HighlightYellow>
+          <br />
+          each other through COVID-19
+        </ConnectionHeader>
+        <ConnectionDot />
+      </ConnectionDiv>
       <Business>
         <BusinessHeader>
           Big business

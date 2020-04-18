@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const OurValueWrapper = styled.section`
   text-align: center;
   padding-top: 40px;
   padding-bottom: 80px;
-  background: white
+  background: ${StylesSchema.White};
 `;
 
 const OurValueDiv = styled.section`
@@ -19,12 +20,12 @@ const OurValueDiv = styled.section`
 `;
 
 const OurValueCol = styled.div`
-  flex-basis: 50%
+  flex-basis: 50%;
   text-align: center;
   margin: 0 auto;
   
   @media (max-width: 415px) {
-    flex-basis: 100%
+    flex-basis: 100%;
   }
 `;
 
