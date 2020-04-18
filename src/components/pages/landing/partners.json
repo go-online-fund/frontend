@@ -1,54 +1,67 @@
 [
   {
     "companyName": "Nas Daily",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg" 
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586238419/nasdaily_logo_znoqua.svg",
+    "supportAreas": []
   },
   {
     "companyName": "Ayden",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png"
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586420994/adyen_kfitn2.png",
+    "supportAreas": ["payment"]
   },
   {
     "companyName": "Product Pixels",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/product_pixels_zf79wo.png"
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/product_pixels_zf79wo.png",
+    "supportAreas": []
   },
   {
     "companyName": "ByKido",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png"
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png",
+    "supportAreas": ["marketing"]
   },
   {
     "companyName": "Wattah",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/wattah_c6ucsa.png"
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/wattah_c6ucsa.png",
+    "supportAreas": ["marketing"]
   },
   {
     "companyName": "E-alchemist",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/e-alchemist_nuxvus.png"
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586521923/e-alchemist_nuxvus.png",
+    "supportAreas": ["website", "marketing"]
   },
   {
     "companyName": "Engine Studios",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786918/engine_studios_ndtvsp.png"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786918/engine_studios_ndtvsp.png",
+    "supportAreas": ["website"]
   },
   {
     "companyName": "Simple Host",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786917/simple_host_h00xex.svg"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786917/simple_host_h00xex.svg",
+    "supportAreas": ["website"]
   },
   {
     "companyName": "Inbox Consults",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786918/INBOX-CONSULTS_tkpnig.png"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1586786918/INBOX-CONSULTS_tkpnig.png",
+    "supportAreas": []
   },
   {
     "companyName": "Spenmo",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181542/SPENMO_lpjugi.png"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181542/SPENMO_lpjugi.png",
+    "supportAreas": ["payment"]
   },
   {
     "companyName": "BotDistrikt",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181541/botdistrikt_i4h3kr.png"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181541/botdistrikt_i4h3kr.png",
+    "supportAreas": ["automation"]
   },
   {
     "companyName": "One Vision",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181533/onev_qzbawh.png"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181533/onev_qzbawh.png",
+    "supportAreas": []
   },
   {
     "companyName": "Triple D",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181532/Triple_D_oux2in.svg"
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181532/Triple_D_oux2in.svg",
+    "supportAreas": []
   }
 ]

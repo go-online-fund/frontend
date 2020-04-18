@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router';
 
 const SmallBusinessWrapper = styled.section`
   height: 600px;
@@ -88,25 +89,30 @@ const JoinButton = styled.button`
     font-size: 14px; 
      padding: 5px 10px;
   }
-  
 `;
 
-const SmallBusiness: React.FC = () => (
-  <SmallBusinessWrapper>
-    <SmallBusinessBackgroundImgDiv />
-    <SmallBusinessDescription>
-      <SmallBusinessTitle>
-        Are you a SME looking for support
-        <br />
-        to move your business online?
-      </SmallBusinessTitle>
-      <a href='/#applyForFund'>
-        <JoinButton>
+const SmallBusiness: React.FC = () => {
+  const history = useHistory();
+
+  return (
+    <SmallBusinessWrapper>
+      <SmallBusinessBackgroundImgDiv />
+      <SmallBusinessDescription>
+        <SmallBusinessTitle>
+          Are you a SME looking for support
+          <br />
+          to move your business online?
+        </SmallBusinessTitle>
+        <JoinButton
+          onClick={() => history.push('/', {
+            scrollTo: 'applyForFund',
+          })}
+        >
           APPLY
         </JoinButton>
-      </a>
-    </SmallBusinessDescription>
-  </SmallBusinessWrapper>
-);
+      </SmallBusinessDescription>
+    </SmallBusinessWrapper>
+  );
+};
 
 export default SmallBusiness;

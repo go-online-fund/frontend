@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router';
 import { StylesSchema } from '../../../shared/enums/styles';
+import { PrimaryButton } from '../../elements';
+import partnersList from '../landing/partners.json';
 
 interface HelpAreasGridItemProps {
   isEven: boolean;
 }
 
 const ResourcesWrapper = styled.section`
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 80px;
+  align-items: center;
   background-color: ${StylesSchema.White};
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 2rem;
 `;
 
 const ResourcesHeader = styled.h1`
@@ -37,7 +42,7 @@ const HelpAreasGrid = styled.div`
   }
 `;
 
-const HelpAreasGridItem = styled.section<HelpAreasGridItemProps>`
+const HelpAreasGridBox = styled.div<HelpAreasGridItemProps>`
   -webkit-tap-highlight-color: transparent;
   align-items: center;
   background-color: ${({ isEven }) => (isEven ? StylesSchema.DarkGrey : StylesSchema.Yellow)};
@@ -49,29 +54,83 @@ const HelpAreasGridItem = styled.section<HelpAreasGridItemProps>`
   flex-flow: row wrap;
   height: 125px;
   justify-content: center;
-  margin: 2rem;
   text-transform: uppercase;
   transition: transform 0.5s ease;
-  width: 225px;
 
   &:hover {
-    background-color: ${({ isEven }) => (isEven ? StylesSchema.Yellow : StylesSchema.DarkGrey)};
-    color: ${({ isEven }) => (isEven ? StylesSchema.DarkGrey : StylesSchema.White)};
     transform: scale(1.05);
   }
 `;
 
-const RESOURCES = ['Website', 'Payment', 'Marketing', 'Government Grants', 'Automation'];
+const HelpAreasGridItem = styled.div`
+  width: 225px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 2rem;
+`;
 
-const Resources: React.FC = () => (
-  <ResourcesWrapper>
-    <ResourcesHeader>Our Resources</ResourcesHeader>
-    <HelpAreasGrid>
-      {
-        RESOURCES.map((resource, index) => <HelpAreasGridItem isEven={index % 2 === 0}>{resource}</HelpAreasGridItem>)
+const PartnerIcon = styled.img`
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  padding: 0.5em;
+  max-width: 40%;
+  max-height: 50px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const IconsContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+`;
+
+
+const RESOURCES = ['website', 'payment', 'marketing', 'government grants', 'automation'];
+
+const Resources: React.FC = () => {
+  const history = useHistory();
+
+  return (
+    <ResourcesWrapper>
+      <ResourcesHeader>Our Resources</ResourcesHeader>
+      <HelpAreasGrid>
+        {
+        RESOURCES.map((resource, index) => {
+          const partners = partnersList.filter(({ supportAreas }) => supportAreas.includes(resource));
+
+          return (
+            <HelpAreasGridItem>
+              <HelpAreasGridBox isEven={index % 2 === 0}>{resource}</HelpAreasGridBox>
+              <IconsContainer>
+                {
+                  partners.map(({ companyName, companyLogo }) => (
+                    <PartnerIcon
+                      alt={companyName}
+                      title={companyName}
+                      src={companyLogo}
+                    />
+                  ))
+                }
+              </IconsContainer>
+            </HelpAreasGridItem>
+          );
+        })
       }
-    </HelpAreasGrid>
-  </ResourcesWrapper>
-);
+      </HelpAreasGrid>
+      <PrimaryButton
+        onClick={() => history.push('/', {
+          scrollTo: 'applyForFund',
+        })}
+      >
+        Apply now
+      </PrimaryButton>
+    </ResourcesWrapper>
+  );
+};
 
 export default Resources;
