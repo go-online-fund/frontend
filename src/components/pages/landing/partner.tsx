@@ -182,7 +182,7 @@ const Partner: React.FC = () => {
             />
           </div>
           {' '}
-          <span>SME supported</span>
+          <span>SMEs supported</span>
         </PartnerSupport>
       </Carousel>
       <RoundedSecondaryButton

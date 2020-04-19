@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import { StylesSchema } from '../../../shared/enums/styles';
-import { PrimaryButton } from '../../elements';
+import { SecondaryButton } from '../../elements';
 import partnersList from '../landing/partners.json';
 
 interface HelpAreasGridItemProps {
@@ -54,6 +54,7 @@ const HelpAreasGridBox = styled.div<HelpAreasGridItemProps>`
   flex-flow: row wrap;
   height: 125px;
   justify-content: center;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   transition: transform 0.5s ease;
 
@@ -110,6 +111,7 @@ const Resources: React.FC = () => {
                 {
                   partners.map(({ companyName, companyLogo }) => (
                     <PartnerIcon
+                      key={companyName}
                       alt={companyName}
                       title={companyName}
                       src={companyLogo}
@@ -122,13 +124,13 @@ const Resources: React.FC = () => {
         })
       }
       </HelpAreasGrid>
-      <PrimaryButton
+      <SecondaryButton
         onClick={() => history.push('/', {
           scrollTo: 'applyForFund',
         })}
       >
         Apply now
-      </PrimaryButton>
+      </SecondaryButton>
     </ResourcesWrapper>
   );
 };

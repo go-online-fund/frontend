@@ -13,7 +13,7 @@ const OurValueDiv = styled.section`
   text-align: center;
   display: flex;
   flex-direction: row;
-  
+
   @media (max-width: 600px) {
     display: block;
   }
@@ -23,7 +23,7 @@ const OurValueCol = styled.div`
   flex-basis: 50%;
   text-align: center;
   margin: 0 auto;
-  
+
   @media (max-width: 415px) {
     flex-basis: 100%;
   }
@@ -31,15 +31,15 @@ const OurValueCol = styled.div`
 
 const OurValueImg = styled.img`
   height: 170px;
-  width: 170px
+  width: 170px;
 `;
 
 const OurValueDesc = styled.p`
-   font-size: 22px;
-   font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
   font-family: Montserrat, sans-serif;
   line-height: 1.5;
-  margin-top: 10px
+  margin-top: 10px;
 `;
 
 const OurValue: React.FC = () => (

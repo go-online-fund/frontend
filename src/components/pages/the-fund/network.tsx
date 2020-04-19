@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { StylesSchema } from '../../../shared/enums/styles';
 
 const NetworkWrapper = styled.section`
   text-align: center;
@@ -7,54 +8,65 @@ const NetworkWrapper = styled.section`
 
 const NetworkDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  
-   @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column
+  flex-direction: column;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+  }
+`;
+
+const NetworkStyles = css`
+  box-sizing: border-box;
+  padding: 0 10px 60px;
+  text-align: center;
+
+  @media (min-width: 576px) {
+    width: 50%;
   }
 `;
 
 const Company = styled.div`
-  background: black;
-  flex-basis: 45%;
-  color: white;
-  text-align: left;
-  padding-right: 80px;
-  padding-right: 160px;
-  padding-left: 40px;
-  padding-bottom: 100px;
-  
-   @media (max-width: 600px) {
-    flex-basis: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    padding-bottom: 60px;
+  ${NetworkStyles}
+  background: ${StylesSchema.DarkGrey};
+  color: ${StylesSchema.White};
+
+  @media (min-width: 576px) {
+    text-align: left;
+    padding: 0 160px 100px 40px;
+  }
+`;
+
+const Sponsor = styled.div`
+  ${NetworkStyles}
+  background-color: ${StylesSchema.Yellow};
+  color: ${StylesSchema.Black};
+
+  @media (min-width: 576px) {
+    text-align: right;
+    padding: 0 40px 160px 100px;
   }
 `;
 
 const NetworkCompanyHeader = styled.h2`
   font-size: 102px;
-  padding-top: 20px;  
-  margin-bottom: 0px;
+  padding-top: 20px;
+  margin-bottom: 0;
   font-weight: bold;
-  
+
   @media (max-width: 600px) {
     font-size: 82px;
-    padding-top: 0px
+    padding-top: 0;
   }
 `;
 
 const CompanySmallHeader = styled.h1`
   font-size: 32px;
   font-weight: bold;
-  margin-top: 0px;
-  
+  margin-top: 0;
+
   @media (max-width: 600px) {
     font-size: 22px;
   }
-  
 `;
 
 const CompanyDesc = styled.p`
@@ -63,40 +75,22 @@ const CompanyDesc = styled.p`
   font-size: 22px;
   font-weight: normal;
   text-align: justify;
-  
+
   @media (max-width: 600px) {
     font-size: 18px;
-  }
-`;
-
-const Sponsor = styled.div`
-  flex-basis: 45%;
-  color: black;
-  text-align: right;
-  padding-right: 40px;
-  padding-left: 160px;
-  background: #fbc91b;
-  padding-bottom: 100px;
-  
-  @media (max-width: 600px) {
-    flex-basis: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    padding-bottom: 60px   
   }
 `;
 
 const NetworkSponsorHeader = styled.h2`
   font-size: 102px;
   color: black;
-  padding-top: 20px;  
-  margin-bottom: 0px;
+  padding-top: 20px;
+  margin-bottom: 0;
   font-weight: bold;
-  
+
   @media (max-width: 600px) {
     font-size: 82px;
-    padding-top: 0px
+    padding-top: 0;
   }
 `;
 
@@ -104,8 +98,8 @@ const SponsorSmallHeader = styled.h1`
   color: black;
   font-size: 32px;
   font-weight: bold;
-  margin-top: 0px;
-  
+  margin-top: 0;
+
   @media (max-width: 600px) {
     font-size: 22px;
   }
@@ -117,7 +111,7 @@ const SponsorDesc = styled.p`
   font-size: 22px;
   font-weight: normal;
   text-align: justify;
-  
+
   @media (max-width: 600px) {
     font-size: 18px;
   }
