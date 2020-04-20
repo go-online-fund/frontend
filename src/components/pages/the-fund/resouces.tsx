@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import { StylesSchema } from '../../../shared/enums/styles';
 import { SecondaryButton } from '../../elements';
-import partnersList from '../landing/partners.json';
+import CompanyList from './company_list';
 
 interface HelpAreasGridItemProps {
   isEven: boolean;
@@ -70,27 +70,6 @@ const HelpAreasGridItem = styled.div`
   margin: 2rem;
 `;
 
-const PartnerIcon = styled.img`
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  transition: transform 0.5s ease;
-  padding: 0.5em;
-  max-width: 40%;
-  max-height: 50px;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const IconsContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-`;
-
-
 const RESOURCES = ['website', 'payment', 'marketing', 'government grants', 'automation'];
 
 const Resources: React.FC = () => {
@@ -101,29 +80,14 @@ const Resources: React.FC = () => {
       <ResourcesHeader>Our Resources</ResourcesHeader>
       <HelpAreasGrid>
         {
-        RESOURCES.map((resource, index) => {
-          const partners = partnersList.filter(({ supportAreas }) => supportAreas.includes(resource));
-
-          return (
-            <HelpAreasGridItem>
-              <HelpAreasGridBox isEven={index % 2 === 0}>{resource}</HelpAreasGridBox>
-              <IconsContainer>
-                {
-                  partners.map(({ companyName, companyLogo }) => (
-                    <PartnerIcon
-                      key={companyName}
-                      alt={companyName}
-                      title={companyName}
-                      src={companyLogo}
-                    />
-                  ))
-                }
-              </IconsContainer>
-            </HelpAreasGridItem>
-          );
-        })
+        RESOURCES.map((resource, index) => (
+          <HelpAreasGridItem>
+            <HelpAreasGridBox isEven={index % 2 === 0}>{resource}</HelpAreasGridBox>
+          </HelpAreasGridItem>
+        ))
       }
       </HelpAreasGrid>
+      <CompanyList />
       <SecondaryButton
         onClick={() => history.push('/', {
           scrollTo: 'applyForFund',
