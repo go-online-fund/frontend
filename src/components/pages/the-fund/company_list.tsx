@@ -4,9 +4,10 @@ import './css/company_list.css';
 import companyList from '../../../data/sponsor_list';
 
 const CompanyListWrapper = styled.section`
-  width: 78%
+  width: 78%;
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const renderCompanies = (companies: any[]) => {
   const listOfCompanies = companies.map((company, index) => (
     <tr key={company}>
