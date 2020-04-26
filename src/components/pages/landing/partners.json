@@ -15,9 +15,9 @@
     "supportAreas": []
   },
   {
-    "companyName": "ByKido",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png",
-    "supportAreas": ["marketing"]
+    "companyName": "Smart Solutions",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/matt_smart_uv4lo4.png",
+    "supportAreas": []
   },
   {
     "companyName": "Wattah",
@@ -63,5 +63,25 @@
     "companyName": "Triple D",
     "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181532/Triple_D_oux2in.svg",
     "supportAreas": []
+  },
+  {
+    "companyName": "Login Marketing",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/login_marketing_n4ipfm.png",
+    "supportAreas": []
+  },
+  {
+    "companyName": "NPN",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/npm_umbp5w.png",
+    "supportAreas": []
+  },
+  {
+    "companyName": "Responsible Cyber",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/responsible_cyber_klldy6.png",
+    "supportAreas": []
+  },
+  {
+    "companyName": "ByKido",
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png",
+    "supportAreas": ["marketing"]
   }
 ]

@@ -168,7 +168,7 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={100}
-              end={140000}
+              end={200000}
             />
           </div>
           <span>amount of resources raised</span>
@@ -178,7 +178,7 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={0}
-              end={17}
+              end={50}
             />
           </div>
           {' '}
