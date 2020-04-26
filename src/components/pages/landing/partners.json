@@ -15,9 +15,9 @@
     "supportAreas": []
   },
   {
-    "companyName": "Smart Solutions",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/matt_smart_uv4lo4.png",
-    "supportAreas": []
+    "companyName": "ByKido",
+    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png",
+    "supportAreas": ["marketing"]
   },
   {
     "companyName": "Wattah",
@@ -80,8 +80,8 @@
     "supportAreas": []
   },
   {
-    "companyName": "ByKido",
-    "companyLogo": "https://res.cloudinary.com/doaxab4ly/image/upload/v1586538256/byikido_ae5pxh.png",
-    "supportAreas": ["marketing"]
+    "companyName": "Smart Solutions",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/matt_smart_uv4lo4.png",
+    "supportAreas": []
   }
 ]
