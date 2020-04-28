@@ -50,9 +50,9 @@
     "supportAreas": ["payment"]
   },
   {
-    "companyName": "BotDistrikt",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181541/botdistrikt_i4h3kr.png",
-    "supportAreas": ["automation"]
+    "companyName": "Responsible Cyber",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/responsible_cyber_klldy6.png",
+    "supportAreas": []
   },
   {
     "companyName": "One Vision",
@@ -75,15 +75,11 @@
     "supportAreas": []
   },
   {
-    "companyName": "Responsible Cyber",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/responsible_cyber_klldy6.png",
-    "supportAreas": []
+    "companyName": "BotDistrikt",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181541/botdistrikt_i4h3kr.png",
+    "supportAreas": ["automation"]
   },
-  {
-    "companyName": "Skilfinity",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/skilfinity_sz0yxn.png",
-    "supportAreas": []
-  },
+
   {
     "companyName": "Keepital",
     "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/keepital_rzdxoi.jpg",
@@ -92,6 +88,11 @@
   {
     "companyName": "Smart Solutions",
     "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587871421/matt_smart_uv4lo4.png",
+    "supportAreas": []
+  },
+  {
+    "companyName": "Skilfinity",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/skilfinity_sz0yxn.png",
     "supportAreas": []
   }
 ]
