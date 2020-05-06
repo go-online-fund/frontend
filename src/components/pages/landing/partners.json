@@ -79,10 +79,14 @@
     "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1587181541/botdistrikt_i4h3kr.png",
     "supportAreas": ["automation"]
   },
-
   {
-    "companyName": "Keepital",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/keepital_rzdxoi.jpg",
+    "companyName": "Skilfinity",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/skilfinity_sz0yxn.png",
+    "supportAreas": []
+  },
+  {
+    "companyName": "Corsiva",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588785308/corsiva_logo_vkfc61.png",
     "supportAreas": []
   },
   {
@@ -91,8 +95,13 @@
     "supportAreas": []
   },
   {
-    "companyName": "Skilfinity",
-    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/skilfinity_sz0yxn.png",
+    "companyName": "Keepital",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588091909/keepital_rzdxoi.jpg",
+    "supportAreas": []
+  },
+  {
+    "companyName": "Watch Guard",
+    "companyLogo": "https://res.cloudinary.com/dtemq7kdo/image/upload/v1588785308/watchguard_szoogr.png",
     "supportAreas": []
   }
 ]
