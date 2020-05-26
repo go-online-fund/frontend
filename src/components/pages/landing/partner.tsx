@@ -83,8 +83,8 @@ const PartnerIconContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px 20px;
-  
-   @media (max-width: 500px) {
+
+  @media (max-width: 500px) {
     padding: 10px 10px;
   }
 `;
