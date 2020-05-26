@@ -100,7 +100,6 @@ const WhoWeSupport: React.FC = () => {
     <Support>
       <SupportHeader>WHO WILL THE FUND HELP?</SupportHeader>
       <Carousel
-        containerClass='carousel-support-container'
         responsive={responsive}
         infinite
       >

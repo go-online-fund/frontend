@@ -171,7 +171,7 @@ const Partner: React.FC = () => {
             {' '}
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
-              start={100}
+              start={1000}
               end={200000}
             />
           </div>
@@ -182,7 +182,7 @@ const Partner: React.FC = () => {
             <CountUp
               formattingFn={(e) => e.toLocaleString('en-US')}
               start={0}
-              end={50}
+              end={120}
             />
           </div>
           {' '}
