@@ -10,6 +10,7 @@ import NavigateToTop from './footer/navigate-to-top';
 import Header from './header/header';
 import Landing from './pages/landing';
 import TheFund from './pages/the-fund';
+import SuccessStories from './pages/success-stories';
 
 const AppWrapper = styled.div`
   background-color: ${StylesSchema.White};
@@ -51,6 +52,9 @@ const App: React.FC = () => {
           </Route>
           <Route exact path='/how-the-fund-works'>
             <TheFund />
+          </Route>
+          <Route exact path='/success-stories'>
+            <SuccessStories />
           </Route>
         </Switch>
         <CSSTransition

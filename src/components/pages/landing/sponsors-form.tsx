@@ -57,150 +57,24 @@ const NormalTextHeader = styled.p`
   text-transform: uppercase;
 `;
 
-const options: SponsorHelpOption[] = [
-  { value: 'Capital', label: 'Capital' },
-  { value: 'Resources, Logistics, or Operations', label: 'Resources, Logistics, or Operations' },
-  { value: 'Training', label: 'Training' },
-];
+const SponsorDescription = styled.p`
+  text-align: center;
+  padding-bottom: 80px;
+  color: black;
+  line-height: 2
+`;
 
-const defaultForm = {
-  companyName: '',
-  companyEmail: '',
-  contactNumber: '',
-  contributionArea: '',
-};
-
-const SponsorsForm: React.FC = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectValues, setSelectValues] = useState<SponsorHelpOption[]>([]);
-  const [sponsorForm, setSponsorForm] = useState<SponsorApplication>(defaultForm);
-
-  /**
-   * update state with selected options from react-select
-   * @param e selected options
-   */
-  const onSelect = (e: SponsorHelpOption[]) => {
-    setSelectValues(e);
-    if (!e) {
-      setSponsorForm({
-        ...sponsorForm,
-        contributionArea: '',
-      });
-      return;
-    }
-    const contributionArea = e.map(({ value }) => value).join(',');
-    setSponsorForm({
-      ...sponsorForm,
-      contributionArea,
-    });
-  };
-
-  /**
-   * set loading state when awaiting response.
-   * show success message, reset form after response is returned
-   * @param event
-   */
-  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsLoading(true);
-    const responseStatus = await FormsService.postSponsorApplication(sponsorForm);
-    if (responseStatus === 200) {
-      setIsLoading(false);
-      setSponsorForm(defaultForm);
-      setSelectValues([]);
-      setIsSubmitted(true);
-    }
-  };
-
-  /**
-   * removes form submittion success text upon re-focusing of form
-   */
-  const clearSubmitMessage = () => {
-    if (!isSubmitted) {
-      return;
-    }
-    setIsSubmitted(false);
-  };
-
-  return (
-    <SponsorSection id='beASponsor'>
-      <BigTextHeader>Big Business</BigTextHeader>
-      <NormalTextHeader>Helps</NormalTextHeader>
-      <SmallTextHeader>Small Business</SmallTextHeader>
-      <SponsorsFormWrapper
-        onSubmit={submitForm}
-        onFocus={clearSubmitMessage}
-      >
-        <TextField
-          aria-label='Company name'
-          required
-          placeholder='Company name'
-          disabled={isLoading}
-          value={sponsorForm.companyName}
-          onChange={(e) => setSponsorForm({
-            ...sponsorForm,
-            companyName: e.target.value,
-          })}
-        />
-        <TextField
-          aria-label='Company Email'
-          required
-          type='email'
-          placeholder='Company Email'
-          disabled={isLoading}
-          value={sponsorForm.companyEmail}
-          onChange={(e) => setSponsorForm({
-            ...sponsorForm,
-            companyEmail: e.target.value,
-          })}
-        />
-        <TextField
-          aria-label='Contact Number'
-          type='tel'
-          placeholder='Contact number'
-          disabled={isLoading}
-          value={sponsorForm.contactNumber}
-          onChange={(e) => setSponsorForm({
-            ...sponsorForm,
-            contactNumber: e.target.value,
-          })}
-        />
-        <Suspense fallback={<div>Loading Options...</div>}>
-          <Select
-            aria-label='Contribution'
-            placeholder='What would you like to contribute?'
-            required
-            options={options}
-            isMulti
-            onChange={onSelect}
-            value={selectValues}
-            disabled={isLoading}
-          />
-        </Suspense>
-        <PrimaryButton
-          type='submit'
-          disabled={isLoading}
-        >
-          {
-            isLoading
-              ? <LoadingSpinner type='primary' />
-              : 'BE A SPONSOR'
-          }
-        </PrimaryButton>
-        {
-          isSubmitted && (
-            <SuccessText type='dark'>
-              Thank you for. Your response has been submitted.
-              <br />
-              We will be in touch with you shortly to discuss
-              how you can support this initiative.
-            </SuccessText>
-          )
-        }
-      </SponsorsFormWrapper>
-    </SponsorSection>
-  );
-};
+const SponsorsForm: React.FC = () => (
+  <SponsorSection id='beASponsor'>
+    <BigTextHeader>Big Business</BigTextHeader>
+    <NormalTextHeader>Helps</NormalTextHeader>
+    <SmallTextHeader>Small Business</SmallTextHeader>
+    <SponsorDescription>
+      Applications are now closed.
+      <br />
+      Thank you for supporting us on this journey!
+    </SponsorDescription>
+  </SponsorSection>
+);
 
 export default SponsorsForm;
