@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/SuccessStories.css';
-
+/* eslint-disable max-len */
 const SuccessStories: React.FC = () => (
   <>
     <section className='section'>
@@ -10,11 +10,14 @@ const SuccessStories: React.FC = () => (
           <div className='img-wrapper'>
             <img
               className='story-img'
+              alt='Deskera'
               src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
             />
           </div>
           <div className='text-title'>Company name</div>
-          <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div className='text-body'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
           <div className='text-title'>Sponsored by</div>
           <div className='text-body'>Lorem upsum dolor sit amet.</div>
           <div className='text-title'>Story Title</div>
@@ -25,7 +28,11 @@ const SuccessStories: React.FC = () => (
         </div>
         <div className='content-container'>
           <div className='img-wrapper'>
-            <img className='story-img' src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png' />
+            <img
+              className='story-img'
+              alt='Deskera'
+              src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
+            />
           </div>
           <div className='text-title'>Company name</div>
           <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -36,7 +43,11 @@ const SuccessStories: React.FC = () => (
         </div>
         <div className='content-container'>
           <div className='img-wrapper'>
-            <img className='story-img' src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png' />
+            <img
+              alt='Deskera'
+              className='story-img'
+              src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
+            />
           </div>
           <div className='text-title'>Company name</div>
           <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -50,7 +61,11 @@ const SuccessStories: React.FC = () => (
         </div>
         <div className='content-container'>
           <div className='img-wrapper'>
-            <img className='story-img' src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png' />
+            <img
+              alt='Deskera'
+              className='story-img'
+              src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
+            />
           </div>
           <div className='text-title'>Company name</div>
           <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -64,10 +79,16 @@ const SuccessStories: React.FC = () => (
         </div>
         <div className='content-container'>
           <div className='img-wrapper'>
-            <img className='story-img' src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png' />
+            <img
+              alt='Deskera'
+              className='story-img'
+              src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
+            />
           </div>
           <div className='text-title'>Company name</div>
-          <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div className='text-body'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
           <div className='text-title'>Sponsored by</div>
           <div className='text-body'>Lorem upsum dolor sit amet.</div>
           <div className='text-title'>Story Title</div>
@@ -78,10 +99,16 @@ const SuccessStories: React.FC = () => (
         </div>
         <div className='content-container'>
           <div className='img-wrapper'>
-            <img className='story-img' src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png' />
+            <img
+              alt='Deskera'
+              className='story-img'
+              src='https://res.cloudinary.com/dgby8fykn/image/upload/v1590465712/deskera_atk3mt.png'
+            />
           </div>
           <div className='text-title'>Company name</div>
-          <div className='text-body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div className='text-body'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
           <div className='text-title'>Sponsored by</div>
           <div className='text-body'>Lorem upsum dolor sit amet.</div>
           <div className='text-title'>Story Title</div>
