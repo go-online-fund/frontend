@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
 
@@ -19,7 +19,7 @@ const ApplyFundFormDescription = styled.p`
   text-align: center;
   padding-bottom: 80px;
   color: white;
-  line-height: 2
+  line-height: 2;
 `;
 
 const ApplyFundSection = styled.div`

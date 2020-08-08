@@ -1,15 +1,6 @@
-import React, { Suspense, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { StylesSchema } from '../../../shared/enums/styles';
-import { SponsorApplication } from '../../../shared/interfaces/forms.interface';
-import FormsService from '../../../shared/services/forms.service';
-import {
-  PrimaryButton,
-  Select,
-  SuccessText,
-  TextField,
-  LoadingSpinner,
-} from '../../elements';
 
 
 interface SponsorHelpOption {
@@ -24,13 +15,13 @@ const SponsorSection = styled.div`
   text-align: center;
 `;
 
-const SponsorsFormWrapper = styled.form`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background-color: ${StylesSchema.Yellow};
-`;
+// const SponsorsFormWrapper = styled.form`
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 2rem;
+//   background-color: ${StylesSchema.Yellow};
+// `;
 
 const BigTextHeader = styled.p`
   font-size: 2rem;
@@ -61,7 +52,7 @@ const SponsorDescription = styled.p`
   text-align: center;
   padding-bottom: 80px;
   color: black;
-  line-height: 2
+  line-height: 2;
 `;
 
 const SponsorsForm: React.FC = () => (
