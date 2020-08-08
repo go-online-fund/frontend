@@ -124,24 +124,15 @@ const Header: React.FC = () => {
       </Link>
       <Navigation>
         <NavAnchor
+          onClick={() => navigateTo('/success-stories')}
+        >
+          Success Stories
+        </NavAnchor>
+        <NavAnchor
           onClick={() => navigateTo('/how-the-fund-works')}
         >
           How the fund works
         </NavAnchor>
-        <NavAnchor
-          onClick={() => navigateTo('/', {
-            scrollTo: 'applyForFund',
-          })}
-        >
-          Apply for fund
-        </NavAnchor>
-        <NavAnchorHighlight
-          onClick={() => navigateTo('/', {
-            scrollTo: 'beASponsor',
-          })}
-        >
-          Be a sponsor
-        </NavAnchorHighlight>
       </Navigation>
       <Burger open={open} setOpen={setOpen} />
       <SlideMenu open={open} onNavigation={navigateTo} />

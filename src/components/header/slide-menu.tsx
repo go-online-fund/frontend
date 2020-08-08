@@ -53,23 +53,14 @@ interface SlideMenuProps {
 const SlideMenu: React.FC<SlideMenuProps> = ({ open, onNavigation }) => (
   <StyledMenu open={open}>
     <NavAnchor
+      onClick={() => onNavigation('/success-stories')}
+    >
+      Success Stories
+    </NavAnchor>
+    <NavAnchor
       onClick={() => onNavigation('/how-the-fund-works')}
     >
       How the fund works
-    </NavAnchor>
-    <NavAnchor
-      onClick={() => onNavigation('/', {
-        scrollTo: 'applyForFund',
-      })}
-    >
-      Apply For Fund
-    </NavAnchor>
-    <NavAnchor
-      onClick={() => onNavigation('/', {
-        scrollTo: 'beASponsor',
-      })}
-    >
-      Be a Sponsor
     </NavAnchor>
   </StyledMenu>
 );
