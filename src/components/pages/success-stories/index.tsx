@@ -39,8 +39,8 @@ const SuccessStories: React.FC = () => (
           shift to operate online. We quickly helped the companies built websites and
           ran social media marketing, as well as facilitated free 1-on-1 consultations and
           webinars with our sponsors.
-          <br/>
-          <br/>
+          <br />
+          <br />
           The topics revolved around online payment, automation and chatbots, cyber security and digital marketing.
           Thanks to your support, we&apos;ve helped 120 SMEs and raised SGD$200,000 worth of
           resources! Our heartfelt gratitude to those who have contributed, this success is indeed ours.

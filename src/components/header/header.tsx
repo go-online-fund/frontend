@@ -41,24 +41,24 @@ const NavAnchor = styled.a`
   }
 `;
 
-const NavAnchorHighlight = styled.a`
-  background: ${StylesSchema.Yellow};
-  border-radius: 3px;
-  color: ${StylesSchema.Black};
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 5px 10px 5px 10px;
+// const NavAnchorHighlight = styled.a`
+//   background: ${StylesSchema.Yellow};
+//   border-radius: 3px;
+//   color: ${StylesSchema.Black};
+//   font-size: 1rem;
+//   cursor: pointer;
+//   text-decoration: none;
+//   padding: 5px 10px 5px 10px;
 
-  &:hover,
-  &:focus {
-    opacity: 0.9;
-  }
+//   &:hover,
+//   &:focus {
+//     opacity: 0.9;
+//   }
 
-  &:last-child {
-    margin-right: 0;
-  }
-`;
+//   &:last-child {
+//     margin-right: 0;
+//   }
+// `;
 
 const Navigation = styled.nav`
   display: none;
